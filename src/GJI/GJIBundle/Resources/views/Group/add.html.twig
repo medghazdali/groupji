@@ -1,0 +1,141 @@
+{% form_theme form 'bootstrap_3_layout.html.twig' %}
+{% extends 'GJIBundle::index.html.twig' %}
+{% block body %}
+
+
+
+        <div class="my-3 my-md-5">
+          <div class="container">
+          	<div class="row">
+
+				
+				{%  set class='col-md-12 col-lg-12' %}
+
+				{% if test is defined %}
+				{% set class='col-md-8 col-lg-8' %}
+
+		            <div class="col-lg-4">
+		              <div class="card">
+
+		                      <a href="#"><img class="card-img-top" src="{{asset('uploads/documents/groupe/')}}{{img}}" alt="And this isn't my nose. This is a false one."></a>                  
+		              </div>
+		            </div>
+
+				{% endif %}
+
+
+	            <div class="{{class}}">
+
+
+
+
+
+					{{ form_start(form, { 'attr': {'class': 'card'} }) }}
+
+	                  <div class="card-header">
+	                      <h3 class="card-title">Create New Group</h3>
+	                  </div>
+	                  <div class="card-body">
+	                      <div class="row">
+
+	                          <div class="col-md-12 col-lg-12">
+	 
+	                              <div class="form-group">
+	                                  <label class="form-label">{{ form_label(form.title) }} </label>
+	                                  {{ form_widget(form.title) }}
+	                              </div>
+
+	                              <div class="form-group">
+	                                  <label class="form-label">{{ form_label(form.body) }} </label>
+	                                  {{ form_widget(form.body) }} 
+	                              </div>
+
+
+	                              <div class="form-group">
+	                                  <div class="form-label">Banner Image </div>
+	                                  <div class="custom-file">
+	                                      {{ form_widget(form.file, { 'attr': {'class': 'custom-file-input'} }) }} 
+	                                      <label class="custom-file-label">Choose file</label>
+
+	                                  </div>
+	                                                                  <p class="nameP2"></p>
+
+	                              </div>
+
+	                              <div class="form-group">
+	                                  <div class="form-label">Group Type</div>
+	                                  <div class="custom-controls-stacked">
+
+										{{ form_widget(form.Cat) }}
+
+
+	                                  </div>
+	                              </div>
+
+
+	                          </div>
+
+	                      </div>
+	                  </div>
+	                  <div class="card-footer text-right">
+	                      <div class="d-flex">
+	                          <a href="javascript:void(0)" class="btn btn-link">Cancel</a>
+	                          <button type="submit" class="btn btn-primary ml-auto"><i class="fe fe-user-plus"></i> Save Group</button>
+	                      </div>
+	                  </div>
+	              	{{ form_end(form) }}
+
+
+
+
+
+
+
+
+	        	</div>                
+	        </div>                
+
+          </div>
+        </div>
+
+
+
+
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
+
+<script>
+
+$('#form_file').bind('change', function() {
+
+  console.log(this.files[0])
+
+  //this.files[0].size gets the size of your file.
+  if (this.files[0]) {
+
+      console.log(this.files[0])
+      listName=''
+      for(i=0;i<this.files.length ; i++){
+          listName=this.files[i].name
+        $(".nameP2").append(listName+"<br>")
+
+      }
+      console.log(listName)
+      
+      
+    if (this.files[0].size>0) 
+      $("#form_file").addClass('is-valid')
+    
+
+  }else{
+
+      $("#form_file").removeClass('is-valid')
+      $(".nameP2").text('')
+
+  }
+
+
+});
+
+</script>
+
+{% endblock %}

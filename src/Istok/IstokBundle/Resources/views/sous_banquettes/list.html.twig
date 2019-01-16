@@ -1,0 +1,84 @@
+    {% extends 'IstokIstokBundle::index.html.twig' %}
+    {% block body %}
+
+
+<h1>Listes sous catégories banquettes</h1><hr>
+
+<div class="col-md-6">
+
+<a class="btn btn-sm btn-primary" href="{{path('sous_banquettes_add')}}"><i class="glyphicon glyphicon-plus"></i> Ajouter sous catégorie banquettes </a>
+
+<table class="table table-bordered search-table" >
+<thead> 
+<tr>
+<th>Categorie banquettes</th>
+<th>Sous Categorie banquettes</th>
+
+
+</tr>
+</thead> 
+
+<tbody>
+{% for sous_banquette in sous_banquettes %}
+
+
+
+<tr>
+<td>{{sous_banquette.CatBanquettes.categorie}}</td>
+<td>{{sous_banquette.SousCategorie}}</td>
+
+{% if(role[0])=='ROLE_SUPER_ADMIN' %}
+
+
+<td>
+<a  data-toggle="tooltip" data-placement="top" title="Modifier" class="btn btn-sm btn-warning" href="{{path('sous_banquettes_edit',{'id':sous_banquette.id})}}" role="button">  <span class="glyphicon glyphicon-edit" aria-hidden="true"></span></a>
+<a  data-toggle="tooltip" data-placement="top" title="Supprimer" class="btn btn-sm btn-danger" href="{{path('sous_banquettes_delete',{'id':sous_banquette.id})}}" role="button">  <span class="glyphicon glyphicon-trash" aria-hidden="true"></span>
+</a>
+
+
+
+</td>
+
+
+{% endif %}
+
+</tr>
+
+
+{% endfor%}
+
+
+
+</tbody>
+
+</table>
+
+</div>
+
+
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/1.12.2/jquery.min.js"></script>
+<script>
+			$(document).ready(function(){
+				$('table.search-table').tableSearch({
+					searchText:'Rechercher    ',
+					searchPlaceHolder:' '
+				});
+			});
+$(document).ready(function(){
+
+
+ $(".delete").click(function(event){
+    if (confirm("voulez vous vraiment supprimer ?") == true) {
+    } else {
+        event.preventDefault();
+location.reload();
+
+
+    }    });
+});
+
+</script>
+
+
+
+    {% endblock %}

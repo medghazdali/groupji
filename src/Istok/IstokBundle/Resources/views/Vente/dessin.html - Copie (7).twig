@@ -1,0 +1,4038 @@
+  {% extends 'IstokIstokBundle::index2.html.twig' %}
+    {% block body %}
+
+
+
+
+  <!-- Nav tabs -->
+  <ul class="nav nav-tabs" role="tablist" style="margin-bottom:55px">
+    <li role="presentation" class="active"><a href="#dessin" aria-controls="home" role="tab" data-toggle="tab">Dessin</a></li>
+    <li role="presentation"><a href="#bois" onclick="bois()" aria-controls="profile" role="tab" data-toggle="tab">Bois</a></li>
+    <li role="presentation"><a href="#banquette" aria-controls="banquette"  id="setting" role="tab" data-toggle="tab">Banquettes</a></li>
+    <li role="presentation"><a  href="#tissus" aria-controls="tissus" role="tab" data-toggle="tab">Tissus</a></li>
+    <li style="float:right;    background: #1967be;" role="presentation"><a style="border-color: #e6e6e6 #e6e6e6 #dddddd;   background: #eee;" > <strong id="totalsa">00.00 DH</strong>  </a></li>
+  </ul>
+
+  <!-- Tab panes -->
+
+
+
+<!--begin tabs-->
+
+   
+
+<div id="tabs"  class="tab-content">   
+
+
+
+        <ul></ul>
+
+
+
+<!-- debut dessin -->
+  <div id="dessin" role="tabpanel" class="tab-pane active" >   
+    <div id="configurateur"> 
+
+      <div id="col1" class="col-md-3" style="padding:0px !important">
+
+        <div id="col1Content"> 
+
+<div id="medheader" class="ui-accordion-header ui-helper-reset ui-state-default ui-accordion-header-active ui-state-active ui-corner-top ui-accordion-icons" role="tab" id="ui-accordion-col1Content-header-0" aria-controls="drag-list" aria-selected="true" tabindex="0"></div>
+
+
+<div id="drag-list" class="drag-list panel-group" id="accordion" role="tablist" aria-multiselectable="true">
+
+
+
+
+
+  <div class="panel panel-default">
+    <div class="panel-heading" role="tab" id="headingOne">
+      <h4 class="panel-title">
+        <a role="button" data-toggle="collapse" data-parent="#accordion" href="#collapseOne" aria-expanded="true" aria-controls="collapseOne">
+          Ajouter des éléments
+        </a>
+      </h4>
+    </div>
+    <div id="collapseOne" class="panel-collapse collapse in" role="tabpanel" aria-labelledby="headingOne">
+      <div class="panel-body">
+
+
+
+
+
+
+                  <ul class="ulmed">
+                    <li style="width:0px"></li>
+                          <li>    
+                              <div  id="addFauxCoin" class="draggable fauxCoin obstacle coina1" title="Ajouter un faux coin">
+                              <div class="options op">
+                              <img src="{{ asset('bundles/istokistok/img/salon/delete.png') }}" title="Supprimer" class="deleteSB"/>
+                              <img src="{{ asset('bundles/istokistok/img/salon/options.png') }}" title="Options"  class="optionsCoin1"/>
+
+                              </div>
+                              <input type="hidden" name="dossierArriere" value="0">
+                              <input type="hidden" class="largeurDossier"  value="0">
+                              <input type="hidden" class="hauteurDossier"  value="0">
+                              </div>              
+                          </li>
+                          <li style="" >   
+                              <div  id="addCoin" class="draggable coin obstacle coina1" title="Ajouter un coin">
+                              <div class="options op">
+                              <img src="{{ asset('bundles/istokistok/img/salon/delete.png') }}" title="Supprimer" class="deleteSB"/>
+                              <img src="{{ asset('bundles/istokistok/img/salon/options.png') }}" title="Options"  class="optionsCoin1"/>
+
+                              </div>
+
+                              <input type="hidden" name="dossierArriere" value="0">
+                              <input type="hidden" class="largeurDossier"  value="0">
+                              <input type="hidden" class="hauteurDossier"  value="0">
+
+
+                              </div>                
+                          </li>
+
+         
+                          <li style="" >   
+                              <div  id="addCan" class="draggable  obstacle can coint" title="Ajouter un coin traditionnelle">
+                            <div class="options op" style="width:40%">
+                              <img src="{{ asset('bundles/istokistok/img/salon/delete.png') }}" title="Supprimer" class="deleteSB"/>
+                              <img  onclick="myFunction(this)" src="{{ asset('bundles/istokistok/img/salon/ret.png') }}" title="Options"  class="optionsCoin"/>
+
+                              <img  onclick="myFunction4(this)" src="{{ asset('bundles/istokistok/img/salon/min.png') }}" title="Options"  class="optionsCoin"/>
+                              <img  onclick="myFunction3(this)" src="{{ asset('bundles/istokistok/img/salon/plus.png') }}" title="Options"  class="optionsCoin"/>
+
+                              <img src="{{ asset('bundles/istokistok/img/salon/options.png') }}" title="Options"  class="optionsCoin2"/>
+
+
+
+                              </div>
+
+                              <input type="hidden" name="dossierArriere" value="0">
+                              <input type="hidden" class="largeurDossier"  value="0">
+                              <input type="hidden" class="hauteurDossier"  value="0">
+
+                              <input type="text" name="" class="dimens dimens1" value="90">
+                              <input type="text" name="" class="dimens dimens3" value="70">
+                              <input type="text" name="" class="dimens dimens4" value="30">
+                              <input type="text" name="" class="dimens dimens2" value="70">
+                              <input type="text" name="" class="dimens dimens5" value="90">
+
+                              </div>                
+                          </li>         
+
+
+         
+                          <li style="width:20%" >   
+                              <div style="text-align:center"  id="addCan" class="draggable  obstacle can can2 coinm" title="Ajouter un coin moderne">
+                            <div class="options op" style="width:40%">
+                              <img src="{{ asset('bundles/istokistok/img/salon/delete.png') }}" title="Supprimer" class="deleteSB"/>
+                              <img  onclick="myFunction(this)" src="{{ asset('bundles/istokistok/img/salon/ret.png') }}" title="Options"  class="optionsCoin"/>
+
+                              <img  onclick="myFunction4(this)" src="{{ asset('bundles/istokistok/img/salon/min.png') }}" title="Options"  class="optionsCoin"/>
+                              <img  onclick="myFunction3(this)" src="{{ asset('bundles/istokistok/img/salon/plus.png') }}" title="Options"  class="optionsCoin"/>
+
+
+                              <img src="{{ asset('bundles/istokistok/img/salon/options.png') }}" title="Options"  class="optionsCoin2"/>
+
+
+
+                              </div>
+
+                              <input type="hidden" name="dossierArriere" value="0">
+                              <input type="hidden" class="largeurDossier"  value="0">
+                              <input type="hidden" class="hauteurDossier"  value="0">
+
+                              <input type="text" name="" class="dimens dimens1" value="55" >
+                              <input type="text" name="" class="dimens dimens3" value="70">
+                              <input type="text" name="" class="dimens dimens4" value="30">
+                              <input type="text" name="" class="dimens dimens2" value="70">
+                              <input type="text" name="" class="dimens dimens5" value="55" >
+                              <input type="text" name="" class="dimens dimens8" value="90">
+                              <input type="text" name="" class="dimens dimens7" value="35"  style="color:#999">
+                              <input type="text" name="" class="dimens dimens6" value="35" style="color:#999">
+
+                              </div>                
+                          </li>         
+
+
+
+
+
+
+         
+
+
+
+
+
+                          <li > 
+                              <div  id="addSBV" data-id="" class="draggable sb sbv obstacle" title="Ajouter un support de banquette vertical" >
+                              <div class="ui-resizable-handle ui-resizable-n ngrip"></div>  
+                              <div class="ui-resizable-handle ui-resizable-s sgrip"></div> 
+                              <div class="longueur"> 
+                              <div class="longueurSpin"> </div>
+                              </div> 
+                              <div class="options op">
+                              <img src="{{ asset('bundles/istokistok/img/salon/delete.png') }}" title="Supprimer" class="deleteSB"/>
+                              <img src="{{ asset('bundles/istokistok/img/salon/options.png') }}" title="Options"  class="optionsSB"/>
+                              <img src="{{ asset('bundles/istokistok/img/salon/edit-forme.png') }}" title="Modifier la forme"   class="formeSB"/> 
+                              </div> 
+
+                              <div class="divAccoudoirGauche"></div> 
+                              <div class="divAccoudoirDroite"></div>
+                              <div class="divFaceGauche"></div> 
+                              <div class="divFaceDroite"></div>
+
+                              <input type="hidden" class="check" name="coinGauche"      value="0">
+                              <input type="hidden" class="check" name="coinDroite"      value="0">
+
+                              <input type="hidden" class="nbrCoinCollision"         value="0">
+                              <input type="hidden" class="check" name="fauxCoin"      value="0">
+
+                              <input type="hidden" class="check" name="faceGauche"      value="0">
+                              <input type="hidden" class="check" name="faceDroite"      value="0">
+
+                              <input type="hidden" class="check" name="accoudoirGauche" value="0">
+                              <input type="hidden" class="check" name="accoudoirDroite" value="0">                                
+                              <input type="hidden" class="largeurAccoudoir"  value="0">
+
+                              <input type="hidden" name="dossierArriere" value="0">
+                              <input type="hidden" name="facerondu" class="facerondu" value="0">
+                              <input type="hidden" class="largeurDossier"  value="0">
+                              <input type="hidden" class="hauteurDossier"  value="0"> 
+
+                              </div> 
+                          </li> 
+
+
+
+
+                          <li style="margin-top:22px" > 
+                              <div style="-webkit-transform: skewY(45deg); transform: skewY(-45deg);"  id="addSBV" data-id="" class="draggable sb sbv obstacle" title="Ajouter un support de banquette vertical" >
+                              <div class="ui-resizable-handle ui-resizable-n ngrip"></div>  
+                              <div class="ui-resizable-handle ui-resizable-s sgrip"></div> 
+                              <div class="longueur" style="-webkit-transform: skewY(-45deg); transform: skewY(45deg);"> 
+                              <div class="longueurSpin"> </div>
+                              </div> 
+                              <div class="options op"  style="-webkit-transform: skewY(-45deg); transform: skewY(45deg);">
+                              <img src="{{ asset('bundles/istokistok/img/salon/delete.png') }}" title="Supprimer" class="deleteSB"/>
+                              <img src="{{ asset('bundles/istokistok/img/salon/options.png') }}" title="Options"  class="optionsSB"/>
+                              <img src="{{ asset('bundles/istokistok/img/salon/edit-forme.png') }}" title="Modifier la forme"   class="formeSB"/> 
+                              </div> 
+
+                              <div class="divAccoudoirGauche"></div> 
+                              <div class="divAccoudoirDroite"></div>
+                              <div class="divFaceGauche"></div> 
+                              <div class="divFaceDroite"></div>
+
+                              <input type="hidden" class="check" name="coinGauche"      value="0">
+                              <input type="hidden" class="check" name="coinDroite"      value="0">
+
+                              <input type="hidden" class="nbrCoinCollision"         value="0">
+                              <input type="hidden" class="check" name="fauxCoin"      value="0">
+
+                              <input type="hidden" class="check" name="faceGauche"      value="0">
+                              <input type="hidden" class="check" name="faceDroite"      value="0">
+
+                              <input type="hidden" class="check" name="accoudoirGauche" value="0">
+                              <input type="hidden" class="check" name="accoudoirDroite" value="0">                                
+                              <input type="hidden" class="largeurAccoudoir"  value="0">
+                              <input type="hidden" name="facerondu" class="facerondu" value="0">
+
+                              <input type="hidden" name="dossierArriere" value="0">
+                              <input type="hidden" class="largeurDossier"  value="0">
+                              <input type="hidden" class="hauteurDossier"  value="0"> 
+
+                              </div> 
+                          </li> 
+
+
+
+
+
+
+                          <li  style="width:50%;margin-top:20px"  > 
+                              <div  id="addSBH" data-id="" class="draggable sb sbh obstacle" title="Ajouter un support de banquette horizontal">
+                              <div class="ui-resizable-handle ui-resizable-e egrip"></div>  
+                              <div class="ui-resizable-handle ui-resizable-w wgrip"></div> 
+                              <div class="longueur"> 
+                              <div class="longueurSpin"> </div>
+                              </div>  
+
+                              <div class="options op">
+                              <img src="{{ asset('bundles/istokistok/img/salon/delete.png') }}" title="Supprimer" class="deleteSB"/>
+                              <img src="{{ asset('bundles/istokistok/img/salon/options.png') }}" title="Options"  class="optionsSB"/>
+                              <img src="{{ asset('bundles/istokistok/img/salon/edit-forme.png') }}" title="Modifier la forme"   class="formeSB"/>               
+                              </div> 
+
+                              <div class="divAccoudoirGauche"></div> 
+                              <div class="divAccoudoirDroite"></div>
+                              <div class="divFaceGauche"></div> 
+                              <div class="divFaceDroite"></div>
+
+                              <input type="hidden" class="check" name="coinGauche"       value="0">
+                              <input type="hidden" class="check" name="coinDroite"       value="0">
+
+                              <input type="hidden" class="nbrCoinCollision"        value="0">
+                              <input type="hidden" class="check" name="fauxCoin"       value="0">
+
+                              <input type="hidden" class="check" name="faceGauche"       value="0">
+                              <input type="hidden" class="check" name="faceDroite"       value="0">
+
+                              <input type="hidden" class="check" name="accoudoirGauche"  value="0">
+                              <input type="hidden" class="check" name="accoudoirDroite"  value="0">                                 
+                              <input type="hidden" class="largeurAccoudoir"  value="0">
+                              <input type="hidden" name="facerondu" class="facerondu" value="0">
+
+                              <input type="hidden" name="dossierArriere"   value="0">
+                              <input type="hidden" class="largeurDossier"  value="0">
+                              <input type="hidden" class="hauteurDossier"  value="0"> 
+                                    
+                              </div> 
+                          </li>
+
+
+
+
+
+
+                  <li style="width:50%;margin-top:20px" > 
+                              <div style="-webkit-transform: skewX(45deg); transform: skewX(-45deg);"  id="addSBH" data-id="" class="draggable sb sbh obstacle" title="Ajouter un support de banquette horizontal">
+                              <div class="ui-resizable-handle ui-resizable-e egrip"></div>  
+                              <div class="ui-resizable-handle ui-resizable-w wgrip"></div> 
+                              <div class="longueur" style="-webkit-transform: skewX(-45deg); transform: skewX(45deg);"> 
+                              <div class="longueurSpin"> </div>
+                              </div>  
+
+                              <div class="options op" style="-webkit-transform: skewX(-45deg); transform: skewX(45deg);">
+                              <img src="{{ asset('bundles/istokistok/img/salon/delete.png') }}" title="Supprimer" class="deleteSB"/>
+                              <img src="{{ asset('bundles/istokistok/img/salon/options.png') }}" title="Options"  class="optionsSB"/>
+                              <img src="{{ asset('bundles/istokistok/img/salon/edit-forme.png') }}" title="Modifier la forme"   class="formeSB"/>               
+                              </div> 
+
+                              <div class="divAccoudoirGauche"></div> 
+                              <div class="divAccoudoirDroite"></div>
+                              <div class="divFaceGauche"></div> 
+                              <div class="divFaceDroite"></div>
+
+                              <input type="hidden" class="check" name="coinGauche"       value="0">
+                              <input type="hidden" class="check" name="coinDroite"       value="0">
+
+                              <input type="hidden" class="nbrCoinCollision"        value="0">
+                              <input type="hidden" class="check" name="fauxCoin"       value="0">
+
+                              <input type="hidden" class="check" name="faceGauche"       value="0">
+                              <input type="hidden" class="check" name="faceDroite"       value="0">
+                              <input type="hidden" name="facerondu" class="facerondu" value="0">
+
+                              <input type="hidden" class="check" name="accoudoirGauche"  value="0">
+                              <input type="hidden" class="check" name="accoudoirDroite"  value="0">                                 
+                              <input type="hidden" class="largeurAccoudoir"  value="0">
+
+                              <input type="hidden" name="dossierArriere"   value="0">
+                              <input type="hidden" class="largeurDossier"  value="0">
+                              <input type="hidden" class="hauteurDossier"  value="0"> 
+                                    
+                              </div> 
+                          </li>
+
+
+
+
+
+
+
+
+
+
+
+
+                          <li >   
+                              <div  id="addCouvertureH" class="draggable couverture couvertureh obstacle" title="Définir une couverture horizontale" style="width: 78px;height: 22px;">
+                              <div class="ui-resizable-handle ui-resizable-e egrip"></div>  
+                              <div class="ui-resizable-handle ui-resizable-w wgrip"></div> 
+
+                              <div style="margin-top: -3px;"> 
+                              <img src="{{ asset('bundles/istokistok/img/salon/hfg.png') }}"  class="hfg" style="margin-right: -6px;"/>
+                              <span class="fm" style="width: 50px/*149px*/;height: 9px;display: inline-block;background-image: url({{ asset('bundles/istokistok/img/salon/hfm.png') }});"> </span>
+                              <img src="{{ asset('bundles/istokistok/img/salon/hfd.png') }}"  class="hfd"  style="margin-left: -6px;"/>
+                              </div>
+
+                              <div class="options op">
+                              <img src="{{ asset('bundles/istokistok/img/salon/delete.png') }}" title="Supprimer" class="deleteSB"/> 
+                              <input  class="nbSupport_couverture" title="Nombre de banquettes"  value="1"/>
+                              </div>  
+                              <select class="liste_sb" style="display:none;"></select>              
+                              </div>               
+                          </li>
+                          <li >   
+                              <div  id="addCouvertureV" class="draggable couverture couverturev obstacle" title="Définir une couverture verticale" style="height: 105px;width: 22px;">
+                              <div class="ui-resizable-handle ui-resizable-n ngrip"></div>  
+                              <div class="ui-resizable-handle ui-resizable-s sgrip"></div> 
+
+                              <div> 
+                              <img src="{{ asset('bundles/istokistok/img/salon/vfn.png') }}"  class="vfn" />
+                              <span class="fm" style="height:50px;width: 9px;display: inline-block;background-image: url({{ asset('bundles/istokistok/img/salon/vfm.png') }});"> </span>
+                              <img src="{{ asset('bundles/istokistok/img/salon/vfs.png') }}"  class="vfs.png" />
+                              </div>
+
+                              <div class="options op">
+                              <img src="{{ asset('bundles/istokistok/img/salon/delete.png') }}" title="Supprimer" class="deleteSB"/> 
+                              <input  class="nbSupport_couverture"  title="Nombre de banquettes"  value="2"/>
+                              </div>
+                              <select class="liste_sb" style="display:none;"></select>                
+                              </div>               
+                          </li>
+                          <li style="margin-top: -50px;">   
+                              <div  id="addPilier" class="draggable pilier" title="Ajouter un pilier">
+
+                              <div class="ui-resizable-handle ui-resizable-e egrip"></div>  
+                              <div class="ui-resizable-handle ui-resizable-w wgrip"></div>
+                              <div class="ui-resizable-handle ui-resizable-n ngrip"></div>  
+                              <div class="ui-resizable-handle ui-resizable-s sgrip"></div>
+
+                              <span class="n_pilier"></span>                   
+                              <div class="options op">
+                              <img src="{{ asset('bundles/istokistok/img/salon/delete.png') }}"  title="Supprimer" class="deleteSB"/>
+                              <img src="{{ asset('bundles/istokistok/img/salon/options.png') }}" title="Options"   class="optionsPilier"/> 
+                              <img src="{{ asset('bundles/istokistok/img/salon/edit-forme.png') }}" title="Modifier la forme"   class="formePilier"/>                 
+                              </div>
+                              </div>    
+
+                          </li>
+                  </ul> 
+
+
+
+
+      </div>
+    </div>
+  </div>
+  <div class="panel panel-default">
+    <div class="panel-heading" role="tab" id="headingTwo">
+      <h4 class="panel-title">
+        <a role="button" data-toggle="collapse" data-parent="#accordion" href="#collapseTwo" aria-expanded="true" aria-controls="collapseTwo">
+
+
+     Paramètres du salon
+        </a>
+      </h4>
+    </div>
+
+
+    <div id="collapseTwo" class="panel-collapse collapse in" role="tabpanel" aria-labelledby="headingTwo">
+      <div class="panel-body">
+
+      <div>
+        <table>
+         <tr> 
+         <td>  <label>Largeur de support  &nbsp;</label></td>
+       <td>
+           
+             <div class="form-group">
+
+       <select class="form-control" id="largeurSalon" style="margin-top: 9px;">
+
+        {% for i in 30..120 %}
+        {% if i ==70 %}
+          <option selected="selected"  value ={{i}} >  {{i}} cm  </option>
+
+        {% endif %}
+       
+          <option value = {{i}} >  {{i}} cm  </option>
+        {% endfor %}
+
+
+             </select>   
+
+             </div>       
+         </td>
+         </tr>
+                  
+          <tr> 
+           <td> <label>Hauteur de support &nbsp;</label> </td>
+           <td>  
+             <div class="form-group">
+ <select class="form-control" id="hauteurSB"  style="margin-top: 9px;">
+           
+        {% for i in 5..30 %}
+
+                {% if i ==20 %}
+          <option selected="selected"  value ={{i}} >  {{i}} cm  </option>
+
+        {% endif %}
+
+          <option value = {{i}} >  {{i}} cm  </option>
+        {% endfor %}
+
+
+          </select>
+        </div>
+           </td>
+         </tr>
+        </table> 
+ 
+      </div>
+
+
+            </div>
+    </div>
+  </div>
+  <div class="panel panel-default">
+    <div class="panel-heading" role="tab" id="headingThree">
+      <h4 class="panel-title">
+        <a class="collapsed" role="button" data-toggle="collapse" data-parent="#accordion" href="#collapseThree" aria-expanded="false" aria-controls="collapseThree">
+          Collapsible Group Item #3
+        </a>
+      </h4>
+    </div>
+    <div id="collapseThree" class="panel-collapse collapse" role="tabpanel" aria-labelledby="headingThree">
+      <div class="panel-body">
+        Anim pariatur cliche reprehenderit, enim eiusmod high life accusamus terry richardson ad squid. 3 wolf moon officia aute, non cupidatat skateboard dolor brunch. Food truck quinoa nesciunt laborum eiusmod. Brunch 3 wolf moon tempor, sunt aliqua put a bird on it squid single-origin coffee nulla assumenda shoreditch et. Nihil anim keffiyeh helvetica, craft beer labore wes anderson cred nesciunt sapiente ea proident. Ad vegan excepteur butcher vice lomo. Leggings occaecat craft beer farm-to-table, raw denim aesthetic synth nesciunt you probably haven't heard of them accusamus labore sustainable VHS.
+      </div>
+    </div>
+  </div>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+            </div>
+            <div>
+            </div>
+        </div>
+
+    </div>
+
+
+<!--end col1-->
+
+
+  <div id="droppableSalon">    
+     
+    <div style="position:absolute;/*top:541px;*/top:100%;margin-top:-58px;margin-left: -6px;height: 60px;width: 10px;" > 
+      <img src="{{ asset('bundles/istokistok/img/salon/flecheY.png') }}" style="height: 100%;width: 100%;"> 
+    </div>
+    
+    <div style="position:absolute;/*top:596px;*/ top:100%; margin-top:-4px;width: 60px;" >
+    
+        <img src="{{ asset('bundles/istokistok/img/salon/flecheX.png') }}" style="height: 10px;width: 100%;margin-left: 0px;"> 
+        <span style="position: relative;top: -5px;font-size: 12px;font-weight: bold;font-family: arial;padding-right: 1px;margin-left: 2px;"> 
+        <input  id="echelle" style="background:transparent; width: 23px;  height: 11px;text-align: center;font-weight: bold;font-size: 11px; border: none;padding-left: 4px;font-family: arial;" value="100"/>
+         cm </span>
+        
+      </div>  
+         
+  </div>
+
+
+
+
+</div>
+<!--end configurateur-->
+
+
+
+
+<div id="dialog-options" title="Options" style="display:none;"> 
+  <form>  
+   <fieldset>
+    <legend>Coins  :</legend>   
+      <div  style="margin-top:6px;">
+      <input type="checkbox" id="fauxCoin" class="check"><label for="fauxCoin">Faux Coin</label>
+      </div> 
+   </fieldset>    
+   <fieldset style="margin-top:15px;">
+    <legend>Accoudoirs :</legend> 
+      <input type="checkbox" id="accoudoirGauche" class="check"><label for="accoudoirGauche">À gauche</label> 
+      <input type="checkbox" id="accoudoirDroite" class="check"><label for="accoudoirDroite">À droite</label> 
+      
+      <div  style="margin-top:6px;"> 
+      <label style="margin-left:0;" >Largeur de l'accoudoir</label>
+      <select class="s2" id="largeurAccoudoir" >
+
+        {% for i in 3..40 %}
+          <option value = {{i}} >  {{i}} cm  </option>
+        {% endfor %}
+
+       </select>
+        </div>
+          
+   </fieldset> 
+   <fieldset style="margin-top:15px;">
+    <legend>Faces  :</legend>  
+      <input type="checkbox" id="faceGauche" class="check"><label for="faceGauche">À gauche</label> 
+      <input type="checkbox" id="faceDroite" class="check"><label for="faceDroite">À droite</label>  
+   </fieldset>
+   <fieldset style="margin-top:15px;">
+    <legend>Dossier arrière :</legend> 
+       
+      <select  id="dossierArriere" class="s2" style="margin-right:5px">
+           <option value ="0" > Sans  </option> 
+           <option value ="1" > À gauche </option>
+           <option value ="2" > À droite </option>              
+          </select>
+               
+      <select  id="dossierArriere2" class="s2">
+           <option value ="0" > Sans  </option> 
+           <option value ="1" > En haute </option>
+           <option value ="2" > En basse </option>              
+          </select>
+          
+      <!-- <input type="checkbox" id="dossierArriere" class="check"><label for="dossierArriere">Support avec dossier arrière</label>   -->
+      
+      <div  style="margin-top:6px;"> 
+       <label style="margin-left:0;margin-right: 15px;" >Largeur du dossier</label>
+       <select id="" class="s2">
+          
+
+
+        {% for i in 1..20 %}
+          <option value = {{i}} >  {{i}} cm  </option>
+        {% endfor %}
+
+
+                   </select>
+            </div>
+            <div  style="margin-top:6px;">
+          <label style="margin-left:0;margin-right: 13px;" >Hauteur du dossier</label>
+      <select class="s2" >
+          
+
+        {% for i in 20..100 %}
+          <option value = {{i}} >  {{i}} cm  </option>
+        {% endfor %}
+
+
+                   </select>
+          </div>
+           
+   </fieldset>
+  </form>
+</div>
+
+<div id="dialog-options-pilier" title="Options" style="display:none;"> 
+  <form>  
+   <fieldset>  
+    <legend>Tailles  :</legend>
+    <div  style="margin-top:6px;">
+     <span style="border-bottom: 2px solid;width: 30px;display: inline-block;height: 10px;"></span>
+     <select class="s2" id="select_l1_cb">
+        
+
+        {% for i in 1..200 %}
+          <option value = {{i}} >  {{i}} cm  </option>
+        {% endfor %}
+
+
+         </select>
+        </div>
+        <div  style="margin-top:6px;">
+         <span style="border-bottom: 2px dotted;width: 30px;display: inline-block;height: 10px;"></span>
+     <select class="s2" id="select_l2_cb">
+          
+        {% for i in 1..100 %}
+          <option value = {{i}} >  {{i}} cm  </option>
+        {% endfor %}
+
+                 </select> 
+        </div>
+   </fieldset>
+   <fieldset style="margin-top:15px;">   
+    <legend>Distances  :</legend>
+    <div  style="margin-top:6px;">
+     <label style="margin-left:0;margin-right: 2px;" >Distance à gauche</label> 
+     <select class="s2" id="select_dg_cb">
+        
+        {% for i in 0..300 %}
+          <option value = {{i}} >  {{i}} cm  </option>
+        {% endfor %}
+
+
+           </select>
+        </div>
+        <div  style="margin-top:6px;">
+         <label style="margin-left:0;margin-right: 2px;" >Distance à droite &nbsp;</label> 
+     <select class="s2" id="select_dd_cb">
+          
+        {% for i in 1..300 %}
+          <option value = {{i}} >  {{i}} cm  </option>
+        {% endfor %}
+
+
+          </select> 
+        </div>
+   </fieldset>
+  </form>
+</div>
+
+<div id="dialog-forme-pilier" title="Forme du pilier" style="display:none;"> 
+  <form>  
+   <fieldset>  
+    <legend>Bordures  : </legend>
+    <div  style="margin-top:6px;">   
+     <label style="margin-left:0;margin-right: 11px;" >Bordure haute </label> 
+     <select  class="borderStyle borderTopStyle s2">
+           <option value ="none" >    Sans  </option> 
+           <option value ="solid" >   ______  </option>
+           <option value ="dotted" >  ............  </option>              
+         </select>
+        </div>
+        <div  style="margin-top:6px;">   
+         <label style="margin-left:0;margin-right: 10px;" >Bordure basse </label> 
+     <select class="borderStyle borderBottomStyle s2">
+           <option value ="none" >    Sans  </option> 
+           <option value ="solid" >   ______  </option>
+           <option value ="dotted" >  ............  </option>              
+         </select>
+       </div>  
+       <div  style="margin-top:6px;">   
+         <label style="margin-left:0;margin-right: 2px;" >Bordure gauche </label> 
+     <select class="borderStyle borderLeftStyle s2">
+           <option value ="none" >    Sans  </option> 
+           <option value ="solid" >   ______  </option>
+           <option value ="dotted" >  ............  </option>              
+         </select>
+       </div>  
+       <div  style="margin-top:6px;">   
+         <label style="margin-left:0;margin-right: 11px;" >Bordure droite </label> 
+     <select class="borderStyle borderRightStyle s2">
+           <option value ="none" >    Sans  </option> 
+           <option value ="solid" >   ______  </option>
+           <option value ="dotted" >  ............  </option>              
+         </select>        
+       </div> 
+   </fieldset>
+   <fieldset style="margin-top:15px;">   
+    <legend>Arrondir les bordures : </legend>
+    <div  style="margin-top:6px;">
+      <label style="margin-left:0;margin-right: 5px;" > Haut-gauche</label> 
+      <input value="0 px" type="text" class="input-slider  borderTopLeftRadiusInput" readonly> 
+      <div class="slider borderTopLeftRadius"></div>      
+        </div>  
+        <div  style="margin-top:10px;">
+      <label style="margin-left:0;margin-right: 13px;" > Haut-droite</label> 
+      <input value="0 px" type="text" class="input-slider  borderTopRightRadiusInput" readonly> 
+      <div class="slider borderTopRightRadius"></div>     
+        </div>
+        <div  style="margin-top:10px;">
+      <label style="margin-left:0;margin-right: 11px;" > Bas-gauche</label> 
+      <input value="0 px" type="text" class="input-slider  borderBottomLeftRadiusInput" readonly> 
+      <div class="slider borderBottomLeftRadius"></div>       
+        </div>
+        <div  style="margin-top:10px;">
+      <label style="margin-left:0;margin-right: 19px;" > Bas-droite</label> 
+      <input value="0 px" type="text" class="input-slider borderBottomRightRadiusInput" readonly> 
+      <div class="slider borderBottomRightRadius"></div>        
+        </div>
+   </fieldset>
+  </form>
+</div>    
+
+<div id="dialog-forme-sb" title="Forme du support" style="display:none;"> 
+  <form>  
+   <fieldset>  
+    <legend>Arrondir les bordures : </legend>
+    <div  style="margin-top:6px;">
+      <label style="margin-left:0;margin-right: 5px;" > Haut-gauche</label> 
+      <input value="0 px" type="text" class="input-slider  borderTopLeftRadiusInput" readonly> 
+      <div class="slider borderTopLeftRadius"></div>      
+        </div>  
+        <div  style="margin-top:10px;">
+      <label style="margin-left:0;margin-right: 13px;" > Haut-droite</label> 
+      <input value="0 px" type="text" class="input-slider  borderTopRightRadiusInput" readonly> 
+      <div class="slider borderTopRightRadius"></div>     
+        </div>
+        <div  style="margin-top:10px;">
+      <label style="margin-left:0;margin-right: 11px;" > Bas-gauche</label> 
+      <input value="0 px" type="text" class="input-slider  borderBottomLeftRadiusInput" readonly> 
+      <div class="slider borderBottomLeftRadius"></div>       
+        </div>
+        <div  style="margin-top:10px;">
+      <label style="margin-left:0;margin-right: 19px;" > Bas-droite</label> 
+      <input value="0 px" type="text" class="input-slider borderBottomRightRadiusInput" readonly> 
+      <div class="slider borderBottomRightRadius"></div>        
+        </div>
+   </fieldset>
+  </form>
+</div>
+
+ <div id="dialog-confirm" title="Confirmer" style="display:none">
+   <p><span class="ui-icon ui-icon-alert" style="float: left; margin: 0 7px 20px 0;"></span>
+    Etes-vous sûr de vouloir supprimer cet élément ?
+   </p>
+ </div>
+
+
+
+
+
+
+
+
+
+
+<div id="dialog-options_c" title="Options" style="display:none;"> 
+  <form>  
+
+   
+   <fieldset style="margin-top:15px;">
+    <legend>Dossier arrière :</legend> 
+      <label style="margin-left:0;margin-right: 41px;"> Dossier arrière </label>
+       
+      <select  id="dossierArriere" class="s2">
+           <option value ="0" > Sans  </option> 
+           <option value ="1" > À gauche </option>
+           <option value ="2" > À droite </option>              
+           <option value ="3" > En haute </option>              
+           <option value ="4" > En basse </option>              
+          </select>
+          
+      <!-- <input type="checkbox" id="dossierArriere" class="check"><label for="dossierArriere">Support avec dossier arrière</label>   -->
+      
+      <div  style="margin-top:6px;"> 
+       <label style="margin-left:0;margin-right: 15px;" >Largeur du dossier</label>
+       <select class="s2" id="largeurDossier" disabled>
+          
+
+
+        {% for i in 1..20 %}
+          <option value = {{i}} >  {{i}} cm  </option>
+        {% endfor %}
+
+
+                   </select>
+            </div>
+            <div  style="margin-top:6px;">
+          <label style="margin-left:0;margin-right: 13px;" >Hauteur du dossier</label>
+      <select class="s2" id="hauteurDossier" disabled>
+          
+
+        {% for i in 20..100 %}
+          <option value = {{i}} >  {{i}} cm  </option>
+        {% endfor %}
+
+
+                   </select>
+          </div>
+           
+   </fieldset>
+  </form>
+</div>
+
+
+
+
+<!------ dossier arriere coin tra et modern -->
+
+<div id="dialog-options_c2" title="Options" style="display:none;"> 
+  <form>  
+
+   
+   <fieldset style="margin-top:15px;">
+    <legend>Dossier arrière ---tra:</legend> 
+      <label style="margin-left:0;margin-right: 41px;"> Dossier arrière </label>
+       
+      <select  id="dossierArriere" class="s2">
+           <option value ="0" > Sans  </option> 
+           <option value ="2" > À gauche </option>
+           <option value ="1" > En haute </option>              
+           <option value ="3" > Les deux </option>              
+      </select>
+          
+       
+
+
+
+      <!-- <input type="checkbox" id="dossierArriere" class="check"><label for="dossierArriere">Support avec dossier arrière</label>   -->
+      
+      <div  style="margin-top:6px;"> 
+       <label style="margin-left:0;margin-right: 15px;" >Largeur du dossier</label>
+       <select class="s2" id="largeurDossier" disabled>
+          
+
+
+        {% for i in 1..20 %}
+          <option value = {{i}} >  {{i}} cm  </option>
+        {% endfor %}
+
+
+                   </select>
+            </div>
+            <div  style="margin-top:6px;">
+          <label style="margin-left:0;margin-right: 13px;" >Hauteur du dossier</label>
+      <select class="s2" id="hauteurDossier" disabled>
+          
+
+        {% for i in 20..100 %}
+          <option value = {{i}} >  {{i}} cm  </option>
+        {% endfor %}
+
+
+                   </select>
+          </div>
+           
+   </fieldset>
+  </form>
+</div>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+</div>
+
+
+<!-- end dessin -->
+
+
+
+
+
+
+
+<!--begin bois-->
+
+<div role="tabpanel" class="tab-pane" id="bois">
+
+<div class="container " id="alertarticle">
+  <div class="alert alert-danger" role="alert"> <strong>Oh snap!</strong> vous devez sélectionner au moins un élément. </div>
+</div>
+
+
+
+<div id="boisdiv">
+
+
+<div class="col-md-4">
+
+<div class="panel panel-default">
+  <div class="panel-body">
+   
+
+
+
+<div class="col-md-4">
+
+ <div class="form-group">
+
+<img style="width: 100%;height: 100px;" id="content" src="" alt="img..." class="img-thumbnail imgzoom">
+
+</div>
+</div>
+
+
+
+<div class="col-md-8">
+
+  <div class="form-group">
+    <label for="exampleInputName2">Liste categories :</label>
+
+<select class="form-control" id="catchange">
+  <option value="0" disabled selected >Sélectionner une categorie de bois</option>
+
+  {% for categorie in categories %}
+
+     <option value="{{categorie.id}}"> {{categorie.categorie}}  </option>
+
+  {% endfor %}
+
+</select>
+
+ 
+
+
+  </div>
+
+
+
+</div>
+
+
+
+
+
+<div class="col-md-8">
+    <label for="exampleInputName2">Référence du bois :</label>
+
+  <div class="form-group boislist">
+
+<select class="form-control" id="boischange">
+
+</select>
+
+
+<img class="boisimg" src="{{ asset('bundles/istokistok/img/loading.gif') }}" style="width: 40px;">
+
+  </div>
+
+
+</div>
+
+
+
+
+<div class="col-md-4 accod" style="margin-top:25px">
+
+ <div class="form-group">
+
+<img style="width: 100%;height: 100px;" id="contentacco" src="" alt="img..." class="img-thumbnail imgzoom">
+
+</div>
+</div>
+
+
+<div class="col-md-8 accod" style="margin-top:25px">
+
+  <div class="form-group">
+    <label for="exampleInputName2">Référence accoudoir :</label>
+
+<select class="form-control" id="accodchange">
+  <option value="0" disabled selected >Sélectionner Référence accoudoir</option>
+
+  {% for accoudoir in accoudoirs %}
+
+     <option class="{{accoudoir.metrage}}" isred="{{accoudoir.path}}" value="{{accoudoir.id}}"> {{accoudoir.reference}} </option>
+
+  {% endfor %}
+
+</select>
+
+
+  </div>
+
+</div>
+
+
+  
+
+
+
+
+
+
+<div class="col-md-8 col-xs-offset-4 " style="border-top: 1px solid #ddd;margin-top: 25px;padding-top: 20px;">
+
+
+<div class="row prixdiv">
+
+  <div class="col-md-6 col-sm-12">
+  <div class="form-group">
+    <input style="height:32px" type="text" class="form-control" id="goinputprix">
+  </div>
+  </div>
+
+
+  <div class="col-md-6 col-sm-12">
+<button id="goprix" type="button" class="btn btn-sm btn-default">valider</button>
+
+  </div>
+
+
+
+</div>
+<p id="msgprix" style="color:red">Prix incorrect</p>
+
+
+
+</div>
+
+
+
+
+
+  
+
+<div class="col-md-12">
+
+  <div class="form-group" >
+    <label for="exampleInputName2">Couleur :</label>
+
+<select class="form-control">
+
+  {% for color in colors %}
+<option> {{color.couleur}} </option>
+
+  {% endfor %}
+
+
+
+</select>
+
+  </div>
+
+</div>
+
+
+
+
+<div class="col-md-12">
+
+  <div class="form-group" >
+    <label for="exampleInputName2">Motif :</label>
+
+<select class="form-control">
+
+  {% for color in colors %}
+<option> {{color.couleur}} </option>
+
+  {% endfor %}
+
+
+
+</select>
+
+  </div>
+
+</div>
+
+
+
+
+
+
+<br><br>
+
+<div class="col-md-6 col-xs-12">
+
+
+  <button type="button" class="btn btn-primary btn-sm" data-toggle="modal" data-target="#myModal"> <span  class="glyphicon glyphicon-bed" aria-hidden="true">  </span> Selectionner des tables</button>
+
+</div>
+
+<div class="col-md-6 col-xs-12">
+
+  <button type="button" class="btn btn-success btn-sm" data-toggle="modal" data-target="#myModal2"> <span   class="glyphicon glyphicon-oil" aria-hidden="true"></span>  Selectionner des cendries</button>
+
+
+</div>
+
+
+
+
+
+
+
+</div>
+
+
+  </div>
+</div>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+<!-- Modal 2 ------------------------------------------------------------------!-->
+
+
+<div class="modal fade" id="myModal2" tabindex="-1" role="dialog" aria-labelledby="myModalLabel">
+  <div class="modal-dialog  modal-lg" role="document">
+    <div class="modal-content">
+      <div class="modal-header">
+        <button type="button" class="close" data-dismiss="modal" aria-label="Close"><span aria-hidden="true">&times;</span></button>
+        <h4 class="modal-title" id="myModalLabel"> Liste des cendries</h4>
+      </div>
+      <div class="modal-body">
+
+
+<table class="table table-bordered search-table">
+
+<thead> 
+<tr>
+<th></th>
+<th>Image</th>
+<th>Reference</th>
+<th>Prix</th>
+<th>Quantite</th>
+<th>Dimensions</th>
+
+
+</tr>
+</thead> 
+
+<tbody>
+{% for cendrie in cendries %}
+
+
+<tr style="text-align: center">
+
+<td>
+
+  <div class="checkbox">
+    <label>
+      <input value="{{cendrie.id}}" name="tabcendrie" type="checkbox"> 
+    </label>
+  </div>
+
+</td>
+<td  style="width:20%"><img style="width:100px;height:65px" src="{{asset('uploads/documents/cendrie/'~cendrie.path)}}" class="img-thumbnail" alt="no img"> </td>
+<td>{{cendrie.ref}}</td>
+<td width="12%"><input value="{{cendrie.prix}}" name="prixcendrie" class="prixcendrie" type="text" style="width:100%"> </td>
+
+<td>
+
+
+<select  class="form-control cendrieaqte" style="height: 43px;padding: 10px;font-size: 12px;">
+{% for i in 1..10 %}
+<option value = {{i}} >  {{i}}   </option>
+{% endfor %}
+</select> 
+
+
+</td>
+
+
+<td>
+
+<div class="col-md-6">
+<label>largeur : </label><input  style="width:40%;height: 20px;" type="text" class="largeurC">
+
+</div>
+
+<div class="col-md-6">
+<label>longueur :</label> <input style="width:40%;height: 20px;"  type="text" class="longueurC">
+
+</div>
+
+<div class="col-md-6">
+<label>hauteur : </label><input  style="width:40%;height: 20px;" type="text" class="hauteurC">
+
+</div>
+
+<div class="col-md-6">
+<label>diametre :</label> <input style="width:40%;height: 20px;"  type="text" class="diametreC">
+
+</div>
+
+
+
+ 
+</td>
+
+</tr>
+
+
+{% endfor%}
+
+
+
+</tbody>
+
+</table>
+
+
+
+
+
+
+      </div>
+      <div class="modal-footer">
+        <button type="button" class="btn btn-default btn-sm" data-dismiss="modal">fermer</button>
+        <button id="valtab2" type="button" class="btn btn-primary btn-sm">Valider</button>
+      </div>
+    </div>
+  </div>
+</div>
+
+
+
+
+<!----------------------------------!-->
+
+
+<!-- Modal -->
+<div class="modal fade" id="myModal" tabindex="-1" role="dialog" aria-labelledby="myModalLabel">
+  <div class="modal-dialog modal-lg" role="document">
+    <div class="modal-content">
+      <div class="modal-header">
+        <button type="button" class="close" data-dismiss="modal" aria-label="Close"><span aria-hidden="true">&times;</span></button>
+        <h4 class="modal-title" id="myModalLabel"> Liste des tables</h4>
+      </div>
+      <div class="modal-body">
+
+
+
+<table class="table table-bordered search-table">
+<thead> 
+<tr>
+<th></th>
+<th>Image</th>
+<th>Reference</th>
+<th>Prix</th>
+<th>Quantite</th>
+<th>Dimensions</th>
+
+</tr>
+</thead> 
+
+<tbody>
+{% for mida in midas %}
+
+
+<tr style="text-align: center">
+
+<td>
+
+  <div class="checkbox">
+    <label>
+      <input value="{{mida.id}}" name="tab" type="checkbox"> 
+    </label>
+  </div>
+
+</td>
+<td style="width:20%"><img style="width:100px;height:65px" src="{{asset('uploads/documents/mida/'~mida.path)}}" class="img-thumbnail" alt="no img"> </td>
+<td>{{mida.ref}}</td>
+<td width="12%"><input value="{{mida.prix}}" name="prixtable" class="prixtable" type="text" style="width:100%"> </td>
+<td>
+
+<select  class="form-control midaqte" style="    height: 43px;padding: 10px;font-size: 12px;">
+{% for i in 1..30 %}
+<option value = {{i}} >  {{i}}   </option>
+{% endfor %}
+</select> 
+
+
+</td>
+
+<td>
+
+<div class="col-md-6">
+<label>largeur : </label><input  style="width:40%;height: 20px;" type="text" class="largeurT">
+
+</div>
+
+<div class="col-md-6">
+<label>longueur :</label> <input style="width:40%;height: 20px;"  type="text" class="longueurT">
+
+</div>
+
+<div class="col-md-6">
+<label>hauteur : </label><input  style="width:40%;height: 20px;" type="text" class="hauteurT">
+
+</div>
+
+<div class="col-md-6">
+<label>diametre :</label> <input style="width:40%;height: 20px;"  type="text" class="diametreT">
+
+</div>
+
+
+
+ 
+</td>
+
+</tr>
+
+
+{% endfor%}
+
+
+
+</tbody>
+
+</table>
+
+
+
+
+
+
+      </div>
+      <div class="modal-footer">
+        <button type="button" class="btn btn-default btn-sm" data-dismiss="modal">fermer</button>
+        <button id="valtab" type="button" class="btn btn-primary btn-sm">Valider</button>
+      </div>
+    </div>
+  </div>
+</div>
+
+
+
+
+
+<!-- Modal for image -->
+<div class="modal fade" id="myModalimg" tabindex="-1" role="dialog" aria-labelledby="myModalLabel">
+  <div class="modal-dialog" role="document">
+    <div class="modal-content">
+
+      <div class="modal-body">
+        
+
+      <img style="width:100%" src="/istoks/salon2/web/uploads/documents/accoudoirs/sdd.jpg" alt="..." class="img-thumbnail" id="imgmodal">
+
+
+      </div>
+      <div class="modal-footer">
+        <button type="button" class="btn btn-default" data-dismiss="modal">Close</button>
+      </div>
+    </div>
+  </div>
+</div>
+
+
+
+
+
+<div class="col-md-8">
+
+
+
+
+
+
+
+<table class="table table-bordered "  id="tableBois">
+  <thead class="">
+   
+
+   <tr style="background-color:#ebf2f6 ">
+    <td style="/*width: 250px;*/text-align:left;">  <label for="boisCmd"> Elément </label>   </td> 
+    <td style="/*width: 80px;*/"> Nombre </td>  
+    <td style="width: 250px;"> Prix </td> 
+    <td style="width: 250px;"> Métrage </td>   
+    <td style="width: 250px;"> Prix Totale </td> 
+  </tr>
+
+
+
+  </thead>
+  <tbody class="mytb">
+
+  <tr>
+
+    <td id="zuport"> Supports </td> 
+    <td></td>  
+    <td></td>
+    <td></td> 
+    <td></td>
+
+  </tr>
+
+  <tr>
+
+    <td> Coins </td> 
+    <td></td>  
+    <td></td>
+    <td></td> 
+    <td></td>
+
+</tr>
+  <tr>
+
+    <td> Faces </td> 
+    <td></td>  
+    <td></td>
+    <td></td> 
+    <td></td>
+
+</tr>
+
+  <tr id="accoudoirstr">
+
+    <td> Accoudoirs </td> 
+    <td></td>  
+    <td></td>
+    <td></td> 
+    <td></td>
+
+</tr>
+
+
+  <tr>
+
+    <td> Dossiers </td> 
+    <td></td>  
+    <td></td>
+    <td></td> 
+    <td></td>
+
+</tr>
+
+  <tr>
+
+    <td> fauxCoin </td> 
+    <td></td>  
+    <td></td>
+    <td></td> 
+    <td></td>
+
+</tr>
+
+  <tr>
+
+    <td> Coin Moderne </td> 
+    <td></td>  
+    <td></td>
+    <td></td> 
+    <td></td>
+
+</tr>
+
+  <tr>
+
+    <td> Coin Traditionnelle </td> 
+    <td></td>  
+    <td></td>
+    <td></td> 
+    <td></td>
+
+</tr>
+
+  <tr>
+
+    <td> Pilier </td> 
+    <td></td>  
+    <td></td>
+    <td></td> 
+    <td></td>
+
+</tr>
+
+  <tr>
+
+    <td> Faces round </td> 
+    <td></td>  
+    <td></td>
+    <td></td> 
+    <td></td>
+
+</tr>
+
+
+
+</tr>
+
+         <tr id="trTotalBois">
+          <td colspan="4" style="text-align:right" ><strong>Total</strong> </td>  
+          <td ><strong id="TotalBois"></strong></td>  
+
+        </tr>
+
+         <tr id="trRemarqueBois">
+          <td><strong>Remarque</strong> </td>  
+          <td colspan="4" ><textarea class="form-control" id="RemarqueBois" rows="1"></textarea></td>  
+
+        </tr>
+
+
+
+
+  </tbody>
+</table>
+
+
+
+</div>
+
+
+
+
+
+
+
+</div><!--end boisdiv-->
+
+</div>
+
+<!--end bois-->
+
+
+
+
+
+
+<!--begin banquetteaa-->
+
+
+<div role="tabpanel" class="tab-pane" id="banquette">
+
+
+<div class="dessinNew col-md-12"  style="margin-bottom:10px">
+
+
+
+</div>
+
+
+
+
+
+<div class="col-md-4">
+<div class="panel panel-default">
+<div class="panel-heading" role="tab" id="headingOne">
+<div class="panel-body">
+
+
+
+  <div class="col-md-12">
+
+      <div class="form-group">
+      <label for="exampleInputName2">Liste categories :</label>
+          <select class="form-control" id="catchangeBanq">
+            <option value="0" disabled selected >Sélectionner une categorie de banquette</option>
+            {% for cat_banquette in cat_banquettes %}
+            <option value="{{cat_banquette.id}}"> {{cat_banquette.categorie}}  </option>
+            {% endfor %}
+          </select>
+      </div>
+      
+  </div>
+
+
+
+  <div class="col-md-12">
+      <label for="exampleInputName2">Liste banquette :</label>
+
+      <div class="form-group boislist">
+
+      <select class="form-control" id="boischangeBanq">
+
+      </select>
+
+
+      <img class="boisimgBanq" src="{{ asset('bundles/istokistok/img/loading.gif') }}" style="width: 40px;">
+
+      </div>
+  </div>
+
+
+
+
+  <div class="col-md-12">
+
+      <div class="form-group">
+      <label for="exampleInputName2">Liste banquettes :</label>
+          <select class="form-control" id="selectRefBanq">
+            <option value="0" disabled selected >Sélectionner une banquette</option>
+            {% for banquette in banquettes %}
+            <option value="{{banquette.id}}"> {{banquette.reference}}  </option>
+            {% endfor %}
+          </select>
+      </div>
+  </div>
+
+
+  <div class="col-md-12 row prixdivBanq">
+
+
+      <div class="col-md-6 col-sm-12">
+        <div class="form-group">
+        <input style="height:32px" type="text" class="form-control" id="goinputprixBanq">
+        </div>
+      </div>
+
+
+      <div class="col-md-6 col-sm-12">
+          <button id="goprixBanq" type="button" class="btn btn-sm btn-default">valider</button>
+      </div>
+  <p id="msgprixBanq" style="color:red">Prix incorrect</p>
+  </div>
+
+
+
+
+
+
+<div class="col-md-12">
+   
+
+    <label>Largeur de banquettes</label></td>
+
+
+
+    <div class="form-group">
+
+      <select class="form-control" id="Largeurbanquettes" style="margin-top: 9px;">
+
+      {% for i in 30..120 %}
+      {% if i ==70 %}
+      <option selected="selected"  value ={{i}} >  {{i}} cm  </option>
+
+      {% endif %}
+
+      <option value = {{i}} >  {{i}} cm  </option>
+      {% endfor %}
+
+
+      </select>   
+
+    </div>     
+
+      <label>Hauteur de banquettes</label> 
+
+    <div class="form-group">
+        <select class="form-control" id=""  style="margin-top: 9px;">
+
+        {% for i in 5..30 %}
+
+      {% if i ==26 %}
+      <option selected="selected"  value ={{i}} >  {{i}} cm  </option>
+
+      {% endif %}
+
+
+        <option value = {{i}} >  {{i}} cm  </option>
+        {% endfor %}
+
+
+        </select>
+      </div> 
+
+</div>
+    
+</div>
+
+
+
+
+
+
+
+
+
+
+
+
+
+</div>
+
+
+</div>
+</div>
+
+
+
+
+<div class="col-md-8">
+
+
+<table class="table table-bordered "  id="tableBanq">
+  <thead class="">
+   
+
+   <tr style="background-color:#ebf2f6 ">
+    <td style="/*width: 250px;*/text-align:left;">  <label for="boisCmd"> Elément </label>   </td> 
+    <td style="/*width: 80px;*/"> Nombre </td>  
+    <td style="width: 250px;"> Prix Banquette </td> 
+    <td style="width: 250px;"> Métrage </td>   
+    <td style="width: 250px;"> Prix Totale </td> 
+  </tr>
+
+
+
+  </thead>
+  <tbody class="mytb">
+
+  <tr>
+
+    <td id="zuport"> Supports </td> 
+    <td></td>  
+    <td></td>
+    <td></td> 
+    <td></td>
+
+  </tr>
+<!--
+  <tr>
+
+    <td> Coins </td> 
+    <td></td>  
+    <td></td>
+    <td></td> 
+    <td></td>
+
+</tr>
+
+
+  <tr id="accoudoirstr">
+
+    <td> Accoudoirs </td> 
+    <td></td>  
+    <td></td>
+    <td></td> 
+    <td></td>
+
+</tr>
+
+-->
+
+  <tr>
+
+    <td> fauxCoin </td> 
+    <td></td>  
+    <td></td>
+    <td></td> 
+    <td></td>
+
+</tr>
+
+  <tr>
+
+    <td> Coin Moderne </td> 
+    <td></td>  
+    <td></td>
+    <td></td> 
+    <td></td>
+
+</tr>
+
+  <tr>
+
+    <td> Coin Traditionnelle </td> 
+    <td></td>  
+    <td></td>
+    <td></td> 
+    <td></td>
+
+</tr>
+
+         <tr id="trTotalBanq">
+          <td colspan="4" style="text-align:right" ><strong>Total</strong> </td>  
+          <td ><strong id="totalbanq"></strong></td>  
+
+        </tr>
+
+
+        </tr>
+
+         <tr id="trRemarqueBanq">
+          <td><strong>Remarque</strong> </td>  
+          <td colspan="4" ><textarea class="form-control" id="RemarqueBanq" rows="1"></textarea></td>  
+
+        </tr>
+
+
+  </tbody>
+</table>
+
+
+
+
+
+</div>
+
+<!--end banquette-->
+
+
+</div>
+
+
+
+
+
+
+
+<!--begin tissus-->
+
+<div role="tabpanel" class="tab-pane" id="tissus">
+
+
+
+
+
+<div class="col-md-4">
+  <div class="panel panel-default">
+    <div class="panel-heading" role="tab" id="headingOne">
+      <div class="panel-body">
+
+
+
+        <div class="col-md-12">
+            <div class="form-group">
+              <label for="exampleInputName2">Couverture</label>
+              <input type="text" class="form-control" id="Prixcoverture" value="0.80">
+            </div>              
+
+
+            <div class="form-group">
+            <label for="exampleInputName2">Liste categories :</label>
+                <select class="form-control" id="catchangeTissus">
+                  <option value="0" disabled="" selected="">Sélectionner une categorie de tissus</option>
+
+                            {% for cat_tissu in cat_tissus %}
+
+                               <option value="{{cat_tissu.id}}"> {{cat_tissu.categorie}}  </option>
+
+                            {% endfor %}
+
+
+
+                            </select>
+            </div>
+            
+        </div>
+
+
+
+        <div class="col-md-12">
+            <label for="exampleInputName2">Liste tissus :</label>
+
+            <div class="form-group boislist">
+
+            <select class="form-control" id="selectRefTissus">
+
+                  <option value="0" disabled="" selected="">Sélectionner  tissu</option>
+
+
+            </select>
+
+
+            <img class="boisimgTissus" src="/istoks/salon2/web/bundles/istokistok/img/loading.gif" style="width: 40px; display: none;">
+
+            </div>
+        </div>
+
+
+
+
+        <div class="col-md-12 row prixdivTissus" >
+
+
+            <div class="col-md-6 col-sm-12">
+              <div class="form-group">
+              <input style="height:32px" type="text" class="form-control" id="goinputprixTissus">
+              </div>
+            </div>
+
+
+            <div class="col-md-6 col-sm-12" style="">
+                <button id="goprixTissus" type="button" class="btn btn-sm btn-default">valider</button>
+
+                <a href=""  class="btn btn-link">Ajouter 2éme couverture</a>
+
+            </div>
+        <p id="msgprixTissus" style="color: red;">Prix incorrect</p>
+
+        </div>
+
+
+
+        <div class="col-md-12 row prixdivTissus" style="">
+            <div class="col-md-12">
+
+                <div class="form-group">
+                  <label class="custom-control custom-radio">
+                    <input id="radio1" name="radio" type="radio" class="custom-control-input" checked="">
+                    <span class="custom-control-description">Astik</span>
+                  </label>
+                  <label class="custom-control custom-radio">
+                    <input  name="radio" id="FermeturEclair" type="radio" class="custom-control-input">
+                    <span class="custom-control-description">Fermeture eclair</span>
+                  </label>
+
+                </div>
+
+
+            </div>
+        </div>
+
+
+
+
+
+
+    
+      </div>
+
+    </div>
+
+
+   </div>
+</div>
+
+
+
+
+
+
+
+<div class="col-md-8">
+
+
+      <table class="table table-bordered "  id="tableTissus">
+        <thead class="">
+         
+
+         <tr style="background-color:#ebf2f6 ">
+          <td style="/*width: 250px;*/text-align:left;">  <label for="boisCmd"> Elément </label>   </td> 
+          <td style="/*width: 80px;*/"> Total banquette </td>  
+          <td style="width: 250px;"> Nbr couverture </td>   
+          <td style="width: 250px;"> Métrage </td>   
+          <td style="width: 250px;"> Prix unitaire </td> 
+          <td style="width: 250px;"> Montant Totale </td> 
+        </tr>
+
+
+
+        </thead>
+        <tbody class="mytb">
+
+        <tr>
+          <td id="zuport"> Tissu </td> 
+          <td></td>  
+          <td></td>
+          <td></td> 
+          <td></td>
+          <td></td>
+        </tr>
+
+
+
+        <tr id="tissusSupp">
+          <td id="zuport"> Tissu supplémentaire </td> 
+          <td></td>  
+          <td></td>
+          <td></td> 
+          <td></td>
+          <td></td>
+        </tr>
+
+        <tr>
+          <td colspan="5" style="text-align:right" ><strong>Total</strong> </td>  
+          <td ><strong id="totalTissu"></strong></td>  
+
+        </tr>
+
+        </tr>
+
+         <tr id="trRemarqueTissu">
+          <td><strong>Remarque</strong> </td>  
+          <td colspan="5" ><textarea class="form-control" id="RemarqueTissu" rows="1"></textarea></td>  
+
+        </tr>
+
+
+            </tbody>
+      </table>
+
+
+</div>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+</div>
+<!--end tissus-->
+
+
+
+
+
+
+
+
+
+
+
+
+
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.12.4/jquery.min.js"></script>
+
+
+<script>
+
+
+
+
+
+$('#boischange').on('change', function() {
+  idxx=this.value;
+      cnaame=this.options[this.selectedIndex].getAttribute('isred');
+      prix0=this.options[this.selectedIndex].getAttribute('id');
+
+document.getElementById('content').src="{{asset('uploads/documents/bois/')}}"+cnaame
+
+
+
+prix0=parseFloat(prix0)
+$("#goinputprix").val(prix0)
+
+
+})
+
+
+
+//------------valider le prix bois----------------
+
+$( "#goprix" ).click(function() {
+
+$("#msgprix").hide()
+
+idxxn=$("#goinputprix").val()
+prix1=parseFloat(idxxn)
+
+remise='{{ remise }}'
+remise=parseInt(remise)
+remise=remise/100
+prixT0=parseFloat(prix0)*parseFloat(remise)
+
+
+prixT=parseFloat(prix0)-prixT0
+
+if(prixT>0){
+
+$("#msgprix").hide()
+
+
+$("#tableBois").show()
+$("#tableBois").show()
+  bois2(idxxn)
+
+
+}else{
+
+
+$("#msgprix").text("Prix incorrect prix min : "+ toDH(prixT))
+$("#msgprix").show()
+
+
+}
+
+
+
+
+})
+
+
+
+
+
+
+
+$('#accodchange').on('change', function() {
+  id=this.value;
+
+      cnaame=this.options[this.selectedIndex].getAttribute('isred');
+      metrageaccodoirs=this.options[this.selectedIndex].getAttribute('class');
+
+refaccoudoir=$("#accodchange option:selected").text();
+
+document.getElementById('contentacco').src="{{asset('uploads/documents/accoudoirs/')}}"+cnaame
+
+//alert(cnaame)
+
+//$("#tableBois").show()
+  bois2(idxxn)
+
+
+
+})
+
+
+
+
+
+
+
+
+
+
+
+
+extratotal1=0
+extratotal2=0
+
+
+ function bois2(id){
+
+largeurSalon=$("#largeurSalon").val()
+$("#zuport").text("Support ("+largeurSalon+") cm")
+
+   largeur=$("#largeurSalon").val();
+   largeur  = parseFloat(largeur)/100
+
+totalsa=0
+totalsa0=0
+    //$.post("{{ path('bois_getprix') }}",{id:id}, function(result){
+    
+   // prix  = parseFloat(result)
+    prix  = parseFloat(id)
+    tpx=sb_metrage_bois*prix
+    tpx  = parseFloat(tpx)
+
+//-----------------bois------------------------
+
+    $("#bois #tableBois tr:eq(1) td:eq(1)").text(sb_nombre);  
+    $("#bois #tableBois tr:eq(1) td:eq(2)").text(toDH(prix));   
+    $("#bois #tableBois tr:eq(1) td:eq(3)").text(toMetre(sb_metrage_bois));   
+    $("#bois #tableBois tr:eq(1) td:eq(4)").text(toDH(tpx));  
+    $("#bois #tableBois tr:eq(1) td:eq(1)").text(sb_nombre);  
+
+
+
+totalsa=totalsa+tpx
+//-----------------coin------------------------
+    if(coin_nombre>0){
+
+    coin_metrage0='{{ coin_metrage }}'
+    coin_metrage=parseFloat(coin_metrage0)
+    prix_coins0=coin_metrage*prix
+    prix_coins  = parseFloat(prix_coins0)
+
+
+
+    $("#bois #tableBois tr:eq(2) td:eq(1)").text(coin_nombre);  
+    $("#bois #tableBois tr:eq(2) td:eq(2)").text(toDH(prix));   
+    $("#bois #tableBois tr:eq(2) td:eq(3)").text(toMetre(coin_metrage*coin_nombre));   
+    $("#bois #tableBois tr:eq(2) td:eq(4)").text(toDH(prix_coins));   
+
+totalsa=totalsa+prix_coins
+
+    }
+
+//---------------------face-----------------------------
+
+    if(face_nombre>0){
+
+   face_metrage0='{{ face_metrage }}'
+    face_metrage=parseFloat(face_metrage0)
+    prix_face0=face_metrage*prix*face_nombre
+    prix_face  = parseFloat(prix_face0)
+
+
+
+    $("#bois #tableBois tr:eq(3) td:eq(1)").text(face_nombre);  
+    $("#bois #tableBois tr:eq(3) td:eq(2)").text(toDH(prix));   
+    $("#bois #tableBois tr:eq(3) td:eq(3)").text(toMetre(face_metrage*face_nombre));   
+    $("#bois #tableBois tr:eq(3) td:eq(4)").text(toDH(prix_face));   
+
+totalsa=totalsa+prix_face
+}
+
+//---------------------faceRRENDU-----------------------------
+
+    if(faceronduSIZE>0){
+
+   face_metrage0='{{ face_metrage }}'
+    face_metrage=parseFloat(face_metrage0)
+    prix_face0=face_metrage*prix*faceronduSIZE
+    prix_face  = parseFloat(prix_face0)
+
+
+
+    $("#bois #tableBois tr:eq(10) td:eq(1)").text(faceronduSIZE);  
+    $("#bois #tableBois tr:eq(10) td:eq(2)").text(toDH(prix));   
+    $("#bois #tableBois tr:eq(10) td:eq(3)").text(toMetre(face_metrage*faceronduSIZE));   
+    $("#bois #tableBois tr:eq(10) td:eq(4)").text(toDH(prix_face));   
+
+totalsa=totalsa+prix_face
+}
+
+//---------------------accoudoirs-----------------------------
+
+    //alert(acc_nombre)
+
+
+    if(acc_nombre>0){
+
+    accoudoirs_metrage0='{{ accoudoirs_metrage }}'
+    accoudoirs_metrage=parseFloat(metrageaccodoirs)
+    prix_accoudoirs0=accoudoirs_metrage*prix*acc_nombre
+    prix_accoudoirs  = parseFloat(prix_accoudoirs0)
+
+
+
+    $("#bois #tableBois tr:eq(4) td:eq(0)").text(refaccoudoir);  
+    $("#bois #tableBois tr:eq(4) td:eq(1)").text(acc_nombre);  
+    $("#bois #tableBois tr:eq(4) td:eq(2)").text(toDH(prix));   
+    $("#bois #tableBois tr:eq(4) td:eq(3)").text(toMetre(accoudoirs_metrage*acc_nombre));   
+    $("#bois #tableBois tr:eq(4) td:eq(4)").text(toDH(prix_accoudoirs));   
+
+totalsa=totalsa+prix_accoudoirs
+}
+
+//---------------------dos-support----------------------------
+    if(dossier_nombre>0){
+
+    dos_prix0='{{ dos_prix }}'
+    dos_prix=parseFloat(dos_prix0)
+    //prix_dos0=dossier_nombre*dos_prix
+    prix_dos0=dossier_metrage_bois*dos_prix
+    prix_dos  = parseFloat(prix_dos0)
+
+
+
+    $("#bois #tableBois tr:eq(5) td:eq(1)").text(dossier_nombre);  
+    $("#bois #tableBois tr:eq(5) td:eq(2)").text(toDH(dos_prix));   
+    $("#bois #tableBois tr:eq(5) td:eq(3)").text(toMetre(dossier_metrage_bois));   
+    $("#bois #tableBois tr:eq(5) td:eq(4)").text(toDH(prix_dos));   
+
+totalsa=totalsa+prix_dos
+
+}
+
+
+
+
+//---------------------dos-cointrad----------------------------
+
+
+
+    dossier_nombreCT=0;
+    var l;
+    $("#droppableSalon .coint").each(function(){
+      if($(this).find("input[name=dossierArriere]").val()>=1){
+         dossier_nombreCT++;
+
+      }
+
+      if($(this).find("input[name=dossierArriere]").val()==3){
+         dossier_nombreCT++;
+
+      }
+    });
+
+//alert(dossier_nombreCT)
+ if(dossier_nombreCT>0){
+
+    dos_prix0='{{ dos_prix }}'
+    dos_prix=parseFloat(dos_prix0)
+    prix_dos0=largeur*dos_prix*dossier_nombreCT
+    prix_dos  = parseFloat(prix_dos0)
+
+
+    $(".boisDossierTrad").remove()
+    $("#bois #tableBois").append('<tr class="boisDossierTrad"><td> Dossier Coin Traditionnelle </td> <td>'+dossier_nombreCT+'</td>  <td>'+toDH(dos_prix)+'</td><td>'+toMetre(largeur)+'</td> <td>'+toDH(prix_dos)+'</td></tr>');  
+
+
+totalsa=totalsa+prix_dos
+
+}
+
+
+
+//---------------------dos-coinmod----------------------------
+
+
+
+    dossier_nombreCM=0;
+    var l;
+    $("#droppableSalon .coinm").each(function(){
+      if($(this).find("input[name=dossierArriere]").val()>=1){
+         dossier_nombreCM++;
+
+      }
+
+      if($(this).find("input[name=dossierArriere]").val()==3){
+         dossier_nombreCM++;
+
+      }
+    });
+
+//alert(dossier_nombreCM)
+ if(dossier_nombreCM>0){
+
+    dos_prix0='{{ dos_prix }}'
+    dos_prix=parseFloat(dos_prix0)
+    prix_dos0=largeur*dos_prix*dossier_nombreCM
+    prix_dos  = parseFloat(prix_dos0)
+
+
+    $(".boisDossierMod").remove()
+    $("#bois #tableBois").append('<tr class="boisDossierMod"><td> Dossier Coin Moderne </td> <td>'+dossier_nombreCM+'</td>  <td>'+toDH(dos_prix)+'</td><td>'+toMetre(largeur)+'</td> <td>'+toDH(prix_dos)+'</td></tr>');  
+
+
+totalsa=totalsa+prix_dos
+
+}
+
+
+
+
+//---------------------fcoins-----------------------------
+
+    if(fcoin_nombre>0){
+
+    fo_prix='{{ fo_prix }}'
+    fo_mertage0='{{ fo_mertage }}'
+    fo_mertage=parseFloat(fo_mertage0)
+fo_prix=parseFloat(fo_prix)
+//fo_prixs=fo_mertage*fcoin_nombre*fo_prix
+fo_prixs=fcoin_nombre*fo_prix
+
+MetrageFaucU=fo_mertage*fcoin_nombre
+MetrageFaucU=parseFloat(MetrageFaucU).toFixed(2)
+
+
+    $("#bois #tableBois tr:eq(6) td:eq(1)").text(fcoin_nombre);  
+    $("#bois #tableBois tr:eq(6) td:eq(2)").text(toDH(fo_prix));   
+    $("#bois #tableBois tr:eq(6) td:eq(3)").text(MetrageFaucU+' U');   
+    $("#bois #tableBois tr:eq(6) td:eq(4)").text(toDH(fo_prixs)); 
+
+totalsa=totalsa+fo_prixs
+
+    } 
+
+
+//---------------------coinm---------------------------------------------------
+
+    if(coin_nombrem>0){
+
+
+ coin_metrage0='{{ coin_mod }}'
+    coin_metrage=parseFloat(coin_metrage0*coin_nombrem)
+    prix_coins0=coin_metrage*prix
+    prix_coins  = parseFloat(prix_coins0)
+
+
+
+    $("#bois #tableBois tr:eq(7) td:eq(1)").text(coin_nombrem);  
+    $("#bois #tableBois tr:eq(7) td:eq(2)").text(toDH(prix));   
+    $("#bois #tableBois tr:eq(7) td:eq(3)").text(toMetre(coin_metrage));   
+    $("#bois #tableBois tr:eq(7) td:eq(4)").text(toDH(prix_coins)); 
+
+
+totalsa=totalsa+prix_coins
+
+}
+
+
+//---------------------coint---------------------------------------------------
+
+    if(coin_nombret>0){
+
+ coin_metrage0='{{ coin_tra }}'
+    coin_metrage=parseFloat(coin_metrage0*coin_nombret)
+    prix_coins0=coin_metrage*prix
+    prix_coins  = parseFloat(prix_coins0)
+
+
+    $("#bois #tableBois tr:eq(8) td:eq(1)").text(coin_nombret);  
+    $("#bois #tableBois tr:eq(8) td:eq(2)").text(toDH(prix));   
+    $("#bois #tableBois tr:eq(8) td:eq(3)").text(toMetre(coin_metrage));   
+    $("#bois #tableBois tr:eq(8) td:eq(4)").text(toDH(prix_coins));   
+totalsa=totalsa+prix_coins
+
+}
+//--------------------------------------
+
+//---------------------npilier---------------------------------------------------
+
+    if(npilier>0){
+
+
+    $("#bois #tableBois tr:eq(9) td:eq(1)").text("--");  
+    $("#bois #tableBois tr:eq(9) td:eq(2)").text("--");   
+    $("#bois #tableBois tr:eq(9) td:eq(3)").text("--");   
+    $("#bois #tableBois tr:eq(9) td:eq(4)").text("--");   
+
+}
+//--------------------------------------
+
+
+
+    $("#TotalBois").text(toDH(totalsa));  
+
+//$("#trTotalBois").show(); 
+
+totalsa=parseFloat(totalsa)+parseFloat(extratotal1)+parseFloat(extratotal2)
+totalsa0=totalsa
+    $("#totalsa").text(toDH(totalsa));   
+
+
+    //});  
+
+//-----------face-rendu
+
+
+
+}
+
+
+
+$(document).ready(function(){
+
+
+
+
+
+$("#tableBois").hide()
+$("#tableBanq").hide()
+$("#tableTissus").hide()
+$(".boisimg").hide()
+$(".boisimgBanq").hide()
+
+
+$('.ui-dialog-buttonset button:first').addClass('btn btn-sm btn-primary');
+
+$( ".ui-dialog-buttonset button:nth-child(2)" ).addClass('btn btn-sm btn-danger');
+
+$( ".ui-dialog-titlebar-close" ).append('<span class="glyphicon glyphicon-remove-sign" aria-hidden="true"></span>');
+
+
+
+
+});
+
+
+</script>
+
+
+
+ <script>
+      $(function() {
+
+        window.prettyPrint && prettyPrint();
+
+        $('#colorselector_1').colorselector();
+        $('#colorselector_2').colorselector({
+          callback : function(value, color, title) {
+            $("#colorValue").val(value);
+            $("#colorColor").val(color);
+            $("#colorTitle").val(title);
+          }
+        });
+
+        $("#setColor").click(function(e) {
+          $("#colorselector_2").colorselector("setColor", "#008B8B");
+        })
+
+        $("#setValue").click(function(e) {
+          $("#colorselector_2").colorselector("setValue", 18);
+        })
+
+      });
+    </script>
+
+
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
+
+<script>
+
+
+
+function myFunction(el) {
+
+ret=getscale($(el).parent().parent())
+
+x=ret[0]
+y=ret[3]
+
+
+if(x!=1 && y==1){
+
+
+$(el).parent().parent().css("-moz-transform", "scale(1,1)");
+$(el).parent().parent().css("-o-transform", "scale(1,1)");
+$(el).parent().parent().css("-webkit-transform", "scale(1,1)");
+$(el).parent().parent().css("transform", "scale(1,1)");
+
+$(el).parent().css("-moz-transform", "scale(1,1)");
+$(el).parent().css("-o-transform", "scale(1,1)");
+$(el).parent().css("-webkit-transform", "scale(1,1)");
+$(el).parent().css("transform", "scale(1,1)");
+
+$(el).parent().parent().find("input").css("-moz-transform", "scale(1,1)");
+$(el).parent().parent().find("input").css("-o-transform", "scale(1,1)");
+$(el).parent().parent().find("input").css("-webkit-transform", "scale(1,1)");
+$(el).parent().parent().find("input").css("transform", "scale(1,1)");
+
+$(el).parent().parent().find(".dimens4").css("text-align", "right");
+$(el).parent().parent().find(".dimens3").css("text-align", "right");
+$(el).parent().parent().find(".dimens5").css("text-align", "right");
+$(el).parent().parent().find(".dimens1").css("text-align", "right");
+$(el).parent().parent().find(".dimens6").css("text-align", "right");
+$(el).parent().parent().find(".dimens7").css("text-align", "right");
+$(el).parent().parent().find(".dimens8").css("text-align", "right");
+
+$(el).parent().css("left", "55px");
+
+}
+if(x==1 && y==1){
+
+$(el).parent().css("left", "55px");
+
+$(el).parent().parent().css("-moz-transform", "scale(1,-1)");
+$(el).parent().parent().css("-o-transform", "scale(1,-1)");
+$(el).parent().parent().css("-webkit-transform", "scale(1,-1)");
+$(el).parent().parent().css("transform", "scale(1,-1)");
+
+$(el).parent().css("-moz-transform", "scale(1,-1)");
+$(el).parent().css("-o-transform", "scale(1,-1)");
+$(el).parent().css("-webkit-transform", "scale(1,-1)");
+$(el).parent().css("transform", "scale(1,-1)");
+
+$(el).parent().parent().find("input").css("-moz-transform", "scale(1,-1)");
+$(el).parent().parent().find("input").css("-o-transform", "scale(1,-1)");
+$(el).parent().parent().find("input").css("-webkit-transform", "scale(1,-1)");
+$(el).parent().parent().find("input").css("transform", "scale(1,-1)");
+
+}
+
+if(x==1 && y!=1){
+
+
+$(el).parent().parent().css("-moz-transform", "scale(-1,-1)");
+$(el).parent().parent().css("-o-transform", "scale(-1,-1)");
+$(el).parent().parent().css("-webkit-transform", "scale(-1,-1)");
+$(el).parent().parent().css("transform", "scale(-1,-1)");
+
+
+
+
+$(el).parent().css("-moz-transform", "scale(-1,-1)");
+$(el).parent().css("-o-transform", "scale(-1,-1)");
+$(el).parent().css("-webkit-transform", "scale(-1,-1)");
+$(el).parent().css("transform", "scale(-1,-1)");
+
+
+$(el).parent().css("left", "-40%");
+
+$(el).parent().parent().find("input").css("-moz-transform", "scale(-1,-1)");
+$(el).parent().parent().find("input").css("-o-transform", "scale(-1,-1)");
+$(el).parent().parent().find("input").css("-webkit-transform", "scale(-1,-1)");
+$(el).parent().parent().find("input").css("transform", "scale(-1,-1)");
+
+$(el).parent().parent().find(".dimens4").css("text-align", "left");
+$(el).parent().parent().find(".dimens3").css("text-align", "left");
+$(el).parent().parent().find(".dimens5").css("text-align", "left");
+$(el).parent().parent().find(".dimens1").css("text-align", "left");
+$(el).parent().parent().find(".dimens6").css("text-align", "left");
+$(el).parent().parent().find(".dimens7").css("text-align", "left");
+$(el).parent().parent().find(".dimens8").css("text-align", "left");
+
+
+}
+
+if(x!=1 && y!=1){
+
+
+$(el).parent().parent().css("-moz-transform", "scale(-1,1)");
+$(el).parent().parent().css("-o-transform", "scale(-1,1)");
+$(el).parent().parent().css("-webkit-transform", "scale(-1,1)");
+$(el).parent().parent().css("transform", "scale(-1,1)");
+
+
+$(el).parent().css("-moz-transform", "scale(-1,1)");
+$(el).parent().css("-o-transform", "scale(-1,1)");
+$(el).parent().css("-webkit-transform", "scale(-1,1)");
+$(el).parent().css("transform", "scale(-1,1)");
+
+$(el).parent().parent().find("input").css("-moz-transform", "scale(-1,1)");
+$(el).parent().parent().find("input").css("-o-transform", "scale(-1,1)");
+$(el).parent().parent().find("input").css("-webkit-transform", "scale(-1,1)");
+$(el).parent().parent().find("input").css("transform", "scale(-1,1)");
+
+$(el).parent().css("left", "-40%");
+
+}
+
+
+
+
+//ret=ret+90
+/*
+$(el).parent().parent().css("-ms-transform", "rotate("+ret+"deg)");
+$(el).parent().parent().css("-webkit-transform", "rotate("+ret+"deg)");
+$(el).parent().parent().css("transform", "rotate("+ret+"deg)");
+*/
+
+
+}
+
+function myFunction2(el) {
+
+
+
+$(el).parent().parent().css("-moz-transform", "scale(-1,-1)");
+$(el).parent().parent().css("-o-transform", "scale(-1,-1)");
+$(el).parent().parent().css("-webkit-transform", "scale(-1,-1)");
+$(el).parent().parent().css("transform", "scale(-1,-1)");
+$(el).parent().parent().css("filter", "FlipH");
+$(el).parent().parent().css("-ms-filter", "FlipH");
+
+}
+
+
+function myFunction3(el) {
+
+w=$(el).parent().parent().width()
+h=$(el).parent().parent().height()
+
+w=w+1
+h=h+1
+
+$(el).parent().parent().css("height", w);
+$(el).parent().parent().css("width", h);
+
+}
+
+function myFunction4(el) {
+
+w=$(el).parent().parent().width()
+h=$(el).parent().parent().height()
+
+w=w-1
+h=h-1
+
+$(el).parent().parent().css("height", w);
+$(el).parent().parent().css("width", h);
+
+}
+
+
+
+
+function getRotationDegrees(obj) {
+    var matrix = obj.css("-webkit-transform") ||
+    obj.css("-moz-transform")    ||
+    obj.css("-ms-transform")     ||
+    obj.css("-o-transform")      ||
+    obj.css("transform");
+    if(matrix !== 'none') {
+        var values = matrix.split('(')[1].split(')')[0].split(',');
+        var a = values[0];
+        var b = values[1];
+        var angle = Math.round(Math.atan2(b, a) * (180/Math.PI));
+    } else { var angle = 0; }
+    return (angle < 0) ? angle + 360 : angle;
+}
+
+
+function getscale(obj) {
+    var matrix = obj.css("-webkit-transform") ||
+    obj.css("-moz-transform")    ||
+    obj.css("-ms-transform")     ||
+    obj.css("-o-transform")      ||
+    obj.css("transform");
+    if(matrix !== 'none') {
+        var values = matrix.split('(')[1].split(')')[0].split(',');
+      }
+    return values
+}
+
+
+v1=0;
+v2=0;
+
+extratotal2=0
+extratotal1=0
+
+
+$( "#valtab" ).click(function() {
+
+ $('#myModal').modal('hide');
+
+listtab=[];
+listqte=[];
+listref=[];
+listprix=[];
+
+listdiametreT=[];
+listlargeurT=[];
+listlongueurT=[];
+listhauteurT=[];
+
+valtotalsa=totalsa;
+extratotal1=0
+
+$(".mytbtr").remove()
+
+$("input:checkbox[name=tab]:checked").each(function(){
+    listtab.push($(this).val());
+
+
+
+vp= $(this).parent().parent().parent().parent().find("select").val()
+ref= $(this).parent().parent().parent().parent().find( "td" ).eq( 2 ).text()
+prix= $(this).parent().parent().parent().parent().find( "td" ).eq( 3 ).find(".prixtable").val()
+largeurT= $(this).parent().parent().parent().parent().find(".largeurT").val()
+longueurT= $(this).parent().parent().parent().parent().find(".longueurT").val()
+hauteurT= $(this).parent().parent().parent().parent().find(".hauteurT").val()
+diametreT= $(this).parent().parent().parent().parent().find(".diametreT").val()
+
+
+//alert(diametreT)
+//alert(largeurT)
+
+listqte.push(vp);
+listref.push(ref);
+listprix.push(prix);
+
+listdiametreT.push(diametreT)
+listlargeurT.push(largeurT)
+listlongueurT.push(longueurT)
+listhauteurT.push(hauteurT)
+
+//alert(ref)
+
+
+
+
+
+});
+
+//alert(listqte)
+
+for (i = 0; i < listtab.length; i++) { 
+totp=listqte[i]*listprix[i];
+totp=parseFloat(totp)
+pxa=parseFloat(listprix[i])
+
+extratotal1=parseFloat(extratotal1)+parseFloat(totp)
+
+
+if (listdiametreT[i] == null || listdiametreT[i] == 0 ){
+
+    $("#tableBois .mytb").append(' <tr class="mytbtr">    <td> Table ref ('+listref[i]+') </td>     <td>'+listqte[i]+'</td>      <td>'+toDH(pxa)+'</td><td> <span class="glyphicon glyphicon-arrow-left" aria-hidden="true"></span> '+listlargeurT[i]+' m  <span class="glyphicon glyphicon-arrow-right" aria-hidden="true"></span> '+listlongueurT[i]+' m  <span class="glyphicon glyphicon-arrow-up" aria-hidden="true"></span> '+listhauteurT[i]+' m   <span class="glyphicon glyphicon-stop" aria-hidden="true"></span>  </td>     <td>'+toDH(totp)+'</td> </tr>')
+}else{
+
+
+    $("#tableBois .mytb").append(' <tr class="mytbtr">    <td> Table ref ('+listref[i]+') </td>     <td>'+listqte[i]+'</td>      <td>'+toDH(pxa)+'</td><td> <span class="glyphicon glyphicon-resize-horizontal" aria-hidden="true"></span> '+listdiametreT[i]+' m  <span class="glyphicon glyphicon-arrow-up" aria-hidden="true"></span> '+listhauteurT[i]+' m   <span class="glyphicon glyphicon-record" aria-hidden="true"></span>  </td>     <td>'+toDH(totp)+'</td> </tr>')
+
+
+}
+
+
+
+
+}
+
+
+
+
+valtotalsa=parseFloat(valtotalsa)+parseFloat(extratotal1)+parseFloat(extratotal2)
+valtotalsa=parseFloat(valtotalsa)
+//console.log('------------------- : '+extratotal1)
+//console.log('---2--- : '+valtotalsa)
+
+$("#totalsa").text(toDH(valtotalsa));  
+
+
+});
+
+
+
+//---------------------------------valedit2--------
+
+
+
+$( "#valtab2" ).click(function() {
+   $('#myModal2').modal('hide');
+
+listtab2=[];
+listqte2=[];
+listref2=[];
+listprix2=[];
+
+
+listdiametreT=[];
+listlargeurT=[];
+listlongueurT=[];
+listhauteurT=[];
+
+
+valtotalsa=totalsa;
+extratotal2=0
+$(".mytbtr2").remove()
+
+$("input:checkbox[name=tabcendrie]:checked").each(function(){
+    listtab2.push($(this).val());
+
+
+
+vp= $(this).parent().parent().parent().parent().find("select").val()
+ref= $(this).parent().parent().parent().parent().find( "td" ).eq( 2 ).text()
+
+prix= $(this).parent().parent().parent().parent().find( "td" ).eq( 3 ).find(".prixcendrie").val()
+
+largeurT= $(this).parent().parent().parent().parent().find(".largeurC").val()
+longueurT= $(this).parent().parent().parent().parent().find(".longueurC").val()
+hauteurT= $(this).parent().parent().parent().parent().find(".hauteurC").val()
+diametreT= $(this).parent().parent().parent().parent().find(".diametreC").val()
+
+
+listdiametreT.push(diametreT)
+listlargeurT.push(largeurT)
+listlongueurT.push(longueurT)
+listhauteurT.push(hauteurT)
+
+
+listqte2.push(vp);
+listref2.push(ref);
+listprix2.push(prix);
+
+//alert(ref)
+
+
+});
+
+//alert(listqte2)
+
+for (i = 0; i < listtab2.length; i++) { 
+totp=listqte2[i]*listprix2[i];
+totp=parseFloat(totp)
+pxa=parseFloat(listprix2[i])
+
+extratotal2=parseFloat(extratotal2)+parseFloat(totp)
+
+   /* $(".mytb").append(' <tr class="mytbtr2">    <td> Cendrie ref ('+listref2[i]+') </td>     <td>'+listqte2[i]+'</td>      <td>'+toDH(pxa)+'</td>    <td>--</td>     <td>'+toDH(totp)+'</td> </tr>')*/
+
+
+if (listdiametreT[i] == null || listdiametreT[i] == 0 ){
+
+    $("#tableBois .mytb").append(' <tr class="mytbtr2">    <td> Cendrie ref ('+listref2[i]+') </td>     <td>'+listqte2[i]+'</td>      <td>'+toDH(pxa)+'</td><td> <span class="glyphicon glyphicon-arrow-left" aria-hidden="true"></span> '+listlargeurT[i]+' m  <span class="glyphicon glyphicon-arrow-right" aria-hidden="true"></span> '+listlongueurT[i]+' m  <span class="glyphicon glyphicon-arrow-up" aria-hidden="true"></span> '+listhauteurT[i]+' m   <span class="glyphicon glyphicon-stop" aria-hidden="true"></span>  </td>     <td>'+toDH(totp)+'</td> </tr>')
+}else{
+
+
+    $("#tableBois .mytb").append(' <tr class="mytbtr2">    <td> Cendrie ref ('+listref2[i]+') </td>     <td>'+listqte2[i]+'</td>      <td>'+toDH(pxa)+'</td><td> <span class="glyphicon glyphicon-resize-horizontal" aria-hidden="true"></span> '+listdiametreT[i]+' m  <span class="glyphicon glyphicon-arrow-up" aria-hidden="true"></span> '+listhauteurT[i]+' m   <span class="glyphicon glyphicon-record" aria-hidden="true"></span>  </td>     <td>'+toDH(totp)+'</td> </tr>')
+
+
+}
+
+
+
+}
+
+
+
+valtotalsa=parseFloat(valtotalsa)+parseFloat(extratotal2)+parseFloat(extratotal1)
+valtotalsa=parseFloat(valtotalsa)
+//console.log('------------------- : '+extratotal2) 
+//console.log('---2--- : '+valtotalsa)
+
+$("#totalsa").text(toDH(valtotalsa));     
+
+});
+
+
+
+$('#catchange').on('change', function() {
+
+  id=this.value;
+  //alert(id)
+
+$("#boischange").hide()
+$(".prixdiv").hide()
+
+$(".prixdiv").hide()
+
+
+$(".boisimg").show()
+$(".opbois").remove()
+$(".opboisselected").remove()
+
+
+
+  $.post("{{ path('getcats') }}",{id:id}, function(result){
+
+$(".boisimg").hide()
+$(".prixdiv").show()
+$("#boischange").show()
+$(".prixdiv").show()
+
+
+
+$("#boischange").append('<option class="opboisselected" value="0" disabled selected >Sélectionner une référence de bois</option>')
+
+    for(i=0;i<result.length;i++){
+
+
+    $("#boischange").append('<option id="'+result[i].prix+'" class="opbois" isred="'+result[i].path+'" value="'+result[i].id+'"> '+result[i].ref+' - '+result[i].prix+' DH / M  </option>')
+
+    }
+
+
+
+  });
+
+
+})
+
+
+
+      $(document).ready(function(){
+        $('table.search-table').tableSearch({
+          searchText:'Rechercher    ',
+          searchPlaceHolder:' '
+        });
+
+        $("#msgprixBanq").hide()
+        $("#msgprix").hide()
+        $(".prixdiv").hide()
+        $(".prixdivBanq").hide()
+
+      });
+
+
+$( ".imgzoom" ).click(function() {
+
+
+imgsrc=$(this).attr('src');
+
+document.getElementById('imgmodal').src=imgsrc
+
+
+ $('#myModalimg').modal('show');
+
+
+  });
+
+
+$('.dimens1').bind('input', function() {
+
+  dim1=$(".dimens1").val();
+  dim2=$(".dimens5").val();
+  f1= parseFloat(dim1)*parseFloat(dim1)
+  f2= parseFloat(dim2)*parseFloat(dim2)
+  f3=parseFloat(f1)+parseFloat(f2)
+  f3=parseInt(f3)
+  f3=Math.sqrt(f3)
+
+  $(".dimens8").val(f3);
+
+
+});
+
+
+$('.dimens5').bind('input', function() {
+
+  dim1=$(".dimens1").val();
+  dim2=$(".dimens5").val();
+  f1= parseFloat(dim1)*parseFloat(dim1)
+  f2= parseFloat(dim2)*parseFloat(dim2)
+  f3=parseFloat(f1)+parseFloat(f2)
+  f3=parseInt(f3)
+  f3=Math.sqrt(f3)
+
+  $(".dimens8").val(f3);
+
+
+});
+
+
+//--------------------banquetta__ script------------------
+
+
+
+
+
+
+$('#catchangeBanq').on('change', function() {
+
+  id=this.value;
+  //alert(id)
+
+$("#boischangeBanq").hide()
+$
+
+
+$(".boisimgBanq").show()
+$(".opboisBanq").remove()
+$(".opboisselectedBanq").remove()
+
+
+
+  $.post("{{ path('getcatsBanq') }}",{id:id}, function(result){
+
+//console.log(result)
+
+$(".boisimgBanq").hide()
+$("#boischangeBanq").show()
+
+
+
+$("#boischangeBanq").append('<option class="opboisselectedBanq" value="0" disabled selected >Sélectionner une référence de bois</option>')
+
+    for(i=0;i<result.length;i++){
+
+
+    $("#boischangeBanq").append('<option id="'+result[i].prix+'" class="opboisBanq" isred="'+result[i].path+'" value="'+result[i].id+'"> '+result[i].ref+' - '+result[i].prix+' DH / M  </option>')
+
+    }
+
+
+
+  });
+
+
+})
+
+
+
+
+
+
+$('#selectRefBanq').on('change', function() {
+
+idBanqsous=$("#boischangeBanq").val()
+idBanqref=this.value;
+
+$(".prixdivBanq").hide()
+
+
+
+  $.post("{{ path('getRefBanq') }}",{idBanqref:idBanqref,idBanqsous:idBanqsous}, function(result){
+      
+      //console.log(result)
+      $(".prixdivBanq").show()
+
+
+      $("#goinputprixBanq").val(result.prix)
+
+  })
+
+})
+
+
+
+
+//---valider le prix banquette----
+
+$( "#goprixBanq" ).click(function() {
+
+
+$("#trTotalBanq").show();  
+
+
+
+$("#msgprixBanq").hide()
+
+idxxnB=$("#goinputprixBanq").val()
+prixTB=parseFloat(idxxnB)
+
+
+if(prixTB>0){
+
+$("#msgprixBanq").hide()
+$("#tableBanq").show()
+  Banqs(idxxnB)
+
+
+}else{
+
+
+$("#msgprixBanq").text("Prix incorrect prix min : "+ toDH(prixTB))
+$("#msgprixBanq").show()
+
+
+}
+
+
+
+
+})
+
+
+
+
+
+
+ function Banqs(idB){
+
+banquetteMettre=0.02;
+banquetteMettre=parseFloat(banquetteMettre)
+totalsaB=0
+    //$.post("{{ path('bois_getprix') }}",{id:id}, function(result){
+    
+   // prix  = parseFloat(result)
+    prixB  = parseFloat(idB)
+    sb_metrage_boisB=parseFloat(sb_metrage_bois)
+    tpxB=sb_metrage_boisB*prixB
+    tpxB  = parseFloat(tpxB)
+
+//-----------------bois------------------------
+
+    $("#tableBanq tr:eq(1) td:eq(1)").text(sb_nombre);  
+    $("#tableBanq tr:eq(1) td:eq(2)").text(toDH(prixB));   
+    $("#tableBanq tr:eq(1) td:eq(3)").text(toMetre(sb_metrage_boisB));   
+    $("#tableBanq tr:eq(1) td:eq(4)").text(toDH(tpxB));  
+    $("#tableBanq tr:eq(1) td:eq(1)").text(sb_nombre);  
+
+
+    totalsaB=totalsaB+tpxB
+
+    /*
+//-----------------coin------------------------
+    if(coin_nombre>0){
+
+
+      prix_coins0B=banquetteMettre*prixB*coin_nombre
+      prix_coinsB  = parseFloat(prix_coins0B)
+
+
+
+      $("#tableBanq tr:eq(2) td:eq(1)").text(coin_nombre);  
+      $("#tableBanq tr:eq(2) td:eq(2)").text(toDH(prixB));   
+      $("#tableBanq tr:eq(2) td:eq(3)").text(toMetre(banquetteMettre*coin_nombre));   
+      $("#tableBanq tr:eq(2) td:eq(4)").text(toDH(prix_coinsB));   
+
+      totalsaB=totalsaB+prix_coinsB
+
+    }
+*/
+//-----------------Fcoin------------------------
+
+    if(fcoin_nombre>0){
+
+      Largeurbanquettes=$("#Largeurbanquettes").val()
+      Largeurbanquettes  = parseFloat(Largeurbanquettes)
+      Largeurbanquettes  = Largeurbanquettes/100
+
+      totalMetrage=Largeurbanquettes*fcoin_nombre
+      prix_coins0B=Largeurbanquettes*prixB*fcoin_nombre
+      prix_coinsB  = parseFloat(prix_coins0B)
+
+
+
+      $("#tableBanq tr:eq(2) td:eq(1)").text(fcoin_nombre);  
+      $("#tableBanq tr:eq(2) td:eq(2)").text(toDH(prixB));   
+      $("#tableBanq tr:eq(2) td:eq(3)").text(toMetre(totalMetrage));   
+      $("#tableBanq tr:eq(2) td:eq(4)").text(toDH(prix_coinsB));   
+
+      totalsaB=totalsaB+prix_coinsB
+
+    }
+
+/*
+//-----------------Accodoires------------------------
+    if(acc_nombre>0){
+
+      Largeurbanquettes=$("#Largeurbanquettes").val()
+      Largeurbanquettes  = parseFloat(Largeurbanquettes)
+      Largeurbanquettes  = Largeurbanquettes/100
+
+
+//accoudoirDroite
+
+  largeurAccoudoirTotal=0;
+
+  $(".largeurAccoudoir").each(function(){
+
+      largeurAccoudoirTotal=parseFloat(largeurAccoudoirTotal)+parseFloat($(this).val())
+
+  })
+
+
+      largeurAccoudoirTotal=parseFloat(largeurAccoudoirTotal)/100
+      totalMetrage=Largeurbanquettes-largeurAccoudoirTotal
+      prix_coins0B=totalMetrage*prixB
+      prix_coinsB  = parseFloat(prix_coins0B)
+
+
+
+      $("#tableBanq tr:eq(4) td:eq(1)").text(acc_nombre);  
+      $("#tableBanq tr:eq(4) td:eq(2)").text(toDH(prixB));   
+      $("#tableBanq tr:eq(4) td:eq(3)").text(toMetre(totalMetrage));   
+      $("#tableBanq tr:eq(4) td:eq(4)").text(toDH(prix_coinsB));   
+
+      totalsaB=totalsaB+prix_coinsB
+
+    }
+*/
+
+//banquette_coin_tra
+
+    if(coin_nombret>0){
+
+      metrage_coin_tra='{{ banquette_coin_tra }}'
+      metrage_coin_tra=parseFloat(metrage_coin_tra)
+
+      totalMetrage=metrage_coin_tra*coin_nombret
+      prix_coins0B=totalMetrage*prixB
+      prix_coinsB  = parseFloat(prix_coins0B)
+
+
+
+      $("#tableBanq tr:eq(3) td:eq(1)").text(coin_nombret);  
+      $("#tableBanq tr:eq(3) td:eq(2)").text(toDH(prixB));   
+      $("#tableBanq tr:eq(3) td:eq(3)").text(toMetre(totalMetrage));   
+      $("#tableBanq tr:eq(3) td:eq(4)").text(toDH(prix_coinsB));   
+
+      totalsaB=totalsaB+prix_coinsB
+
+    }
+
+//banquette_coin_mod
+
+
+    if(coin_nombrem>0){
+
+      metrage_coin_tra='{{ banquette_coin_mod }}'
+      metrage_coin_tra=parseFloat(metrage_coin_tra)
+
+      totalMetrage=metrage_coin_tra*coin_nombrem
+      prix_coins0B=totalMetrage*prixB
+      prix_coinsB  = parseFloat(prix_coins0B)
+
+
+
+      $("#tableBanq tr:eq(4) td:eq(1)").text(coin_nombrem);  
+      $("#tableBanq tr:eq(4) td:eq(2)").text(toDH(prixB));   
+      $("#tableBanq tr:eq(4) td:eq(3)").text(toMetre(totalMetrage));   
+      $("#tableBanq tr:eq(4) td:eq(4)").text(toDH(prix_coinsB));   
+
+      totalsaB=totalsaB+prix_coinsB
+
+    }
+
+//coin_nombret
+
+
+    $("#totalbanq").text(toDH(totalsaB));  
+
+//console.log(totalsaB)
+//console.log(totalsa0)
+//console.log('--------------')
+
+    totalsaB=parseFloat(totalsaB)+parseFloat(totalsa0)
+//console.log(totalsaB)
+
+    $("#totalsa").text(toDH(totalsaB));  
+
+}
+
+
+
+Array.min = function( array ){
+    return Math.min.apply( Math, array );
+};
+
+Array.max = function( array ){
+    return Math.max.apply( Math, array );
+};
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+//------------------------------dessiiinnnnn--------------------------
+
+$( "#setting" ).click(function() {
+
+
+    dataID=[];
+    dataWidth=[];
+    
+    dataTop=[];
+    dataLeft=[];
+    
+    dataTopCN=[];
+    dataLeftCN=[];
+    
+    dataTopCT=[];
+    dataLeftCT=[];
+    
+    dataTopCM=[];
+    dataLeftCM=[];
+
+    dataTopFC=[];
+    dataLeftFC=[];
+
+    Largeurbanquettes=$("#Largeurbanquettes").val()
+    Largeurbanquettes  = parseFloat(Largeurbanquettes)
+  
+    coin_metrageM='{{ banquette_coin_mod }}'
+    coin_metrageT='{{ banquette_coin_tra }}'  
+
+    coin_metrageM=parseFloat(coin_metrageM)*100
+    coin_metrageT=parseFloat(coin_metrageT)*100
+
+
+$(".dessinNew").empty()
+
+
+
+//-----------------sbh----------------------------------------
+
+
+  $("#droppableSalon .sbh").each(function(){
+    
+    largeurAccoudoirSBH=0;
+
+    offset=$(this).offset()
+
+    data_id=$(this).attr("data-id")
+
+      Left=offset.left
+      Top=offset.top
+      Left=parseInt(Left)
+      Top=parseInt(Top)
+      dataLeft.push(Left);
+      dataTop.push(Top);
+      dataID.push(data_id);
+
+      width=$(this).find(".dp-numberPicker-input").val()
+
+      accoudoirDroite=$(this).find('input[name="accoudoirDroite"]').val()
+      accoudoirGauche=$(this).find('input[name="accoudoirGauche"]').val()
+      largeurAccoudoir=$(this).find("input.largeurAccoudoir").val()
+
+      accoudoirDroite=parseFloat(accoudoirDroite)
+      accoudoirGauche=parseFloat(accoudoirGauche)
+      largeurAccoudoir=parseFloat(largeurAccoudoir)
+
+
+
+      width=parseFloat(width)
+
+
+
+      if(largeurAccoudoir>0){
+        
+         if(accoudoirGauche>0){
+          largeurAccoudoirSBH=largeurAccoudoirSBH+largeurAccoudoir
+
+         } 
+
+         if(accoudoirDroite>0){
+          largeurAccoudoirSBH=largeurAccoudoirSBH+largeurAccoudoir
+
+         }
+
+
+
+
+      }
+
+
+      width=width-parseFloat(largeurAccoudoirSBH)
+      width=parseFloat(width)
+      dataWidth.push(width)
+
+
+  });
+
+//-----------------sbv----------------------------------------
+
+
+
+  $("#droppableSalon .sbv").each(function(){
+    
+    largeurAccoudoirSBH=0;
+
+    offset=$(this).offset()
+    
+      data_id=$(this).attr("data-id")
+
+      dataID.push(data_id);
+
+
+      Left=offset.left
+      Top=offset.top
+      Left=parseInt(Left)
+      Top=parseInt(Top)
+      dataLeft.push(Left);
+      dataTop.push(Top);
+
+      width=$(this).find(".dp-numberPicker-input").val()
+      accoudoirDroite=$(this).find('input[name="accoudoirDroite"]').val()
+      accoudoirGauche=$(this).find('input[name="accoudoirGauche"]').val()
+      largeurAccoudoir=$(this).find("input.largeurAccoudoir").val()
+      accoudoirDroite=parseFloat(accoudoirDroite)
+      accoudoirGauche=parseFloat(accoudoirGauche)
+      largeurAccoudoir=parseFloat(largeurAccoudoir)
+
+      width=parseFloat(width)
+
+
+
+      if(largeurAccoudoir>0){
+         if(accoudoirGauche>0){
+          largeurAccoudoirSBH=largeurAccoudoirSBH+largeurAccoudoir
+         } 
+
+         if(accoudoirDroite>0){
+          largeurAccoudoirSBH=largeurAccoudoirSBH+largeurAccoudoir
+         }
+      }
+
+          width=width-parseFloat(largeurAccoudoirSBH)
+          width=parseFloat(width)
+          dataWidth.push(width)
+
+
+  });
+
+
+
+
+//**********************************-----------------coin normal----------------------------------------
+
+  $("#droppableSalon .coin").each(function(){
+
+    offset=$(this).offset()
+    Left=offset.left
+    Top=offset.top
+    Left=parseInt(Left)
+    Top=parseInt(Top)
+    dataTopCN.push(Top);
+    dataLeftCN.push(Left);
+
+  });
+
+
+
+//--------calcule COIN--------------
+
+indexTop=[]
+ListindexTop=[]
+indexLeft=[]
+
+
+
+for(i=0;i<dataTopCN.length;i++){
+    for(j=0;j<dataTop.length;j++){
+      if(parseInt(dataTop[j])==parseInt(dataTopCN[i])){
+            indexTop.push(j);
+      }
+    }
+}
+
+
+for(i=0;i<dataLeftCN.length;i++){
+    for(j=0;j<dataLeft.length;j++){
+      if(parseInt(dataLeft[j])==parseInt(dataLeftCN[i])){
+            indexLeft.push(j);
+      }
+    }
+}
+
+for(i=0;i<indexTop.length;i++){
+  if(dataWidth[indexTop[i]] > dataWidth[indexLeft[i]]){
+      dataWidth[indexLeft[i]]=dataWidth[indexLeft[i]]+2
+  }else{
+     dataWidth[indexTop[i]]=dataWidth[indexTop[i]]+2
+  }
+}
+
+
+
+
+////console.log("---indexTop--"+indexTop)
+////console.log("---indexLeft--"+indexLeft)
+
+//---fin calcul coin
+
+
+
+//**********************************-----------------Fcoin normal----------------------------------------
+
+  $("#droppableSalon .fauxCoin").each(function(){
+
+    offset=$(this).offset()
+    Left=offset.left
+    Top=offset.top
+    Left=parseInt(Left)
+    Top=parseInt(Top)
+    dataTopFC.push(Top);
+    dataLeftFC.push(Left);
+
+  });
+
+
+//--------calcule FCOIN--------------
+
+indexTop=[]
+ListindexTop=[]
+indexLeft=[]
+
+
+
+for(i=0;i<dataTopFC.length;i++){
+    for(j=0;j<dataTop.length;j++){
+      if(parseInt(dataTop[j])==parseInt(dataTopFC[i])){
+            indexTop.push(j);
+      }
+    }
+}
+
+
+for(i=0;i<dataLeftFC.length;i++){
+    for(j=0;j<dataLeft.length;j++){
+      if(parseInt(dataLeft[j])==parseInt(dataLeftFC[i])){
+            indexLeft.push(j);
+      }
+    }
+}
+
+
+
+for(i=0;i<indexTop.length;i++){
+  if(dataWidth[indexTop[i]] > dataWidth[indexLeft[i]]){
+      dataWidth[indexLeft[i]]=dataWidth[indexLeft[i]]+Largeurbanquettes
+  }else{
+     dataWidth[indexTop[i]]=dataWidth[indexTop[i]]+Largeurbanquettes
+  }
+}
+
+
+
+
+
+
+//**********************************-----------------cointrad----------------------------------------
+
+  $("#droppableSalon .coint").each(function(){
+
+    offset=$(this).offset()
+    Left=offset.left
+    Top=offset.top
+    Left=parseInt(Left)
+    Top=parseInt(Top)
+    dataTopCT.push(Top);
+    dataLeftCT.push(Left);
+
+  });
+
+
+//--------calcule --------------
+
+indexTop=[]
+ListindexTop=[]
+indexLeft=[]
+
+
+
+for(i=0;i<dataTopCT.length;i++){
+    for(j=0;j<dataTop.length;j++){
+      if(parseInt(dataTop[j])==parseInt(dataTopCT[i])){
+            indexTop.push(j);
+      }
+    }
+}
+
+
+for(i=0;i<dataLeftCT.length;i++){
+    for(j=0;j<dataLeft.length;j++){
+      if(parseInt(dataLeft[j])==parseInt(dataLeftCT[i])){
+            indexLeft.push(j);
+      }
+    }
+}
+
+
+
+for(i=0;i<indexTop.length;i++){
+  if(dataWidth[indexTop[i]] > dataWidth[indexLeft[i]]){
+      dataWidth[indexLeft[i]]=dataWidth[indexLeft[i]]+coin_metrageT
+  }else{
+     dataWidth[indexTop[i]]=dataWidth[indexTop[i]]+coin_metrageT
+  }
+}
+
+
+
+
+//console.log("---indexTop--"+coin_metrageT)
+
+
+
+
+
+//**********************************-----------------coinModern----------------------------------------
+
+  $("#droppableSalon .coinm").each(function(){
+
+    offset=$(this).offset()
+    Left=offset.left
+    Top=offset.top
+    Left=parseInt(Left)
+    Top=parseInt(Top)
+    dataTopCM.push(Top);
+    dataLeftCM.push(Left);
+
+  });
+
+
+//--------calcule --------------
+
+indexTop=[]
+ListindexTop=[]
+indexLeft=[]
+
+
+
+for(i=0;i<dataTopCM.length;i++){
+    for(j=0;j<dataTop.length;j++){
+      if(parseInt(dataTop[j])==parseInt(dataTopCM[i])){
+            indexTop.push(j);
+      }
+    }
+}
+
+
+for(i=0;i<dataLeftCM.length;i++){
+    for(j=0;j<dataLeft.length;j++){
+      if(parseInt(dataLeft[j])==parseInt(dataLeftCM[i])){
+            indexLeft.push(j);
+      }
+    }
+}
+
+
+
+for(i=0;i<indexTop.length;i++){
+  if(dataWidth[indexTop[i]] > dataWidth[indexLeft[i]]){
+      dataWidth[indexLeft[i]]=dataWidth[indexLeft[i]]+coin_metrageM
+  }else{
+     dataWidth[indexTop[i]]=dataWidth[indexTop[i]]+coin_metrageM
+  }
+}
+
+
+
+
+//console.log("---indexTop--"+coin_metrageM)
+
+
+
+
+///--------------dessin--------------------------------
+
+
+
+for(i=0;i<dataWidth.length;i++){
+
+w=parseFloat(dataWidth[i])/2
+wm=dataWidth[i]/100
+$(".dessinNew").append('<div class="sbhD" style="width: '+w+'px;">'+wm+' m</div>')
+
+}
+
+
+})
+
+
+
+
+
+
+
+
+
+//--------------------Tissus__script------------------
+
+
+
+
+
+
+
+
+$('#catchangeTissus').on('change', function() {
+
+  id=this.value;
+  //alert(id)
+
+$("#selectRefTissus").hide()
+
+
+$(".boisimgTissus").show()
+
+
+
+  $.post("{{ path('getTissus') }}",{id:id}, function(result){
+
+//console.log("----------tussi")
+//console.log(result)
+
+$(".boisimgTissus").hide()
+$("#selectRefTissus").empty()
+$("#selectRefTissus").show()
+
+
+
+$("#selectRefTissus").append('<option class="Getref_Tissu" value="0" disabled selected >Sélectionner une référence de tissu</option>')
+
+    for(i=0;i<result.length;i++){
+
+
+    $("#selectRefTissus").append('<option id="'+result[i].prix+'" class="Getref_Tissu"  isred="'+result[i].ref+'"  value="'+result[i].id+'"> '+result[i].ref+' - '+result[i].prix+' DH / M  </option>')
+
+    }
+
+
+
+  });
+
+})
+
+
+
+
+$('#selectRefTissus').on('change', function() {
+
+prixTissu=  $(this).children(":selected").attr("id");
+prixTissu=parseFloat(prixTissu)
+refTissu=this.options[this.selectedIndex].getAttribute('isred');
+
+
+      $("#goinputprixTissus").val(prixTissu)
+
+
+})
+
+
+
+//---valider le prix Tissusuette----
+
+$( "#goprixTissus" ).click(function() {
+
+$("#msgprixTissus").hide()
+
+
+prixTissu2=$("#goinputprixTissus").val()
+
+prixTissu2=parseFloat(prixTissu2)
+
+
+if(prixTissu2>0){
+
+$("#msgprixTissus").hide()
+$("#tableTissus").show()
+$("#tissusSupp").hide()
+
+
+  tissu2(prixTissu)
+
+
+}else{
+
+
+$("#msgprixTissus").text("Prix incorrect prix min : "+ toDH(prixTissu))
+$("#msgprixTissus").show()
+
+
+}
+
+
+
+
+})
+
+//----------calcul table tissu
+
+
+
+
+
+ function tissu2(prixT){
+
+  prixTUSSU=prixT
+totalsaT=0
+    sb_nombre=$("#droppableSalon .sb").size();  
+    sb_metrage_boisB=parseFloat(sb_metrage_bois)
+   // wm=totalbanquette
+
+    NbrCoverture=0
+    Support_couvertures=0
+    nbrSupC=0
+    Prixcoverture=$("#Prixcoverture").val()
+    Prixcoverture=parseFloat(Prixcoverture)
+
+    $("#droppableSalon .nbSupport_couverture").each(function(){
+         Support_couverture = parseInt($(this).val());
+             Support_couvertures=Support_couvertures+Support_couverture
+             nbrSupC++
+
+    }); 
+
+         NbrCoverture=parseInt(NbrCoverture)
+         sb_nombre=parseInt(sb_nombre)
+         Support_couvertures=parseInt(Support_couvertures)
+         NbrCoverture=sb_nombre-Support_couvertures+nbrSupC
+         NbrCoverture=parseInt(NbrCoverture)
+
+         totalCouverture=(NbrCoverture*Prixcoverture)+wm
+         totalCouverture=totalCouverture*prixT
+
+/*       alert(Support_couvertures)
+         alert(nbrSupC)
+         alert(NbrCoverture)*/
+
+
+//alert(sb_nombre)wm
+
+    $("#tableTissus tr:eq(1) td:eq(0)").text(refTissu);  
+    $("#tableTissus tr:eq(1) td:eq(1)").text(toMetre(wm));  
+    $("#tableTissus tr:eq(1) td:eq(2)").text(NbrCoverture+"*"+Prixcoverture);  
+    $("#tableTissus tr:eq(1) td:eq(3)").text(toMetre(sb_metrage_boisB));  
+    $("#tableTissus tr:eq(1) td:eq(4)").text(toDH(prixT));  
+    $("#tableTissus tr:eq(1) td:eq(5)").text(toDH(totalCouverture));  
+
+    $("#totalTissu").text(toDH(totalCouverture));  
+
+    //console.log("totalsaB : "+totalsaB)
+    //console.log("totalsaT : "+totalsaT)
+      totalsaT=totalsaT+totalCouverture
+
+   totalsaT=parseFloat(totalsaB)+parseFloat(totalsaT)
+
+    $("#totalsa").text(toDH(totalsaT)); 
+
+
+
+
+/*
+totalsa=totalsa+tpx
+totalsa=parseFloat(totalsa)+parseFloat(extratotal1)+parseFloat(extratotal2)
+totalsa0=totalsa
+    $("#totalsa").text(toDH(totalsa));  
+
+*/
+}
+
+
+$('#FermeturEclair').click(function() {
+     
+
+
+      //if($('#FermeturEclair').is(':checked')) { alert("it's checked"); }
+totalsaB=0
+    largeurSalon=$("#largeurSalon").val()
+    hauteurSalon=$("#hauteurSB").val()
+
+    largeurSalon=parseInt(largeurSalon)
+    hauteurSalon=parseInt(hauteurSalon)
+    //alert("largeurSalon1 "+largeurSalon)
+
+    largeurSalon=largeurSalon/100
+    hauteurSalon=hauteurSalon/100
+
+    tissuSup=(largeurSalon*2)+(hauteurSalon*2)
+
+
+    tissuSup=tissuSup-1.4+0.1
+
+    tissuSup=parseFloat(tissuSup).toFixed(2)
+    indexC=1.4/tissuSup
+    indexC=parseFloat(indexC).toFixed(2)
+
+
+    TisuSuppTotal=sb_metrage_boisB/indexC
+    TisuSuppTotal=parseFloat(TisuSuppTotal).toFixed(2)
+
+    totalTissuCouverture=prixTUSSU*TisuSuppTotal
+    totalTissuCouverture=parseFloat(totalTissuCouverture)
+
+
+
+    $("#tableTissus tr:eq(2) td:eq(0)").text("Tissu supplémentaire ("+TisuSuppTotal+")");  
+    $("#tableTissus tr:eq(2) td:eq(1)").text(toMetre(wm));  
+    $("#tableTissus tr:eq(2) td:eq(2)").text(NbrCoverture+"*"+Prixcoverture);  
+    $("#tableTissus tr:eq(2) td:eq(3)").text(toMetre(sb_metrage_boisB));  
+    $("#tableTissus tr:eq(2) td:eq(4)").text(toDH(prixTUSSU));  
+    $("#tableTissus tr:eq(2) td:eq(5)").text(toDH(totalTissuCouverture));  
+
+
+    totalTissules2=totalTissuCouverture+totalCouverture 
+
+
+    $("#totalTissu").text(toDH(totalTissules2));  
+
+      totalsaB=totalsaB+totalTissuCouverture
+
+   totalsaB=parseFloat(totalsaB)+parseFloat(totalsa0)
+
+    $("#totalsa").text(toDH(totalsaB)); 
+      
+    });
+//--------------------End Tissus__ script------------------
+
+
+
+
+
+
+
+
+</script>
+
+
+{% endblock %}
+

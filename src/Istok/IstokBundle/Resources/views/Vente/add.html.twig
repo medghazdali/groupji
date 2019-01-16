@@ -1,0 +1,501 @@
+{% form_theme form 'bootstrap_3_horizontal_layout.html.twig' %}
+  {% extends 'IstokIstokBundle::index.html.twig' %}
+    {% block body %}
+
+
+<h2>Ajouter Commande</h2><hr>
+
+ <div class="suc"> </div>
+
+<div class="col-md-4">
+
+ <div class="form-group">
+    <label for="exampleInputEmail1">Article</label>
+      <select  id="article" class="selectpicker form-control" data-show-subtext="true" data-live-search="true">
+  <option disabled selected value=" ">Liste articles</option>
+
+ {% for article in articles %}
+  <option value="{{ article.id }}">{{ article.article }}</option>
+{% endfor %}
+ 
+</select> 
+ </div>
+
+
+ <div class="qtediv form-group">
+ <div class="imggif"></div>
+    <label for="exampleInputEmail1">Quantite</label>
+
+
+<select id="qte" class="form-control">
+
+</select> 
+ </div>
+
+
+ <div class="form-group">
+    
+   <button class="addcmd btn btn-sm btn-info" type="submit">  <span class="glyphicon glyphicon-shopping-cart" aria-hidden="true"> </span> Ajouter au Panier</button>
+
+</div>
+
+
+</div>
+
+
+
+<div class="col-md-8">
+
+<div id="msg">
+
+</div>
+
+
+
+<div class="panel panel-info">
+          <div class="panel-heading">
+            <h3 class="panel-title"><strong>Détails de la commande</strong></h3>
+          </div>
+          <div class="panel-body">
+            <div class="table-responsive">
+              <table class="table table-condensed">
+                <thead>
+                                <tr>
+                      <td><strong>Article</strong></td>
+                      <td class="text-center"><strong>Prix</strong></td>
+                      <td class="text-center"><strong>Quantite</strong></td>
+                      <td class="text-right"><strong>Totale</strong></td>
+                      <td class="text-right"><strong>Action</strong></td>
+                                </tr>
+                </thead>
+                <tbody class="lcmd">
+                  <!-- foreach ($order->lineItems as $line) or some such thing here -->
+              
+
+                    
+
+                    
+
+                </tbody>
+              </table>
+
+
+            </div>
+          </div>
+
+</div>
+
+<div class="panel panel-default"><div class="panel-heading"><h3 style="text-align: right;" class="panel-title">Totales : <strong id="totale">00.00</strong> Dhs</h3></div></div>
+
+   <button class="send btn btn-sm btn-success pull-right" type="button" >  <span class="glyphicon glyphicon-triangle-right" aria-hidden="true"> </span>  Valider la commande</button>
+
+
+</div>
+
+
+
+
+
+
+<!-- Modal here -->
+<div class="modal fade" id="myModal" tabindex="-1" role="dialog" aria-labelledby="myModalLabel">
+  <div class="modal-dialog" role="document">
+    <div class="modal-content">
+      <div class="modal-header">
+        <button type="button" class="close" data-dismiss="modal" aria-label="Close"><span aria-hidden="true">&times;</span></button>
+        <h4 class="modal-title" id="myModalLabel">Numero de Commande : {{idv}}</h4>
+      </div>
+      <div class="modal-body">
+
+      <div class="row">
+
+      <div id="msg2"></div>
+      <div class="col-md-12">
+
+      <fieldset class="scheduler-border">
+    <legend class="scheduler-border">Fiche client</legend>
+
+      {{ form(form) }}
+
+   
+
+</fieldset>
+
+    <fieldset class="scheduler-border">
+    <legend class="scheduler-border">Avance</legend>   <div class="checkbox">
+        
+          <label>
+            <input id="isavance" type="checkbox"> Avance
+          </label>
+        </div>
+
+
+<p>Totale : <strong id="total_"></strong> Dhs </p>
+ <div class="col-xs-4 avn" style="padding:2px;margin-bottom:0px;text-align: center;">
+    <label for="exampleInputPassword1">Montant d'avance </label>
+  </div>
+
+
+ <div class="col-xs-4 avn" style="padding:2px;margin-bottom:0px;text-align: center;">
+    <label for="exampleInputPassword1">Montant reste </label>
+  </div>
+
+
+ <div class="col-xs-4 avn" style="padding:2px;margin-bottom:0px;text-align: center;">
+    <label for="exampleInputPassword1">Montant reste % </label>
+  </div>
+
+
+
+
+ <div class="col-xs-4 avn" style="padding:2px">
+    <input type="text" class="form-control" id="avance" placeholder="avance">
+  </div>
+
+
+ <div class="col-xs-4 avn" style="padding:2px">
+ <div class="form-group" style="text-align: center;">
+    <label id="reste" for="exampleInputPassword1" style="line-height: 2.8;">00</label>
+  </div>
+  </div>
+
+
+
+ <div class="col-xs-4 avn" style="padding:2px">
+ <div class="form-group" style="text-align: center;">
+    <label   id="pors" for="exampleInputPassword1" style="line-height: 2.8;">00</label>
+  </div>
+  </div>
+
+
+
+ <div class="col-xs-6 avn" style="padding:2px">
+ <div class="form-group">
+    <label for="exampleInputPassword1">Autorisation de facilite par </label>
+<select id="facilite" class="form-control">
+ {% for facilite in facilites %}
+  <option value="{{ facilite.id }}">{{ facilite.facilite }}</option>
+{% endfor %}
+</select>
+  </div>
+  </div>
+
+
+  
+
+
+  
+
+      
+</fieldset>
+
+
+
+ <div class="col-xs-12 " style="padding:2px">
+ <div class="form-group">
+    <label for="exampleInputPassword1">Remarque </label>
+
+<textarea id="remarque" class="form-control" rows="2"></textarea>
+
+
+</select>
+  </div>
+  </div>
+
+
+
+
+        </div>
+
+      </div>
+
+
+      </div>
+      <div class="modal-footer">
+        <button type="button" class="btn   btn-sm  btn-default" data-dismiss="modal"> <span class="glyphicon glyphicon-remove" aria-hidden="true"> </span>  Fermer</button>
+        <button type="button" id="valider" class="btn  btn-sm  btn-primary"> <span class="glyphicon glyphicon-ok" aria-hidden="true"> </span>  Valider la commande</button>
+      </div>
+    </div>
+  </div>
+</div>
+
+
+
+
+
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/1.12.4/jquery.min.js"></script>
+<script>
+
+$(document).ready(function(){
+
+
+articles=[]
+total=0
+qtes=[]
+prices=[]
+listId=[]
+
+$(".avn").hide()
+
+$("#qte").empty()
+$("#qte").hide()
+$(".send").hide()
+
+
+   $('#avance').on('input',function(e){
+     avn=$(this).val()
+
+     if(avn<total){
+     $("#reste").css("color","green")
+     $("#pors").css("color","green")
+
+rst=total-avn
+pors=rst*100
+pors=pors/total
+
+pors=pors.toFixed(2);
+rst=rst.toFixed(2);
+
+
+$("#reste").text(rst+" Dhs")
+$("#pors").text(pors+" %")
+
+     }else{
+
+     $("#reste").css("color","red")
+     $("#reste").text("00.00 Dhs")
+
+     $("#pors").css("color","red")
+     $("#pors").text("%")
+
+     }
+
+
+
+    });
+
+
+});
+
+//-----------------avance-------------------------
+
+    var ckbox = $('#isavance');
+
+    $(ckbox).on('click',function () {
+        if (ckbox.is(':checked')) {
+            
+            $(".avn").show('slow')
+
+        } else {
+            
+            $(".avn").hide('slow')
+
+        }
+    });
+
+
+//------------------------------------------
+
+
+$("#article").change(function(){
+ article=$(this).val()
+
+
+articletext = $('#article option:selected').text();
+
+//alert(articletext)
+
+idart=$(this).val();
+
+$("#qte").empty()
+$("#qte").hide()
+$(".send").hide()
+
+$(".imggif").append('<img src="{{ asset('bundles/istokistok/img/loading.gif') }}" style="width: 40px;">')
+
+    $.post("{{ path('article_qte') }}",{idart:idart}, function(result){
+
+    price=result['prix']
+
+    for(j=1;j<=result['qte'];j++){
+
+    $("#qte").append('<option value='+j+'>'+j+'</option>')
+
+    }
+
+    $(".imggif").empty()
+    $("#qte").show()
+    $(".send").show()
+
+    });
+
+
+
+});
+
+
+
+//----- ligne cmd-----
+
+$(".addcmd").click(function(){
+
+
+
+qte=$("#qte").val()
+
+
+if(qte>0){
+
+d = new Date();
+idtr = d.getTime();
+
+articles.push(article);
+qtes.push(qte);
+listId.push(idtr);
+prices.push(price);
+
+console.log(listId)
+
+
+$(".lcmd").append('<tr><td>'+articletext+'</td><td class="text-center">'+price+' Dhs</td><td class="text-center">'+qte+'</td><td class="text-right">'+qte*price+' Dhs</td><td class="text-right"><button  id='+idtr+' class="del btn btn-sm btn-danger" type="button">  <span class="glyphicon glyphicon-trash" aria-hidden="true"></span></button></td></tr>')
+
+total=parseInt(total)+parseInt(price)*parseInt(qte)
+$("#totale").text(total)
+
+}
+
+
+
+
+});
+
+
+
+//----- delete ligne cmd-----
+
+
+$(document).on("click",".del",function(event){
+
+idel=$(this).attr('id')
+index = jQuery.inArray(parseInt(idel), listId )
+
+asupp=parseInt(prices[index])*parseInt(qtes[index])
+total=total-asupp
+$("#totale").text(total)
+
+listId.splice(index,1);
+articles.splice(index,1);
+qtes.splice(index,1);
+prices.splice(index,1);
+
+pr=$(this).parent('td').parent('tr').empty()
+
+})
+
+
+//----- valider cmd-----
+
+
+$(".send").click(function(){
+$("#msg2").empty()
+$("#msg").empty()
+if(listId.length <=0 || qtes.length <=0 || articles.length <=0 ){
+  
+$("#msg").append(' <div class="alert alert-danger alert-dismissible" role="alert"><button type="button" class="close" data-dismiss="alert" aria-label="Close"><span aria-hidden="true">&times;</span></button><strong>la commande !</strong>  n est pas reconnue !! </div>')
+}else{
+  
+ // $('#myModal').modal({backdrop: 'static', keyboard: false})  
+
+$('#myModal').modal('show'); 
+
+$("#total_").text(total)
+}
+
+
+})
+
+//----- send cmd-----
+
+
+$("#valider").click(function(){
+prenom=$("#form_prenom").val()
+type=$("#form_type").val()
+nom=$("#form_nom").val()
+cin=$("#form_cin").val()
+tel=$("#form_tel").val()
+avance=$("#avance").val()
+isavance=$("#isavance").val()
+
+console.log(type)
+
+if ($('#isavance').is(":checked"))
+isavance=1
+else
+isavance=0
+
+facilite=$("#facilite").val()
+remarque=$("#remarque").val()
+idv={{idv}}
+if(cin=="" || nom=="" || facilite==""){
+  
+  $("#msg2").append(' <div class="alert alert-danger alert-dismissible" role="alert"><button type="button" class="close" data-dismiss="alert" aria-label="Close"><span aria-hidden="true">&times;</span></button><strong>les informations entrant sont pas valides</strong> </div>')
+
+
+}else{
+
+$('#myModal').modal('hide');
+$("button").hide()
+
+$('body').pleaseWait();
+
+    $.post("{{ path('vente_insert') }}",{articles:articles,qtes:qtes,prenom:prenom,nom:nom,cin:cin,tel:tel,avance:avance,isavance:isavance,facilite:facilite,remarque:remarque,idv:idv,listId:listId,type:type}, function(result){
+
+$(".suc").empty()
+if(result==1){
+
+
+$(".suc").append(' <div class="alert alert-success alert-dismissible" role="alert"><button type="button" class="close" data-dismiss="alert" aria-label="Close"><span aria-hidden="true">&times;</span></button><strong>Votre commande est terminée avec succès</strong> </div>')
+
+window.location.replace("{{path('vente_detail',{'id':idv})}}");
+
+
+}else{
+  
+$(".suc").append(' <div class="alert alert-danger alert-dismissible" role="alert"><button type="button" class="close" data-dismiss="alert" aria-label="Close"><span aria-hidden="true">&times;</span></button><strong>La composition de votre commande n est pas valide</strong> </div>')
+  
+$("button").show()
+
+}
+
+$('body').pleaseWait('stop');
+
+
+
+    });  
+
+}
+
+
+
+})
+
+
+
+
+
+  var _gaq = _gaq || [];
+  _gaq.push(['_setAccount', 'UA-36251023-1']);
+  _gaq.push(['_setDomainName', 'jqueryscript.net']);
+  _gaq.push(['_trackPageview']);
+
+  (function() {
+    var ga = document.createElement('script'); ga.type = 'text/javascript'; ga.async = true;
+    ga.src = ('https:' == document.location.protocol ? 'https://ssl' : 'http://www') + '.google-analytics.com/ga.js';
+    var s = document.getElementsByTagName('script')[0]; s.parentNode.insertBefore(ga, s);
+  })();
+
+
+</script>
+
+
+{% endblock %}

@@ -1,0 +1,439 @@
+    {% extends 'IstokIstokBundle::index.html.twig' %}
+    {% block body %}
+<script type="text/javascript">
+window.onload = function () {
+    
+
+            var chart1 = new CanvasJS.Chart("chartContainer1", {
+                        title:{
+            text: "Gérer le rendement des employés"
+        },
+                animationEnabled: true,
+        data: [
+        {
+            type: "doughnut",
+            startAngle: 60,
+            toolTipContent: "{legendText}: {y} - <strong>#percent% </strong>",
+            showInLegend: true,
+          explodeOnClick: true, //**Change it to true
+            dataPoints: [
+
+                {% for rdvuser in rdvusers %}
+
+                {y:  {{rdvuser['total']}}, indexLabel: "{{rdvuser['total']}} dhs | #percent%", legendText: "{{rdvuser['username']}}" },
+
+
+                {% endfor %}
+
+
+            ]
+        }
+        ]
+
+
+            });
+
+            chart1.render();
+
+                           
+
+            var chart2 = new CanvasJS.Chart("chartContainer2", {
+                title: {
+                    text: "Chiffre d'affaire par mois"
+                },
+                data: [{
+                    type: "column",
+                    dataPoints: [
+
+
+                        { y: {{listMount[0]}}, label: "janvier" },
+                        { y: {{listMount[1]}}, label: "février" },
+                        { y: {{listMount[2]}}, label: "mars" },
+                        { y: {{listMount[3]}}, label: "avril" },
+                        { y: {{listMount[4]}}, label: "mai" },
+                        { y: {{listMount[5]}}, label: "juin" },
+                        { y: {{listMount[6]}}, label: "juillet" },
+                        { y: {{listMount[7]}}, label: "août" },
+                        { y: {{listMount[8]}}, label: "septembre" },
+                        { y: {{listMount[9]}}, label: "octobre" },
+                        { y: {{listMount[10]}}, label: "novembre" },
+                        { y: {{listMount[11]}}, label: "décembre" },
+
+                    ]
+                }]
+            });
+            chart2.render();
+
+
+
+            var chart3 = new CanvasJS.Chart("chartContainer3", {
+                        title:{
+            text: "Gérer les articles"
+        },
+                animationEnabled: true,
+        data: [
+        {
+            type: "doughnut",
+            startAngle: 60,
+            toolTipContent: "{legendText}: {y} - <strong>#percent% </strong>",
+            showInLegend: true,
+          explodeOnClick: true, //**Change it to true
+            dataPoints: [
+
+
+                {% for rdvarticle in rdvarticles %}
+
+                {y:  {{rdvarticle['total']}}, indexLabel: "{{rdvarticle['totals']}} dhs | #percent%", legendText: "{{rdvarticle['article']}}" },
+
+
+
+                {% endfor %}
+
+
+            ]
+        }
+        ]
+
+
+            });
+
+            chart3.render();
+
+
+var chart4 = new CanvasJS.Chart("chartContainer4",
+    {
+        theme: "theme2",
+        title:{
+            text: "Gérer les articles par type"
+        },
+        data: [
+        {
+            type: "pie",
+            showInLegend: true,
+            toolTipContent: "{y} - #percent %",
+            yValueFormatString: "#0.#,,. Million",
+            legendText: "{indexLabel}",
+            dataPoints: [
+
+                {% for rdvtypeclient in rdvtypeclients %}
+                {y:  {{rdvtypeclient['total']}}, indexLabel: "{{rdvtypeclient['categorie']}}" },
+
+                {% endfor %}
+
+       
+
+            ]
+        }
+        ]
+    });
+    chart4.render();
+
+
+var chart5 = new CanvasJS.Chart("chartContainer5",
+    {
+        theme: "theme2",
+        title:{
+            text: "Gérer les clients"
+        },
+        data: [
+        {
+            type: "pie",
+            showInLegend: true,
+            toolTipContent: "{y} - #percent %",
+            yValueFormatString: "#0.#,,. Million",
+            legendText: "{indexLabel}",
+            dataPoints: [
+
+                {% for rdvtypeart in rdvtypearts %}
+                {y:  {{rdvtypeart['total']}}, indexLabel: "{{rdvtypeart['totals']}} Dhs" },
+
+                {% endfor %}
+
+       
+
+            ]
+        }
+        ]
+    });
+    chart5.render();
+
+
+}
+    </script>
+
+<div class="row" style="margin-top:21px">
+
+<div class="col-md-4">
+<h1 style="margin-top:1px">Statistiques</h1>
+</div>
+
+<!-- begin -serch-->
+<form method="post" action="{{path('statistique')}}">
+<div class="col-md-8">
+
+<div class="col-md-5">
+
+<div class="input-group">
+<div class="input-group-addon">
+<i class="glyphicon glyphicon-calendar">
+</i>
+</div>
+<input value="{{datev1_}}" class="form-control" id="date" name="date" placeholder="MM-DD-YYYY" type="text"/>
+</div>
+
+</div>
+
+<div class="col-md-5">
+
+<div class="input-group">
+<div class="input-group-addon">
+<i class="glyphicon glyphicon-calendar">
+</i>
+</div>
+<input value="{{datev2_}}" class="form-control" id="date" name="date2" placeholder="MM-DD-YYYY" type="text"/>
+</div>
+</div>
+
+<div class="col-md-2">
+
+
+<button type="submit" id="form_save" name="form[save]" class="btn-default btn "><i class="glyphicon glyphicon-search"></i> Recherche</button>
+</div>
+</div>
+<!-- end -serch-->
+</form>
+</div>
+
+
+
+
+
+
+
+
+<hr>
+
+<!--chart1-->
+<div class="col-md-6">
+<div class="panel panel-default">
+
+  <div class="panel-body">
+    <div id="chartContainer1" style="height: 400px; width: 100%;"></div>
+  </div>
+</div>
+</div>
+<!--enf chart1-->
+
+
+
+<div class="col-md-3">
+
+
+<div class="panel panel-warning">
+  <div class="panel-body">
+<div class="row tile_count">
+            <div class="col-md-12 col-sm-12 col-xs-12 tile_stats_count" style="border-width:0px">
+              <span class="count_top"><i class="fa fa-user"></i> C.A aujourd'hui</span>
+              <div class="count" style="color:#18bc9c">{{params[0]}} Dhs</div>
+              <hr style="margin-top:21px;margin-bottom:20px">
+              <span class="count_top"><i class="fa fa-user"></i> Nbr Commande </span>
+              <div class="count" style="color:#E91E63">{{params[1]}}</div>
+              <hr style="margin-top:21px;margin-bottom:20px">
+              <span class="count_top"><i class="fa fa-user"></i> Nbr Article Aujourd'hui </span>
+              <div class="count" style="color:#00BCD4">{{params[2]}}</div>
+              <hr style="margin-top:21px;margin-bottom:20px">
+              <span class="count_top"><i class="fa fa-user"></i> Nbr demande </span>
+              <div class="count" style="color:#00BCD4">{{params[3]}}</div>
+
+            </div>
+
+     
+          </div>
+
+
+</div>
+</div>
+
+
+</div>
+
+
+<div class="col-md-3">
+
+<div class="panel panel-success">
+  <div class="panel-body">
+<div class="row tile_count">
+            <div class="col-md-12 col-sm-12 col-xs-12 tile_stats_count" style="border-width:0px">
+              <span class="count_top"><i class="fa fa-user"></i> Totale C.A</span>
+              <div class="count" style="color:#18bc9c">{{params[4]}} Dhs</div>
+              <span class="count_bottom"><i class="green">4% </i> From last Year</span>
+              <hr style="margin-top:6px;margin-bottom:6px">
+              <span class="count_top"><i class="fa fa-user"></i> Montant credit </span>
+              <div class="count" style="color:#E91E63">{{params[6]}} Dhs</div>
+              <hr style="margin-top:6px;margin-bottom:6px">
+              <span class="count_top"><i class="fa fa-user"></i> Le montant à la caisse </span>
+              <div class="count" style="color:#00BCD4">{{params[5]}} Dhs</div>
+              <hr style="margin-top:6px;margin-bottom:6px">
+              <span class="count_top"><i class="fa fa-user"></i> Le rendement moyen par jour </span>
+              <div class="count" style="color:#9954bb">{{rdvmoy}} Dhs</div>
+
+            </div>
+
+     
+          </div>
+
+
+</div>
+</div>
+
+
+<div class="panel panel-info">
+  <div class="panel-body">
+<div class="row tile_count">
+            <div class="col-md-12 col-sm-12 col-xs-12 tile_stats_count" style="border-width:0px">
+
+       <div class="col-md-12 col-sm-12 col-xs-12 tile_stats_count" style="border-width:0px">
+              <span class="count_top"><i class="fa fa-user"></i> Nbr Commande <strong style="font-size: 18px;" class="pull-right"><span class="label label-success">{{params[7]}}</span>
+</strong></span>
+              
+              <hr style="margin-top:6px;margin-bottom:6px">
+
+              <span class="count_top"><i class="fa fa-user"></i> Nbr Devis <strong style="font-size: 18px;" class="pull-right"><span class="label label-danger">{{params[9]}}</span>
+</strong></span>
+              <hr style="margin-top:6px;margin-bottom:6px">
+
+              <span class="count_top"><i class="fa fa-user"></i> Nbr Article<strong style="font-size: 18px;" class="pull-right"><span class="label label-primary">{{params[8]}}</span>
+</strong></span>
+       
+
+            </div>
+
+            </div>
+
+     
+          </div>
+
+
+</div>
+</div>
+
+
+
+</div>
+
+
+
+
+
+
+
+
+<!--chart2-->
+<div class="col-md-12">
+<div class="panel panel-primary">
+
+  <div class="panel-body">
+    <div id="chartContainer2" style="height: 400px; width: 100%;"></div>
+  </div>
+</div>
+</div>
+<!--enf chart2-->
+
+
+
+
+<!--chart3-->
+<div class="col-md-6">
+<div class="panel panel-primary">
+
+  <div class="panel-body">
+    <div id="chartContainer3" style="height: 400px; width: 100%;"></div>
+  </div>
+</div>
+</div>
+<!--enf chart3-->
+
+
+
+<!--chart4-->
+<div class="col-md-6">
+<div class="panel panel-primary">
+
+  <div class="panel-body">
+    <div id="chartContainer4" style="height: 400px; width: 100%;"></div>
+  </div>
+</div>
+</div>
+<!--enf chart4-->
+
+
+<!--chart5-->
+<div class="col-md-6">
+<div class="panel panel-primary">
+
+  <div class="panel-body">
+    <div id="chartContainer5" style="height: 400px; width: 100%;"></div>
+  </div>
+</div>
+</div>
+<!--enf chart5-->
+
+
+
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/1.12.2/jquery.min.js"></script>
+<script>
+			$(document).ready(function(){
+				$('table.search-table').tableSearch({
+					searchText:'Rechercher    ',
+					searchPlaceHolder:' '
+				});
+			});
+$(document).ready(function(){
+
+      
+
+        var date_input=$('input[name="date"]'); //our date input has the name "date"
+        var container=$('.bootstrap-iso form').length>0 ? $('.bootstrap-iso form').parent() : "body";
+        date_input.datepicker({
+            format: 'dd-mm-yyyy',
+            container: container,
+            todayHighlight: true,
+            autoclose: true,
+        })
+          
+
+        var date_input=$('input[name="date2"]'); //our date input has the name "date"
+        var container=$('.bootstrap-iso form').length>0 ? $('.bootstrap-iso form').parent() : "body";
+        date_input.datepicker({
+            format: 'dd-mm-yyyy',
+            container: container,
+            todayHighlight: true,
+            autoclose: true,
+        })
+    
+
+
+ $(".delete").click(function(event){
+    if (confirm("voulez vous vraiment supprimer ?") == true) {
+    } else {
+        event.preventDefault();
+location.reload();
+
+
+    }    });
+
+
+
+
+
+
+
+
+
+});
+
+</script>
+
+
+
+    {% endblock %}

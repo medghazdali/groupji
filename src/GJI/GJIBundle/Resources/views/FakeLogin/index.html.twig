@@ -1,0 +1,39 @@
+{% extends 'GJIBundle::index2.html.twig' %}
+{% block body %}
+
+
+<div class="container">
+
+  <div class="row h-100 justify-content-center align-items-center" style="margin-top: 55px;">
+      <div class="col-md-1">
+        
+        <svg xmlns="http://www.w3.org/2000/svg" width="30px" height="30px" viewBox="0 0 100 100" preserveAspectRatio="xMidYMid" class="lds-rolling" style="background: none;"><circle cx="50" cy="50" fill="none" ng-attr-stroke='' ng-attr-stroke-width='' ng-attr-r="" ng-attr-stroke-dasharray='' stroke="#918784" stroke-width="10" r="35" stroke-dasharray="164.93361431346415 56.97787143782138" transform="rotate(172.193 50 50)"><animateTransform attributeName="transform" type="rotate" calcMode="linear" values="0 50 50;360 50 50" keyTimes="0;1" dur="1s" begin="0s" repeatCount="indefinite"></animateTransform></circle></svg>
+
+      </div>
+  </div>
+
+</div>
+
+
+
+<div style="display:none">    {{ render(controller('FOSUserBundle:Security:login')) }}   </div>
+
+
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
+
+<script type="text/javascript">
+
+  email='{{email}}'
+  pass='{{pass}}'
+
+
+  $('#username').val(email)
+  $('#password').val(pass)
+
+
+  document.getElementById("loginForm").submit();
+
+</script>
+
+
+{% endblock %}

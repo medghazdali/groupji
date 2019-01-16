@@ -1,0 +1,73 @@
+security:
+    encoders:
+        FOS\UserBundle\Model\UserInterface: bcrypt
+
+    role_hierarchy:
+        ROLE_ADMIN:       ROLE_USER
+        ROLE_SUPER_ADMIN: ROLE_ADMIN
+
+    providers:
+        fos_userbundle:
+            id: fos_user.user_provider.username_email
+
+    firewalls:
+        main:
+            pattern: ^/
+            form_login:
+                provider: fos_userbundle
+                csrf_token_generator: security.csrf.token_manager
+                # if you are using Symfony < 2.8, use the following config instead:
+                # csrf_provider: form.csrf_provider
+
+            logout:       true
+            anonymous:    true
+
+    access_control:
+        - { path: ^/login$, role: IS_AUTHENTICATED_ANONYMOUSLY }
+        - { path: ^/register, role: IS_AUTHENTICATED_ANONYMOUSLY }
+        - { path: ^/resetting, role: IS_AUTHENTICATED_ANONYMOUSLY }
+        - { path: ^/listuser, role: ROLE_SUPER_ADMIN }
+        - { path: ^/vente/delete, role: ROLE_SUPER_ADMIN }
+        - { path: ^/vente/edit, role: ROLE_SUPER_ADMIN }
+        - { path: ^/article/delete, role: ROLE_SUPER_ADMIN }
+        - { path: ^/article/edit, role: ROLE_SUPER_ADMIN }
+        - { path: ^/facilite/add, role: ROLE_SUPER_ADMIN }
+        - { path: ^/facilite/edit, role: ROLE_SUPER_ADMIN }
+        - { path: ^/facilite/delete, role: ROLE_SUPER_ADMIN }
+        - { path: ^/client/delete, role: ROLE_SUPER_ADMIN }
+        - { path: ^/client/edit, role: ROLE_SUPER_ADMIN }
+        - { path: ^/type/edit, role: ROLE_SUPER_ADMIN }
+        - { path: ^/type/delete, role: ROLE_SUPER_ADMIN }
+        - { path: ^/Categories/edit, role: ROLE_SUPER_ADMIN }
+        - { path: ^/Categories/delete, role: ROLE_SUPER_ADMIN }
+        - { path: ^/demande/edit, role: ROLE_SUPER_ADMIN }
+        - { path: ^/demande/delete, role: ROLE_SUPER_ADMIN }
+        - { path: ^/vente, role: ROLE_ADMIN }
+        - { path: ^/vente, role: ROLE_SUPER_ADMIN }
+        - { path: ^/article, role: ROLE_ADMIN }
+        - { path: ^/devis, role: ROLE_ADMIN }
+        - { path: ^/client, role: ROLE_ADMIN }
+        - { path: ^/type, role: ROLE_ADMIN }
+        - { path: ^/facilite, role: ROLE_ADMIN }
+        - { path: ^/vente, role: ROLE_ADMIN }
+        - { path: ^/etab, role: ROLE_ADMIN }
+        - { path: ^/Categories, role: ROLE_ADMIN }
+        - { path: ^/demande, role: ROLE_ADMIN }
+        - { path: ^/home, role: ROLE_ADMIN }
+        - { path: ^/facture, role: ROLE_ADMIN }
+        - { path: ^/statistique, role: ROLE_ADMIN }
+        - { path: ^/article, role: ROLE_SUPER_ADMIN }
+        - { path: ^/devis, role: ROLE_SUPER_ADMIN }
+        - { path: ^/client, role: ROLE_SUPER_ADMIN }
+        - { path: ^/type, role: ROLE_SUPER_ADMIN }
+        - { path: ^/facilite, role: ROLE_SUPER_ADMIN }
+        - { path: ^/vente, role: ROLE_SUPER_ADMIN }
+        - { path: ^/etab, role: ROLE_SUPER_ADMIN }
+        - { path: ^/Categories, role: ROLE_SUPER_ADMIN }
+        - { path: ^/demande, role: ROLE_SUPER_ADMIN }
+        - { path: ^/home, role: ROLE_SUPER_ADMIN }
+        - { path: ^/facture, role: ROLE_SUPER_ADMIN }
+        - { path: ^/statistique, role: ROLE_SUPER_ADMIN }
+
+
+

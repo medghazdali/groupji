@@ -1,0 +1,122 @@
+
+  <nav class="navbar navbar-default">
+  <div class="container">
+    <!-- Brand and toggle get grouped for better mobile display -->
+    <div class="navbar-header">
+      <button type="button" class="navbar-toggle collapsed" data-toggle="collapse" data-target="#bs-example-navbar-collapse-1" aria-expanded="false">
+        <span class="sr-only">Toggle navigation</span>
+        <span class="icon-bar"></span>
+        <span class="icon-bar"></span>
+        <span class="icon-bar"></span>
+      </button>
+      <a class="navbar-brand" href="#"><img style="width:120px" src="{{asset('bundles/istokistok/img/logo.png')}}">  </a>
+    </div>
+
+    <!-- Collect the nav links, forms, and other content for toggling -->
+    <div class="collapse navbar-collapse" id="bs-example-navbar-collapse-1">
+ 
+
+      <ul class="nav navbar-nav">
+
+      <li><a href="{{path('home')}}"><span  class="glyphicon glyphicon-home" aria-hidden="true"></span> Accueil</a></li>
+
+       <li class="dropdown">
+                <a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-haspopup="true" aria-expanded="false"><span  class="glyphicon glyphicon-shopping-cart" aria-hidden="true"></span> Ventes <span class="caret"></span></a>
+                <ul class="dropdown-menu">
+
+                  <li><a href="{{path('vente')}}" ><span  class="glyphicon glyphicon-list-alt" aria-hidden="true"></span> Liste des commandes</a></li>
+                  <li><a href="#"><span  class="glyphicon glyphicon-plus" aria-hidden="true"></span> Créer une commande</a></li>
+                  <li><a href="#"><span  class="glyphicon glyphicon-fullscreen" aria-hidden="true"></span> Dessiner une commande</a></li>
+                  <li role="separator" class="divider"></li>
+                  <li><a href="{{path('devis')}}"><span  class="glyphicon glyphicon-list-alt" aria-hidden="true"></span> Liste des devis</a></li>
+                  <li><a ><span  class="glyphicon glyphicon-plus" aria-hidden="true"></span> Créer un devis</a></li>
+                  <li role="separator" class="divider"></li>
+                  <li><a ><span  class="glyphicon glyphicon-list-alt" aria-hidden="true"></span> Liste des factures</a></li>
+                  <li><a ><span  class="glyphicon glyphicon-plus" aria-hidden="true"></span> Créer une facture</a></li>
+
+                </ul>
+        </li>
+
+       <li class="dropdown">
+                <a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-haspopup="true" aria-expanded="false"><span  class="glyphicon glyphicon-tag" aria-hidden="true"></span> Article <span class="caret"></span></a>
+                <ul class="dropdown-menu">
+<li class="dropdown-submenu">
+  <a tabindex="0">Action</a>
+
+  <ul class="dropdown-menu">
+    <li><a tabindex="0">Sub action</a></li>
+    <li class="dropdown-submenu">
+      <a tabindex="0">Another sub action</a>
+
+      <ul class="dropdown-menu">
+        <li><a tabindex="0">Sub action</a></li>
+        <li><a tabindex="0">Another sub action</a></li>
+        <li><a tabindex="0">Something else here</a></li>
+      </ul>
+    </li>
+    <li><a tabindex="0">Something else here</a></li>
+    <li class="disabled"><a tabindex="-1">Disabled action</a></li>
+    <li class="dropdown-submenu">
+      <a tabindex="0">Another action</a>
+
+      <ul class="dropdown-menu">
+        <li><a tabindex="0">Sub action</a></li>
+        <li><a tabindex="0">Another sub action</a></li>
+        <li><a tabindex="0">Something else here</a></li>
+      </ul>
+    </li>
+  </ul>
+</li>
+                  <li><a href="{{path('bois')}}" ><span  class="glyphicon glyphicon-stop" aria-hidden="true"></span> Bois</a></li>
+                  <li><a href="{{path('devis')}}"><span  class="glyphicon glyphicon-pause" aria-hidden="true"></span> Banquettes</a></li>
+                  <li><a href="{{path('devis')}}"><span  class="glyphicon glyphicon-bookmark" aria-hidden="true"></span> Tissu</a></li>
+                  <li><a href="{{path('devis')}}"><span  class="glyphicon glyphicon-inbox" aria-hidden="true"></span> Couture</a></li>
+                  <li><a href="{{path('devis')}}"><span  class="glyphicon glyphicon-certificate" aria-hidden="true"></span> Garniture</a></li>
+ 
+
+                </ul>
+        </li>
+
+
+
+
+
+      <li><a href="{{path('client')}}" ><span  class="glyphicon glyphicon-user" aria-hidden="true"></span> Client</a></li>
+      <li><a href="{{path('statistique')}}"><span  class="glyphicon glyphicon-stats" aria-hidden="true"></span> Statistique</a></li>
+      <li><a href="{{path('facilite')}}"><span  class="glyphicon glyphicon-home" aria-hidden="true"></span> Facilite</a></li>
+      <li><a href="{{path('listuser')}}"><span  class="glyphicon glyphicon-lock" aria-hidden="true"></span> Users</a></li>
+
+      </ul>
+
+
+
+
+
+
+
+
+
+
+
+
+      <ul style="padding: 0px !important" class="nav navbar-nav navbar-right">
+
+ <li class="dropdown">
+          <a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-haspopup="true" aria-expanded="false">{{ app.user.username }} <span class="caret"></span></a>
+          <ul class="dropdown-menu">
+    <li><a href="{{path('etab_edit')}}"><span class="glyphicon glyphicon-home" aria-hidden="true"></span> Infos Etablissement</a></li>
+        <li><a href="{{path('fos_user_profile_edit')}}"><span class="glyphicon glyphicon-cog" aria-hidden="true"></span> Profile</a></li>
+        <li><a href="{{path('fos_user_security_logout')}}"><span class="glyphicon glyphicon-log-out" aria-hidden="true"></span> Log out</a></li>
+
+          </ul>
+        </li>
+
+       
+
+
+    
+
+      </ul>
+    </div><!-- /.navbar-collapse -->
+  </div><!-- /.container-fluid -->
+</nav>

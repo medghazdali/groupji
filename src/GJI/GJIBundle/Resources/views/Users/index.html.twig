@@ -1,0 +1,380 @@
+{% form_theme form 'bootstrap_3_layout.html.twig' %}
+{% extends 'GJIBundle::index.html.twig' %}
+{% block body %}
+
+
+    <!-- Modal -->
+    <div class="modal fade" id="ModalSave" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel" aria-hidden="true">
+      <div class="modal-dialog" role="document">
+        <div class="modal-content">
+          <div class="modal-header">
+            <h5 class="modal-title" id="exampleModalLabel">Are you sure you want to update your password ?</h5>
+            <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+            </button>
+          </div>              
+
+          <div class="modal-footer">
+            <button type="button" class="btn btn-secondary" data-dismiss="modal">Close</button>
+
+            {{ render(controller('FOSUserBundle:ChangePassword:changePassword',{ 'cle': 3 })) }}            
+
+          </div>
+        </div>
+      </div>
+    </div>
+
+
+
+        <div class="my-3 my-md-5">
+          <div class="container">
+            <div class="row">
+              <div class="col-lg-4">
+                <div class="card card-profile">
+                  <div class="card-header" style="background-image: url(demo/photos/eberhard-grossgasteiger-311213-500.jpg);"></div>
+                  <div class="card-body text-center">
+                    <img class="card-profile-img" src="{{asset('uploads/users/'~Avatar)}}">
+                    <h3 class="mb-3">{{Lname}} {{Fname}}</h3>
+                    <p class="mb-4">
+                      {{About}}
+                    </p>
+
+                        <ul class="social-links list-inline mb-0 mt-2">
+                          <li class="list-inline-item">
+                            <a href="{{facebook}} " title="Facebook" data-toggle="tooltip"><i class="fa fa-facebook"></i></a>
+                          </li>
+                          <li class="list-inline-item">
+                            <a href="{{Twitter}} " title="Twitter" data-toggle="tooltip"><i class="fa fa-twitter"></i></a>
+                          </li>
+                          <li class="list-inline-item">
+                            <a href="{{Linkedin}} " title="linkedin" data-toggle="tooltip"><i class="fa fa-linkedin"></i></a>
+                          </li>
+
+                          <li class="list-inline-item">
+                            <a href="{{Google}} " title="google" data-toggle="tooltip"><i class="fa fa-google-plus"></i></a>
+                          </li>
+                          <li class="list-inline-item">
+                            <a href="{{Skype}} " title="skype" data-toggle="tooltip"><i class="fa fa-skype"></i></a>
+                          </li>
+
+
+                        </ul>
+
+
+                  </div>
+                </div>
+
+                <div class="card">
+                  <div class="card-header">
+                    <h3 class="card-title">Edit Password</h3>
+                  </div>
+                  <div class="card-body">
+
+
+                      {% if  app.request.get('errorz') is defined and  app.request.get('errorz') ==1 %}
+
+                        <div  class="alertDiv alert alert-dismissible alert-danger"> <button type="button" class="close" data-dismiss="alert"></button> <p class="alert-heading" style="text-align: center"> Invalid Password </p></div>
+
+
+                      {% endif %}
+
+
+                      <div class="form-group">
+                            <label class="form-label">Current password</label>
+                            <input class="form-control" id="pass1" type="password" >
+                      </div>                      
+                      <div class="form-group">
+                        <label class="form-label">New password</label>
+                        <input type="password" class="form-control"  id="pass2" required="required" >
+                        <p  style="color: #cd201f;display:none" >Minimum <b>6 characters</b></p>
+
+
+                      </div>
+
+                      <div class="form-group">
+                        <label class="form-label">Repeat Password</label>
+                        <input type="password" id="pass3" class="form-control" >
+                        <p style="color: #cd201f;display:none" >Must match with your password </p>
+
+                      </div>
+
+                      <div class="form-footer">
+
+                        <button  onclick="getdata()"  class="btn btn-primary btn-block">Save</button>
+
+                        <button style="display:none" id="ModalSaveButton" data-toggle="modal" data-target="#ModalSave" class="btn btn-primary btn-block">Save</button>
+
+                      </div>
+
+
+                  </div>
+                </div>
+
+
+              </div>
+              <div class="col-lg-8">
+
+                {{ form_start(form, { 'attr': {'class': 'card'} }) }}
+
+                  <div class="card-body">
+                    <h3 class="card-title">Edit Profile</h3>
+                    <div class="row">
+
+
+                      <div class="col-sm-6 col-md-6">
+                        <div class="form-group">
+                          <label class="form-label">First Name</label>
+                              {{ form_widget(form.Fname) }}
+
+                        </div>
+                      </div>
+                      <div class="col-sm-6 col-md-6">
+                        <div class="form-group">
+                          <label class="form-label">Last Name</label>
+                              {{ form_widget(form.Lname) }}
+
+                        </div>
+                      </div>
+
+                      <div class="col-sm-6 col-md-5">
+                        <div class="form-group">
+                          <label class="form-label">Email address</label>
+                              {{ form_widget(form.Email) }}
+                        </div>
+                      </div>
+
+                      <div class="col-md-7">
+                        <div class="form-group">
+                          <label class="form-label">Address</label>
+                              {{ form_widget(form.address) }}
+                        </div>
+                      </div>
+
+                      <div class="col-md-6">
+
+                        <div class="form-group">
+                          <label class="form-label">Date of birth</label>
+                         <div class="row gutters-xs">
+                            <div class="col-5">
+                              {{ form_widget(form.DateofbirthM) }}
+
+                             
+                            </div>
+                            <div class="col-3">
+                              {{ form_widget(form.DateofbirthD) }}
+                            </div>
+                            <div class="col-4">
+                              
+                              {{ form_widget(form.DateofbirthY) }}
+
+                              </select>
+                            </div>
+                          </div>
+                        </div>
+
+                      </div>
+
+
+
+                      <div class="col-md-6">
+
+                        <div class="form-group">
+                          <label class="form-label">Anniversary Date</label>
+                          <div class="row gutters-xs">
+                            <div class="col-5">
+
+                              {{ form_widget(form.AnniversaryDateM) }}
+
+
+                            </div>
+                            <div class="col-3">
+
+                              {{ form_widget(form.AnniversaryDateD) }}
+
+                            </div>
+
+                          </div>
+                        </div>
+
+                      </div>
+                      <div class="col-sm-6 col-md-5">
+                        <div class="form-group">
+                          <label class="form-label">City</label>
+                              {{ form_widget(form.City) }}
+                        </div>
+                      </div>
+
+                      <div class="col-md-7">
+                        <div class="form-group">
+                          <label class="form-label">Country</label>
+                              {{ form_widget(form.Countrie) }}
+
+
+                        </div>
+                      </div>
+
+
+                      <div class="col-sm-6 col-md-6">
+                        <div class="form-group">
+                          <label class="form-label">facebook</label>
+                            {{ form_widget(form.facebook) }}
+                        </div>
+                      </div>
+
+                      <div class="col-sm-6 col-md-6">
+                        <div class="form-group">
+                          <label class="form-label">Twitter</label>
+                            {{ form_widget(form.Twitter) }}
+                        </div>
+                      </div>
+
+                      <div class="col-sm-6 col-md-6">
+                        <div class="form-group">
+                          <label class="form-label">Linkedin</label>
+                            {{ form_widget(form.Linkedin) }}
+                        </div>
+                      </div>
+
+                      <div class="col-sm-6 col-md-6">
+                        <div class="form-group">
+                          <label class="form-label">Google +</label>
+                            {{ form_widget(form.Google) }}
+                        </div>
+                      </div>
+
+
+                      <div class="col-sm-6 col-md-6">
+                        <div class="form-group">
+                          <label class="form-label">Skype +</label>
+                            {{ form_widget(form.Skype) }}
+                        </div>
+                      </div>
+
+
+                      <div class="col-sm-6 col-md-6">
+                        <div class="form-group">
+                          <label class="form-label">Avatar</label>
+                            {{ form_widget(form.file) }}
+                        </div>
+                      </div>
+
+
+
+                      <div class="col-md-12">
+                        <div class="form-group mb-0">
+                          <label class="form-label">About Me</label>
+                            {{ form_widget(form.About) }}
+                        </div>
+                      </div>
+
+
+
+
+                    </div>
+                  </div>
+                  <div class="card-footer text-right">
+                    <button type="submit" class="btn btn-primary">Update Profile</button>
+                  </div>
+                {{ form_end(form) }}
+
+              </div>
+            </div>
+          </div>
+        </div>
+
+
+
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
+
+<script type="text/javascript">
+
+  function getdata() {
+
+    pass1=$('#pass1').val()
+    pass2=$('#pass2').val()
+    pass3=$('#pass3').val()
+
+    CheckPas1=CheckPassword2(pass1)
+    CheckPassword(pass2)
+    if(passwordVal==1 && CheckPas1==1 ){
+
+      $('#fos_user_change_password_form_current_password').val($('#pass1').val())
+      $('#fos_user_change_password_form_plainPassword_first').val($('#pass2').val())
+      $('#fos_user_change_password_form_plainPassword_second').val($('#pass3').val())
+
+      jQuery(function(){
+         jQuery('#ModalSaveButton').click();
+      });
+
+
+    }
+
+
+
+  }
+
+
+
+function CheckPassword2(inputtxt) {
+
+  pass1 = $('#pass1').val()
+
+  if (pass1.length <=0 ){
+
+    $("#pass1").addClass('is-invalid')
+    return 0;
+
+  }else{
+    
+    $("#pass1").removeClass('is-invalid')
+    return 1;
+
+  }
+
+}
+
+function CheckPassword(inputtxt) {
+
+  var passw = /^[A-Za-z]\w{5,14}$/;
+  password2 = $('#pass3').val()
+
+  if (inputtxt.length >5) {
+
+      $("#pass2").removeClass('is-invalid')
+      $('#pass2').parent().children('p').hide()
+
+      if (password2 == inputtxt) {
+          $('#pass2').removeClass('is-invalid')
+          $('#pass3').removeClass('is-invalid')
+          $('#pass3').parent().children('p').hide()
+          $('#pass2').parent().children('p').hide()
+          passwordVal = 1
+
+      } else {
+
+          $('#pass3').addClass('is-invalid')
+          // $('#password').parent().children('p').show()
+          $('#pass3').parent().children('p').show()
+          passwordVal = 0
+
+      }
+
+
+      return 1;
+
+  } else {
+
+      $("#pass2").addClass('is-invalid')
+      // $('#password2').addClass('is-invalid')
+      $('#pass2').parent().children('p').show()
+      // $('#password2').parent().children('p').show()
+
+      passwordVal = 0
+
+  }
+}
+
+
+</script>
+
+
+{% endblock %}

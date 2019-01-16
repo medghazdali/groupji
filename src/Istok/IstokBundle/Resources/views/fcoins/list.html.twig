@@ -1,0 +1,87 @@
+    {% extends 'IstokIstokBundle::index.html.twig' %}
+    {% block body %}
+
+
+
+  
+
+
+<h1>Liste fcoinss fcoins</h1><hr>
+
+<a class="btn btn-sm btn-primary" href="{{path('fcoins_add')}}"><i class="glyphicon glyphicon-plus"></i> Ajouter  fcoins</a>
+
+
+<table class="table table-bordered search-table" >
+<thead> 
+<tr>
+<th>libelle</th>
+<th>Prix</th>
+<th>Metrage</th>
+
+</tr>
+</thead> 
+
+<tbody>
+{% for fcoins in fcoinss %}
+
+
+<tr>
+<td>{{fcoins.libelle}}</td>
+<td>{{fcoins.prix}}</td>
+<td>{{fcoins.metrage}}</td>
+{% if(role[0])=='ROLE_SUPER_ADMIN' %}
+
+<td>
+
+
+
+<a  data-toggle="tooltip" data-placement="top" title="Modifier" class="btn btn-sm btn-warning" href="{{path('fcoins_edit',{'id':fcoins.id})}}" role="button">  <span class="glyphicon glyphicon-edit" aria-hidden="true"></span></a>
+<a  data-toggle="tooltip" data-placement="top" title="Supprimer" class="btn btn-sm btn-danger" href="{{path('fcoins_delete',{'id':fcoins.id})}}" role="button">  <span class="glyphicon glyphicon-trash" aria-hidden="true"></span>
+</a>
+
+
+
+</td>
+{% endif %}
+
+
+</tr>
+
+
+{% endfor%}
+
+
+
+</tbody>
+
+</table>
+
+
+
+
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/1.12.2/jquery.min.js"></script>
+<script>
+      $(document).ready(function(){
+        $('table.search-table').tableSearch({
+          searchText:'Rechercher    ',
+          searchPlaceHolder:' '
+        });
+      });
+$(document).ready(function(){
+
+
+ $(".delete").click(function(event){
+    if (confirm("voulez vous vraiment supprimer ?") == true) {
+    } else {
+        event.preventDefault();
+location.reload();
+
+
+    }    });
+});
+
+</script>
+
+
+
+    {% endblock %}

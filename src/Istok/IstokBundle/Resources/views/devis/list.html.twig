@@ -1,0 +1,94 @@
+    {% extends 'IstokIstokBundle::index.html.twig' %}
+    {% block body %}
+
+
+<h1>Listes Devis</h1><hr>
+
+<a class="btn btn-sm btn-primary" href="{{path('devis_add')}}"><i class="glyphicon glyphicon-plus"></i> Creer un Devis</a>
+
+
+
+<table class="table table-bordered search-table" >
+<thead> 
+<tr>
+
+
+
+<th>num</th>
+<th>client</th>
+<th>date</th>
+<th>total</th>
+<th>user</th>
+
+
+
+</tr>
+</thead> 
+
+<tbody>
+{% for vente in ventes|reverse %}
+
+
+<tr>
+<td>{{vente.num}}</td>
+<td>{{vente.client.prenom }} {{vente.client.nom }}</td>
+<td>{{vente.date|date("m/d/Y h:m:s")}}</td>
+<td>{{vente.total}} Dhs</td>
+<td>{{vente.user}}</td>
+
+
+
+
+
+
+<td>
+<!--<a class="btn btn-sm btn-warning" href="{{path('devis_edit',{'id':vente.id})}}" role="button">  <span class="glyphicon glyphicon-edit" aria-hidden="true"></span></a>
+<a class="btn btn-sm btn-danger" href="{{path('devis_delete',{'id':vente.id})}}" role="button">  <span class="glyphicon glyphicon-trash" aria-hidden="true"></span>-->
+<a class="btn btn-sm btn-success" href="{{path('vente_detail',{'id':vente.id})}}" role="button">  <span class="glyphicon glyphicon-list" aria-hidden="true"></span></a>
+
+<a class="btn btn-sm btn-warning" href="{{path('devis_to_cmd',{'id':vente.id})}}" role="button">  <span class="glyphicon glyphicon-copy" aria-hidden="true"></span></a>
+<a class="btn btn-sm btn-danger" href="{{path('vente_delete',{'id':vente.id})}}" role="button">  <span class="glyphicon glyphicon-trash" aria-hidden="true"></span></a>
+
+
+
+</td>
+</tr>
+
+
+{% endfor%}
+
+
+
+</tbody>
+
+</table>
+
+
+
+
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/1.12.2/jquery.min.js"></script>
+<script>
+			$(document).ready(function(){
+				$('table.search-table').tableSearch({
+					searchText:'Rechercher    ',
+					searchPlaceHolder:' '
+				});
+			});
+$(document).ready(function(){
+
+
+ $(".delete").click(function(event){
+    if (confirm("voulez vous vraiment supprimer ?") == true) {
+    } else {
+        event.preventDefault();
+location.reload();
+
+
+    }    });
+});
+
+</script>
+
+
+
+    {% endblock %}

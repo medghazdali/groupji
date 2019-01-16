@@ -1,0 +1,88 @@
+/* dashboard icon navigation*/
+		.dshb_icoNav {margin:0;padding:0;text-align: center;}
+		.dshb_icoNav li {
+    text-align: center;
+    list-style: none;
+    display: inline-block;
+    margin: 0 5px 10px;
+ 
+     border: 1px solid #fff; 
+    /* -webkit-border-radius: 2px; */
+    -moz-border-radius: 2px;
+    -ms-border-radius: 2px;
+    /* border-radius: 2px; */
+    background: #009688;
+
+
+        }
+            .dshb_icoNav li:hover {    border: 1px solid #2c3e50; }
+		.dshb_icoNav li a {position:relative;display:block;padding:42px 8px 8px;width:110px;height:72px;font-size:12px;color:#fff;background-repeat:no-repeat;background-position: center 10px}
+		.dshb_icoNav li a:hover {text-decoration:none}
+		.dshb_icoNav .label {position:absolute;right:-5px;top:-5px;text-shadow: none;}
+		.iconNav_left {text-align:left}
+		.iconNav_right {text-align:right}
+	.table thead th {
+    background-color: #ebf2f6 !important;
+}
+
+
+fieldset.scheduler-border {
+    border: 1px solid #ddd !important;
+    padding: 0 1.4em 1.4em 1.4em !important;
+    margin: 0 0 1.5em 0 !important;
+    -webkit-box-shadow:  0px 0px 0px 0px #000;
+            box-shadow:  0px 0px 0px 0px #000;
+}
+
+    legend.scheduler-border {
+        font-size: 1.2em !important;
+        font-weight: bold !important;
+        text-align: left !important;
+        width:auto;
+        padding:0 10px;
+        border-bottom:none;
+    }
+
+   .pdash{    /* size: 45px; */
+    font-size: 32px;
+    margin: 0px !important;
+}
+
+
+ .tile_count .tile_stats_count span {
+    font-size: 13px;
+}
+
+
+.tile_count .tile_stats_count .count {
+    font-size: 40px;
+}
+
+.tile_count .tile_stats_count .count {
+    font-size: 24px;
+    line-height: 47px;
+    font-weight: 600;
+}
+
+.tile_count .tile_stats_count span {
+    font-size: 13px;
+}
+
+
+.tile_count .tile_stats_count:before {
+    content: "";
+    position: absolute;
+    left: 0;
+    height: 65px;
+    border-left: 2px solid #ADB2B5;
+}
+
+
+
+.tile_count .tile_stats_count:first-child:before {
+    border-left: 0;
+}
+
+
+.list-group{margin-bottom: 10px !important}
+

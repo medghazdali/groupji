@@ -1,0 +1,6 @@
+parameters:
+#    parameter_name: value
+
+services:
+    GoogleLoginApi:
+       class: GJI\GJIBundle\media\google\GoogleLoginApi     

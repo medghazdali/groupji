@@ -1,0 +1,275 @@
+    {% extends 'IstokIstokBundle::index.html.twig' %}
+    {% block body %}
+
+
+<h3>Details de Commande num : {{vente.num}} </h3>
+   <button id='{{vente.id }}' class="addcmd btn btn-sm btn-info" type="submit">  <span class="glyphicon glyphicon-print" aria-hidden="true"> </span> Imprimer Ticket</button>
+   <button  onclick='printDiv();' class="addcmd btn btn-sm btn-primary" type="submit">  <span class="glyphicon glyphicon-print" aria-hidden="true"> </span> Imprimer Facture</button>
+
+<hr>
+
+
+
+<div id="">
+<div class="row" style="padding: 0 15px 0 15px">
+<div class="col-md-6">
+<address>
+<strong>Infos client:</strong><br>
+Num : {{vente.client.id }}<br>
+Nom : {{vente.client.prenom }}<br>
+CIN : {{vente.client.cin }}<br>
+Tel : {{vente.client.tel }}<br>
+</address>
+</div>
+
+<div class="col-md-6 text-right">
+<address>
+<strong>Date:</strong><br>
+{{vente.date|date("m/d/Y h:m:s")}}<br><br>
+</address>
+</div>
+
+
+</div>
+
+
+
+
+
+<div class="panel panel-success">
+          <div class="panel-heading">
+            <h3 class="panel-title"><strong>Commande Num : {{vente.num}} </strong></h3>
+          </div>
+          <div class="panel-body">
+            <div class="table-responsive">
+              <table  class="table table-condensed">
+
+              <thead> 
+<tr>
+
+<th>article</th>
+<th>prix</th>
+<th>quantite</th>
+<th>total</th>
+
+</tr>
+</thead> 
+
+<tbody>
+
+{% for ligne_cmd in ligne_cmds %}
+
+<tr>
+<td>{{ligne_cmd.article.article}}</td>
+<td>{{ligne_cmd.prix}} Dhs</td>
+<td>{{ligne_cmd.quantite}}</td>
+<td>{{ligne_cmd.total}} Dhs</td>
+
+
+</tr>
+{% endfor %}
+
+
+
+{% if vente.isavance == 1 %}
+
+
+    							<tr>
+    								<td class="thick-line"></td>
+    								<td class="thick-line"></td>
+    								<td class="thick-line text-center"><strong>Facilite</strong></td>
+    								<td class="thick-line text-right">{{vente.facilite.facilite}}</td>
+    							</tr>
+    							<tr>
+    								<td class="no-line"></td>
+    								<td class="no-line"></td>
+    								<td class="no-line text-center"><strong>Avance</strong></td>
+    								<td class="no-line text-right">{{vente.avance}} Dhs</td>
+    							</tr>
+    							<tr>
+    								<td class="no-line"></td>
+    								<td class="no-line"></td>
+    								<td class="no-line text-center"><strong>Reste</strong></td>
+    								<td class="no-line text-right">{{vente.total-vente.avance}} Dhs</td>
+    							</tr>
+
+   {% endif %}
+    							<tr>
+    								<td class="no-line"></td>
+    								<td class="no-line"></td>
+    								<td class="no-line text-center"><strong>Totale</strong></td>
+    								<td class="no-line text-right">{{vente.total}} Dhs</td>
+    							</tr>
+</tbody>
+
+</table>
+
+</div>
+</div>
+</div>
+</div>
+
+<p><strong>Remarque :</strong> {{vente.remarque}}</p>
+
+<br><br>
+
+
+
+
+<div id="DivIdToPrint" style="display:none">
+
+
+
+<table width="100%" cellspacing="20" border="0">
+
+<tr >
+<td width="33%" height="67">&nbsp;</td>
+<td width="34%"><h3>{{etab}}</h3></td><td width="33%">&nbsp;</td>
+</tr>
+
+</table>
+
+
+
+
+<br><br>
+
+
+<div class="row" style="padding: 0 15px 0 15px">
+<div class="col-md-6">
+<address>
+<strong>Infos client:</strong><br>
+Num : {{vente.client.id }}<br>
+Nom : {{vente.client.prenom }}<br>
+CIN : {{vente.client.cin }}<br>
+Tel : {{vente.client.tel }}<br>
+</address>
+</div>
+
+<div class="col-md-6 text-right">
+<address>
+<strong>Date:</strong><br>
+{{vente.date|date("m/d/Y h:m:s")}}<br><br>
+</address>
+</div>
+
+
+</div>
+
+
+
+
+
+<div class="panel panel-success">
+          <div class="panel-heading">
+            <h3 class="panel-title"><strong>Commande Num : {{vente.num}} </strong></h3>
+            <h3 class="panel-title" id="factnum"></h3>
+          </div>
+          <div class="panel-body">
+            <div class="table-responsive">
+              <table  width="100%"  cellspacing="0" cellpadding="0"align="center" bgcolor="#999999"        class="table table-condensed" border="1">
+
+              <thead> 
+<tr>
+
+<th>article</th>
+<th>prix</th>
+<th>quantite</th>
+<th>total</th>
+
+</tr>
+</thead> 
+
+<tbody>
+
+{% for ligne_cmd in ligne_cmds %}
+
+<tr>
+<td>{{ligne_cmd.article.article}}</td>
+<td>{{ligne_cmd.prix}} Dhs</td>
+<td>{{ligne_cmd.quantite}}</td>
+<td>{{ligne_cmd.total}} Dhs</td>
+
+
+</tr>
+{% endfor %}
+
+
+{% if vente.isavance == 1 %}
+
+
+    							<tr>
+    							
+    								<td  colspan=3  class="thick-line text-center"><strong>Facilite</strong></td>
+    								<td class="thick-line text-right"><strong>{{vente.facilite.facilite}} </strong></td>
+    							</tr>
+    							<tr>
+    							
+    								<td  colspan=3  class="no-line text-center"><strong>Avance</strong></td>
+    								<td class="no-line text-right"><strong>{{vente.avance}} Dhs </strong></td>
+    							</tr>
+    							<tr>
+    							
+    								<td  colspan=3  class="no-line text-center"><strong>Reste</strong></td>
+    								<td class="no-line text-right"><strong>{{vente.total-vente.avance}} Dhs </strong></td>
+    							</tr>
+
+   {% endif %}
+    							<tr>
+    							
+    								<td  colspan=3  class="no-line text-center"><strong>Totale</strong></td>
+    								<td class="no-line text-right"><strong>{{vente.total}} Dhs </strong></td>
+    							</tr>
+</tbody>
+
+</table>
+
+</div>
+</div>
+</div>
+</div>
+
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/1.12.2/jquery.min.js"></script>
+<script>
+
+function printDiv() 
+{
+
+x = Math.floor((Math.random() * 900000000) + 1);
+
+id=$(".addcmd").attr('id')
+
+nfac=x+'/'+id
+$("#factnum").empty()
+$("#factnum").append('<strong> Facture Num : '+nfac+'</strong>')
+
+
+
+    $.post("{{ path('facture_add') }}",{nfac:nfac,id:id}, function(result){
+
+
+
+    });
+
+
+  var divToPrint=document.getElementById('DivIdToPrint');
+
+  var newWin=window.open('','Print-Window');
+
+  newWin.document.open();
+
+  newWin.document.write('<html><body onload="window.print()">'+divToPrint.innerHTML+'</body></html>');
+
+  newWin.document.close();
+
+  setTimeout(function(){newWin.close();},10);
+
+}
+
+
+
+</script>
+
+
+
+    {% endblock %}

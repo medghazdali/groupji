@@ -1,0 +1,203 @@
+[30-Apr-2017 14:32:53 America/Chicago] PHP Fatal error:  Uncaught exception 'PDOException' with message 'SQLSTATE[28000] [1045] Access denied for user 'root'@'localhost' (using password: NO)' in /home/onstok/public_html/Istok/vendor/doctrine/dbal/lib/Doctrine/DBAL/Driver/PDOConnection.php:43
+Stack trace:
+#0 /home/onstok/public_html/Istok/vendor/doctrine/dbal/lib/Doctrine/DBAL/Driver/PDOConnection.php(43): PDO->__construct('mysql:host=loca...', 'root', NULL, Array)
+#1 /home/onstok/public_html/Istok/vendor/doctrine/dbal/lib/Doctrine/DBAL/Driver/PDOMySql/Driver.php(45): Doctrine\DBAL\Driver\PDOConnection->__construct('mysql:host=loca...', 'root', NULL, Array)
+#2 /home/onstok/public_html/Istok/vendor/doctrine/dbal/lib/Doctrine/DBAL/Connection.php(360): Doctrine\DBAL\Driver\PDOMySql\Driver->connect(Array, 'root', NULL, Array)
+#3 /home/onstok/public_html/Istok/vendor/doctrine/dbal/lib/Doctrine/DBAL/Connection.php(429): Doctrine\DBAL\Connection->connect()
+#4 /home/onstok/public_html/Istok/vendor/doctrine/dbal/lib/Doctrine/DBAL/Connection.php(389): Doctrine\DBAL\Connection in /home/onstok/public_html/Istok/vendor/doctrine/dbal/lib/Doctrine/DBAL/Driver/AbstractMySQLDriver.php on line 103
+[30-Apr-2017 14:34:44 America/Chicago] PHP Fatal error:  Uncaught exception 'PDOException' with message 'SQLSTATE[28000] [1045] Access denied for user 'root'@'localhost' (using password: NO)' in /home/onstok/public_html/Istok/vendor/doctrine/dbal/lib/Doctrine/DBAL/Driver/PDOConnection.php:43
+Stack trace:
+#0 /home/onstok/public_html/Istok/vendor/doctrine/dbal/lib/Doctrine/DBAL/Driver/PDOConnection.php(43): PDO->__construct('mysql:host=loca...', 'root', NULL, Array)
+#1 /home/onstok/public_html/Istok/vendor/doctrine/dbal/lib/Doctrine/DBAL/Driver/PDOMySql/Driver.php(45): Doctrine\DBAL\Driver\PDOConnection->__construct('mysql:host=loca...', 'root', NULL, Array)
+#2 /home/onstok/public_html/Istok/vendor/doctrine/dbal/lib/Doctrine/DBAL/Connection.php(360): Doctrine\DBAL\Driver\PDOMySql\Driver->connect(Array, 'root', NULL, Array)
+#3 /home/onstok/public_html/Istok/vendor/doctrine/dbal/lib/Doctrine/DBAL/Connection.php(429): Doctrine\DBAL\Connection->connect()
+#4 /home/onstok/public_html/Istok/vendor/doctrine/dbal/lib/Doctrine/DBAL/Connection.php(389): Doctrine\DBAL\Connection in /home/onstok/public_html/Istok/vendor/doctrine/dbal/lib/Doctrine/DBAL/Driver/AbstractMySQLDriver.php on line 103
+[30-Apr-2017 14:34:47 America/Chicago] PHP Fatal error:  Uncaught exception 'PDOException' with message 'SQLSTATE[28000] [1045] Access denied for user 'root'@'localhost' (using password: NO)' in /home/onstok/public_html/Istok/vendor/doctrine/dbal/lib/Doctrine/DBAL/Driver/PDOConnection.php:43
+Stack trace:
+#0 /home/onstok/public_html/Istok/vendor/doctrine/dbal/lib/Doctrine/DBAL/Driver/PDOConnection.php(43): PDO->__construct('mysql:host=loca...', 'root', NULL, Array)
+#1 /home/onstok/public_html/Istok/vendor/doctrine/dbal/lib/Doctrine/DBAL/Driver/PDOMySql/Driver.php(45): Doctrine\DBAL\Driver\PDOConnection->__construct('mysql:host=loca...', 'root', NULL, Array)
+#2 /home/onstok/public_html/Istok/vendor/doctrine/dbal/lib/Doctrine/DBAL/Connection.php(360): Doctrine\DBAL\Driver\PDOMySql\Driver->connect(Array, 'root', NULL, Array)
+#3 /home/onstok/public_html/Istok/vendor/doctrine/dbal/lib/Doctrine/DBAL/Connection.php(429): Doctrine\DBAL\Connection->connect()
+#4 /home/onstok/public_html/Istok/vendor/doctrine/dbal/lib/Doctrine/DBAL/Connection.php(389): Doctrine\DBAL\Connection in /home/onstok/public_html/Istok/vendor/doctrine/dbal/lib/Doctrine/DBAL/Driver/AbstractMySQLDriver.php on line 103
+[30-Apr-2017 14:36:40 America/Chicago] PHP Fatal error:  Uncaught exception 'PDOException' with message 'SQLSTATE[28000] [1045] Access denied for user 'root'@'localhost' (using password: NO)' in /home/onstok/public_html/Istok/vendor/doctrine/dbal/lib/Doctrine/DBAL/Driver/PDOConnection.php:43
+Stack trace:
+#0 /home/onstok/public_html/Istok/vendor/doctrine/dbal/lib/Doctrine/DBAL/Driver/PDOConnection.php(43): PDO->__construct('mysql:host=loca...', 'root', NULL, Array)
+#1 /home/onstok/public_html/Istok/vendor/doctrine/dbal/lib/Doctrine/DBAL/Driver/PDOMySql/Driver.php(45): Doctrine\DBAL\Driver\PDOConnection->__construct('mysql:host=loca...', 'root', NULL, Array)
+#2 /home/onstok/public_html/Istok/vendor/doctrine/dbal/lib/Doctrine/DBAL/Connection.php(360): Doctrine\DBAL\Driver\PDOMySql\Driver->connect(Array, 'root', NULL, Array)
+#3 /home/onstok/public_html/Istok/vendor/doctrine/dbal/lib/Doctrine/DBAL/Connection.php(429): Doctrine\DBAL\Connection->connect()
+#4 /home/onstok/public_html/Istok/vendor/doctrine/dbal/lib/Doctrine/DBAL/Connection.php(389): Doctrine\DBAL\Connection in /home/onstok/public_html/Istok/vendor/doctrine/dbal/lib/Doctrine/DBAL/Driver/AbstractMySQLDriver.php on line 103
+[30-Apr-2017 14:36:42 America/Chicago] PHP Fatal error:  Uncaught exception 'PDOException' with message 'SQLSTATE[28000] [1045] Access denied for user 'root'@'localhost' (using password: NO)' in /home/onstok/public_html/Istok/vendor/doctrine/dbal/lib/Doctrine/DBAL/Driver/PDOConnection.php:43
+Stack trace:
+#0 /home/onstok/public_html/Istok/vendor/doctrine/dbal/lib/Doctrine/DBAL/Driver/PDOConnection.php(43): PDO->__construct('mysql:host=loca...', 'root', NULL, Array)
+#1 /home/onstok/public_html/Istok/vendor/doctrine/dbal/lib/Doctrine/DBAL/Driver/PDOMySql/Driver.php(45): Doctrine\DBAL\Driver\PDOConnection->__construct('mysql:host=loca...', 'root', NULL, Array)
+#2 /home/onstok/public_html/Istok/vendor/doctrine/dbal/lib/Doctrine/DBAL/Connection.php(360): Doctrine\DBAL\Driver\PDOMySql\Driver->connect(Array, 'root', NULL, Array)
+#3 /home/onstok/public_html/Istok/vendor/doctrine/dbal/lib/Doctrine/DBAL/Connection.php(429): Doctrine\DBAL\Connection->connect()
+#4 /home/onstok/public_html/Istok/vendor/doctrine/dbal/lib/Doctrine/DBAL/Connection.php(389): Doctrine\DBAL\Connection in /home/onstok/public_html/Istok/vendor/doctrine/dbal/lib/Doctrine/DBAL/Driver/AbstractMySQLDriver.php on line 103
+[30-Apr-2017 14:36:44 America/Chicago] PHP Fatal error:  Uncaught exception 'PDOException' with message 'SQLSTATE[28000] [1045] Access denied for user 'root'@'localhost' (using password: NO)' in /home/onstok/public_html/Istok/vendor/doctrine/dbal/lib/Doctrine/DBAL/Driver/PDOConnection.php:43
+Stack trace:
+#0 /home/onstok/public_html/Istok/vendor/doctrine/dbal/lib/Doctrine/DBAL/Driver/PDOConnection.php(43): PDO->__construct('mysql:host=loca...', 'root', NULL, Array)
+#1 /home/onstok/public_html/Istok/vendor/doctrine/dbal/lib/Doctrine/DBAL/Driver/PDOMySql/Driver.php(45): Doctrine\DBAL\Driver\PDOConnection->__construct('mysql:host=loca...', 'root', NULL, Array)
+#2 /home/onstok/public_html/Istok/vendor/doctrine/dbal/lib/Doctrine/DBAL/Connection.php(360): Doctrine\DBAL\Driver\PDOMySql\Driver->connect(Array, 'root', NULL, Array)
+#3 /home/onstok/public_html/Istok/vendor/doctrine/dbal/lib/Doctrine/DBAL/Connection.php(429): Doctrine\DBAL\Connection->connect()
+#4 /home/onstok/public_html/Istok/vendor/doctrine/dbal/lib/Doctrine/DBAL/Connection.php(389): Doctrine\DBAL\Connection in /home/onstok/public_html/Istok/vendor/doctrine/dbal/lib/Doctrine/DBAL/Driver/AbstractMySQLDriver.php on line 103
+[30-Apr-2017 14:36:46 America/Chicago] PHP Fatal error:  Uncaught exception 'PDOException' with message 'SQLSTATE[28000] [1045] Access denied for user 'root'@'localhost' (using password: NO)' in /home/onstok/public_html/Istok/vendor/doctrine/dbal/lib/Doctrine/DBAL/Driver/PDOConnection.php:43
+Stack trace:
+#0 /home/onstok/public_html/Istok/vendor/doctrine/dbal/lib/Doctrine/DBAL/Driver/PDOConnection.php(43): PDO->__construct('mysql:host=loca...', 'root', NULL, Array)
+#1 /home/onstok/public_html/Istok/vendor/doctrine/dbal/lib/Doctrine/DBAL/Driver/PDOMySql/Driver.php(45): Doctrine\DBAL\Driver\PDOConnection->__construct('mysql:host=loca...', 'root', NULL, Array)
+#2 /home/onstok/public_html/Istok/vendor/doctrine/dbal/lib/Doctrine/DBAL/Connection.php(360): Doctrine\DBAL\Driver\PDOMySql\Driver->connect(Array, 'root', NULL, Array)
+#3 /home/onstok/public_html/Istok/vendor/doctrine/dbal/lib/Doctrine/DBAL/Connection.php(429): Doctrine\DBAL\Connection->connect()
+#4 /home/onstok/public_html/Istok/vendor/doctrine/dbal/lib/Doctrine/DBAL/Connection.php(389): Doctrine\DBAL\Connection in /home/onstok/public_html/Istok/vendor/doctrine/dbal/lib/Doctrine/DBAL/Driver/AbstractMySQLDriver.php on line 103
+[30-Apr-2017 14:36:47 America/Chicago] PHP Fatal error:  Uncaught exception 'PDOException' with message 'SQLSTATE[28000] [1045] Access denied for user 'root'@'localhost' (using password: NO)' in /home/onstok/public_html/Istok/vendor/doctrine/dbal/lib/Doctrine/DBAL/Driver/PDOConnection.php:43
+Stack trace:
+#0 /home/onstok/public_html/Istok/vendor/doctrine/dbal/lib/Doctrine/DBAL/Driver/PDOConnection.php(43): PDO->__construct('mysql:host=loca...', 'root', NULL, Array)
+#1 /home/onstok/public_html/Istok/vendor/doctrine/dbal/lib/Doctrine/DBAL/Driver/PDOMySql/Driver.php(45): Doctrine\DBAL\Driver\PDOConnection->__construct('mysql:host=loca...', 'root', NULL, Array)
+#2 /home/onstok/public_html/Istok/vendor/doctrine/dbal/lib/Doctrine/DBAL/Connection.php(360): Doctrine\DBAL\Driver\PDOMySql\Driver->connect(Array, 'root', NULL, Array)
+#3 /home/onstok/public_html/Istok/vendor/doctrine/dbal/lib/Doctrine/DBAL/Connection.php(429): Doctrine\DBAL\Connection->connect()
+#4 /home/onstok/public_html/Istok/vendor/doctrine/dbal/lib/Doctrine/DBAL/Connection.php(389): Doctrine\DBAL\Connection in /home/onstok/public_html/Istok/vendor/doctrine/dbal/lib/Doctrine/DBAL/Driver/AbstractMySQLDriver.php on line 103
+[30-Apr-2017 14:36:48 America/Chicago] PHP Fatal error:  Uncaught exception 'PDOException' with message 'SQLSTATE[28000] [1045] Access denied for user 'root'@'localhost' (using password: NO)' in /home/onstok/public_html/Istok/vendor/doctrine/dbal/lib/Doctrine/DBAL/Driver/PDOConnection.php:43
+Stack trace:
+#0 /home/onstok/public_html/Istok/vendor/doctrine/dbal/lib/Doctrine/DBAL/Driver/PDOConnection.php(43): PDO->__construct('mysql:host=loca...', 'root', NULL, Array)
+#1 /home/onstok/public_html/Istok/vendor/doctrine/dbal/lib/Doctrine/DBAL/Driver/PDOMySql/Driver.php(45): Doctrine\DBAL\Driver\PDOConnection->__construct('mysql:host=loca...', 'root', NULL, Array)
+#2 /home/onstok/public_html/Istok/vendor/doctrine/dbal/lib/Doctrine/DBAL/Connection.php(360): Doctrine\DBAL\Driver\PDOMySql\Driver->connect(Array, 'root', NULL, Array)
+#3 /home/onstok/public_html/Istok/vendor/doctrine/dbal/lib/Doctrine/DBAL/Connection.php(429): Doctrine\DBAL\Connection->connect()
+#4 /home/onstok/public_html/Istok/vendor/doctrine/dbal/lib/Doctrine/DBAL/Connection.php(389): Doctrine\DBAL\Connection in /home/onstok/public_html/Istok/vendor/doctrine/dbal/lib/Doctrine/DBAL/Driver/AbstractMySQLDriver.php on line 103
+[30-Apr-2017 14:36:48 America/Chicago] PHP Fatal error:  Uncaught exception 'PDOException' with message 'SQLSTATE[28000] [1045] Access denied for user 'root'@'localhost' (using password: NO)' in /home/onstok/public_html/Istok/vendor/doctrine/dbal/lib/Doctrine/DBAL/Driver/PDOConnection.php:43
+Stack trace:
+#0 /home/onstok/public_html/Istok/vendor/doctrine/dbal/lib/Doctrine/DBAL/Driver/PDOConnection.php(43): PDO->__construct('mysql:host=loca...', 'root', NULL, Array)
+#1 /home/onstok/public_html/Istok/vendor/doctrine/dbal/lib/Doctrine/DBAL/Driver/PDOMySql/Driver.php(45): Doctrine\DBAL\Driver\PDOConnection->__construct('mysql:host=loca...', 'root', NULL, Array)
+#2 /home/onstok/public_html/Istok/vendor/doctrine/dbal/lib/Doctrine/DBAL/Connection.php(360): Doctrine\DBAL\Driver\PDOMySql\Driver->connect(Array, 'root', NULL, Array)
+#3 /home/onstok/public_html/Istok/vendor/doctrine/dbal/lib/Doctrine/DBAL/Connection.php(429): Doctrine\DBAL\Connection->connect()
+#4 /home/onstok/public_html/Istok/vendor/doctrine/dbal/lib/Doctrine/DBAL/Connection.php(389): Doctrine\DBAL\Connection in /home/onstok/public_html/Istok/vendor/doctrine/dbal/lib/Doctrine/DBAL/Driver/AbstractMySQLDriver.php on line 103
+[30-Apr-2017 14:36:49 America/Chicago] PHP Fatal error:  Uncaught exception 'PDOException' with message 'SQLSTATE[28000] [1045] Access denied for user 'root'@'localhost' (using password: NO)' in /home/onstok/public_html/Istok/vendor/doctrine/dbal/lib/Doctrine/DBAL/Driver/PDOConnection.php:43
+Stack trace:
+#0 /home/onstok/public_html/Istok/vendor/doctrine/dbal/lib/Doctrine/DBAL/Driver/PDOConnection.php(43): PDO->__construct('mysql:host=loca...', 'root', NULL, Array)
+#1 /home/onstok/public_html/Istok/vendor/doctrine/dbal/lib/Doctrine/DBAL/Driver/PDOMySql/Driver.php(45): Doctrine\DBAL\Driver\PDOConnection->__construct('mysql:host=loca...', 'root', NULL, Array)
+#2 /home/onstok/public_html/Istok/vendor/doctrine/dbal/lib/Doctrine/DBAL/Connection.php(360): Doctrine\DBAL\Driver\PDOMySql\Driver->connect(Array, 'root', NULL, Array)
+#3 /home/onstok/public_html/Istok/vendor/doctrine/dbal/lib/Doctrine/DBAL/Connection.php(429): Doctrine\DBAL\Connection->connect()
+#4 /home/onstok/public_html/Istok/vendor/doctrine/dbal/lib/Doctrine/DBAL/Connection.php(389): Doctrine\DBAL\Connection in /home/onstok/public_html/Istok/vendor/doctrine/dbal/lib/Doctrine/DBAL/Driver/AbstractMySQLDriver.php on line 103
+[30-Apr-2017 14:36:49 America/Chicago] PHP Fatal error:  Uncaught exception 'PDOException' with message 'SQLSTATE[28000] [1045] Access denied for user 'root'@'localhost' (using password: NO)' in /home/onstok/public_html/Istok/vendor/doctrine/dbal/lib/Doctrine/DBAL/Driver/PDOConnection.php:43
+Stack trace:
+#0 /home/onstok/public_html/Istok/vendor/doctrine/dbal/lib/Doctrine/DBAL/Driver/PDOConnection.php(43): PDO->__construct('mysql:host=loca...', 'root', NULL, Array)
+#1 /home/onstok/public_html/Istok/vendor/doctrine/dbal/lib/Doctrine/DBAL/Driver/PDOMySql/Driver.php(45): Doctrine\DBAL\Driver\PDOConnection->__construct('mysql:host=loca...', 'root', NULL, Array)
+#2 /home/onstok/public_html/Istok/vendor/doctrine/dbal/lib/Doctrine/DBAL/Connection.php(360): Doctrine\DBAL\Driver\PDOMySql\Driver->connect(Array, 'root', NULL, Array)
+#3 /home/onstok/public_html/Istok/vendor/doctrine/dbal/lib/Doctrine/DBAL/Connection.php(429): Doctrine\DBAL\Connection->connect()
+#4 /home/onstok/public_html/Istok/vendor/doctrine/dbal/lib/Doctrine/DBAL/Connection.php(389): Doctrine\DBAL\Connection in /home/onstok/public_html/Istok/vendor/doctrine/dbal/lib/Doctrine/DBAL/Driver/AbstractMySQLDriver.php on line 103
+[30-Apr-2017 14:36:49 America/Chicago] PHP Fatal error:  Uncaught exception 'PDOException' with message 'SQLSTATE[28000] [1045] Access denied for user 'root'@'localhost' (using password: NO)' in /home/onstok/public_html/Istok/vendor/doctrine/dbal/lib/Doctrine/DBAL/Driver/PDOConnection.php:43
+Stack trace:
+#0 /home/onstok/public_html/Istok/vendor/doctrine/dbal/lib/Doctrine/DBAL/Driver/PDOConnection.php(43): PDO->__construct('mysql:host=loca...', 'root', NULL, Array)
+#1 /home/onstok/public_html/Istok/vendor/doctrine/dbal/lib/Doctrine/DBAL/Driver/PDOMySql/Driver.php(45): Doctrine\DBAL\Driver\PDOConnection->__construct('mysql:host=loca...', 'root', NULL, Array)
+#2 /home/onstok/public_html/Istok/vendor/doctrine/dbal/lib/Doctrine/DBAL/Connection.php(360): Doctrine\DBAL\Driver\PDOMySql\Driver->connect(Array, 'root', NULL, Array)
+#3 /home/onstok/public_html/Istok/vendor/doctrine/dbal/lib/Doctrine/DBAL/Connection.php(429): Doctrine\DBAL\Connection->connect()
+#4 /home/onstok/public_html/Istok/vendor/doctrine/dbal/lib/Doctrine/DBAL/Connection.php(389): Doctrine\DBAL\Connection in /home/onstok/public_html/Istok/vendor/doctrine/dbal/lib/Doctrine/DBAL/Driver/AbstractMySQLDriver.php on line 103
+[30-Apr-2017 14:37:40 America/Chicago] PHP Fatal error:  Call to a member function getetab() on string in /home/onstok/public_html/Istok/src/Istok/IstokBundle/Controller/DefaultController.php on line 597
+[30-Apr-2017 14:40:19 America/Chicago] PHP Fatal error:  Call to a member function getetab() on string in /home/onstok/public_html/Istok/src/Istok/IstokBundle/Controller/DefaultController.php on line 597
+[30-Apr-2017 15:51:05 America/Chicago] PHP Parse error:  syntax error, unexpected ')' in /home/onstok/public_html/Istok/src/Istok/IstokBundle/Controller/DefaultController.php on line 83
+[30-Apr-2017 19:53:06 America/Chicago] PHP Fatal error:  Class 'Istok\IstokBundle\Controller\JsonResponse' not found in /home/onstok/public_html/Istok/src/Istok/IstokBundle/Controller/DefaultController.php on line 639
+[30-Apr-2017 19:53:11 America/Chicago] PHP Fatal error:  Class 'Istok\IstokBundle\Controller\JsonResponse' not found in /home/onstok/public_html/Istok/src/Istok/IstokBundle/Controller/DefaultController.php on line 639
+[01-May-2017 07:53:00 America/Chicago] PHP Fatal error:  Class 'AppBundle\Twig\Extension\JsonDecode' not found in /home/onstok/public_html/Istok/var/cache/dev/appDevDebugProjectContainer.php on line 3635
+[01-May-2017 09:17:32 America/Chicago] PHP Parse error:  syntax error, unexpected '->' (T_OBJECT_OPERATOR), expecting ')' in /home/onstok/public_html/Istok/src/Istok/IstokBundle/Controller/VenteController.php on line 176
+[02-Jul-2017 13:09:38 America/Chicago] PHP Fatal error:  Call to a member function getetab() on null in /home/onstok/public_html/salon/Istok/src/Istok/IstokBundle/Controller/faceController.php on line 168
+[05-Jul-2017 17:54:14 America/Chicago] PHP Fatal error:  Uncaught exception 'PDOException' with message 'SQLSTATE[28000] [1045] Access denied for user 'root'@'localhost' (using password: NO)' in /home/onstok/public_html/salon/Istok/vendor/doctrine/dbal/lib/Doctrine/DBAL/Driver/PDOConnection.php:43
+Stack trace:
+#0 /home/onstok/public_html/salon/Istok/vendor/doctrine/dbal/lib/Doctrine/DBAL/Driver/PDOConnection.php(43): PDO->__construct('mysql:host=loca...', 'root', NULL, Array)
+#1 /home/onstok/public_html/salon/Istok/vendor/doctrine/dbal/lib/Doctrine/DBAL/Driver/PDOMySql/Driver.php(45): Doctrine\DBAL\Driver\PDOConnection->__construct('mysql:host=loca...', 'root', NULL, Array)
+#2 /home/onstok/public_html/salon/Istok/vendor/doctrine/dbal/lib/Doctrine/DBAL/Connection.php(360): Doctrine\DBAL\Driver\PDOMySql\Driver->connect(Array, 'root', NULL, Array)
+#3 /home/onstok/public_html/salon/Istok/vendor/doctrine/dbal/lib/Doctrine/DBAL/Connection.php(429): Doctrine\DBAL\Connection->connect()
+#4 /home/onstok/public_html/salon/Istok/vendor/doctrine/dbal/lib/Doctrine/DBAL/Connectio in /home/onstok/public_html/salon/Istok/vendor/doctrine/dbal/lib/Doctrine/DBAL/Driver/AbstractMySQLDriver.php on line 103
+[05-Jul-2017 17:55:11 America/Chicago] PHP Fatal error:  Uncaught exception 'PDOException' with message 'SQLSTATE[28000] [1045] Access denied for user 'root'@'localhost' (using password: NO)' in /home/onstok/public_html/salon/Istok/vendor/doctrine/dbal/lib/Doctrine/DBAL/Driver/PDOConnection.php:43
+Stack trace:
+#0 /home/onstok/public_html/salon/Istok/vendor/doctrine/dbal/lib/Doctrine/DBAL/Driver/PDOConnection.php(43): PDO->__construct('mysql:host=loca...', 'root', NULL, Array)
+#1 /home/onstok/public_html/salon/Istok/vendor/doctrine/dbal/lib/Doctrine/DBAL/Driver/PDOMySql/Driver.php(45): Doctrine\DBAL\Driver\PDOConnection->__construct('mysql:host=loca...', 'root', NULL, Array)
+#2 /home/onstok/public_html/salon/Istok/vendor/doctrine/dbal/lib/Doctrine/DBAL/Connection.php(360): Doctrine\DBAL\Driver\PDOMySql\Driver->connect(Array, 'root', NULL, Array)
+#3 /home/onstok/public_html/salon/Istok/vendor/doctrine/dbal/lib/Doctrine/DBAL/Connection.php(429): Doctrine\DBAL\Connection->connect()
+#4 /home/onstok/public_html/salon/Istok/vendor/doctrine/dbal/lib/Doctrine/DBAL/Connectio in /home/onstok/public_html/salon/Istok/vendor/doctrine/dbal/lib/Doctrine/DBAL/Driver/AbstractMySQLDriver.php on line 103
+[05-Jul-2017 17:55:20 America/Chicago] PHP Fatal error:  Uncaught exception 'PDOException' with message 'SQLSTATE[28000] [1045] Access denied for user 'root'@'localhost' (using password: NO)' in /home/onstok/public_html/salon/Istok/vendor/doctrine/dbal/lib/Doctrine/DBAL/Driver/PDOConnection.php:43
+Stack trace:
+#0 /home/onstok/public_html/salon/Istok/vendor/doctrine/dbal/lib/Doctrine/DBAL/Driver/PDOConnection.php(43): PDO->__construct('mysql:host=loca...', 'root', NULL, Array)
+#1 /home/onstok/public_html/salon/Istok/vendor/doctrine/dbal/lib/Doctrine/DBAL/Driver/PDOMySql/Driver.php(45): Doctrine\DBAL\Driver\PDOConnection->__construct('mysql:host=loca...', 'root', NULL, Array)
+#2 /home/onstok/public_html/salon/Istok/vendor/doctrine/dbal/lib/Doctrine/DBAL/Connection.php(360): Doctrine\DBAL\Driver\PDOMySql\Driver->connect(Array, 'root', NULL, Array)
+#3 /home/onstok/public_html/salon/Istok/vendor/doctrine/dbal/lib/Doctrine/DBAL/Connection.php(429): Doctrine\DBAL\Connection->connect()
+#4 /home/onstok/public_html/salon/Istok/vendor/doctrine/dbal/lib/Doctrine/DBAL/Connectio in /home/onstok/public_html/salon/Istok/vendor/doctrine/dbal/lib/Doctrine/DBAL/Driver/AbstractMySQLDriver.php on line 103
+[05-Jul-2017 17:57:18 America/Chicago] PHP Fatal error:  Uncaught exception 'PDOException' with message 'SQLSTATE[28000] [1045] Access denied for user 'root'@'localhost' (using password: NO)' in /home/onstok/public_html/salon/Istok/vendor/doctrine/dbal/lib/Doctrine/DBAL/Driver/PDOConnection.php:43
+Stack trace:
+#0 /home/onstok/public_html/salon/Istok/vendor/doctrine/dbal/lib/Doctrine/DBAL/Driver/PDOConnection.php(43): PDO->__construct('mysql:host=loca...', 'root', NULL, Array)
+#1 /home/onstok/public_html/salon/Istok/vendor/doctrine/dbal/lib/Doctrine/DBAL/Driver/PDOMySql/Driver.php(45): Doctrine\DBAL\Driver\PDOConnection->__construct('mysql:host=loca...', 'root', NULL, Array)
+#2 /home/onstok/public_html/salon/Istok/vendor/doctrine/dbal/lib/Doctrine/DBAL/Connection.php(360): Doctrine\DBAL\Driver\PDOMySql\Driver->connect(Array, 'root', NULL, Array)
+#3 /home/onstok/public_html/salon/Istok/vendor/doctrine/dbal/lib/Doctrine/DBAL/Connection.php(429): Doctrine\DBAL\Connection->connect()
+#4 /home/onstok/public_html/salon/Istok/vendor/doctrine/dbal/lib/Doctrine/DBAL/Connectio in /home/onstok/public_html/salon/Istok/vendor/doctrine/dbal/lib/Doctrine/DBAL/Driver/AbstractMySQLDriver.php on line 103
+[15-Nov-2017 11:43:02 America/Chicago] PHP Fatal error:  Uncaught exception 'PDOException' with message 'SQLSTATE[28000] [1045] Access denied for user 'root'@'localhost' (using password: NO)' in /home/onstok/public_html/salon/vendor/doctrine/dbal/lib/Doctrine/DBAL/Driver/PDOConnection.php:43
+Stack trace:
+#0 /home/onstok/public_html/salon/vendor/doctrine/dbal/lib/Doctrine/DBAL/Driver/PDOConnection.php(43): PDO->__construct('mysql:host=loca...', 'root', NULL, Array)
+#1 /home/onstok/public_html/salon/vendor/doctrine/dbal/lib/Doctrine/DBAL/Driver/PDOMySql/Driver.php(45): Doctrine\DBAL\Driver\PDOConnection->__construct('mysql:host=loca...', 'root', NULL, Array)
+#2 /home/onstok/public_html/salon/vendor/doctrine/dbal/lib/Doctrine/DBAL/Connection.php(360): Doctrine\DBAL\Driver\PDOMySql\Driver->connect(Array, 'root', NULL, Array)
+#3 /home/onstok/public_html/salon/vendor/doctrine/dbal/lib/Doctrine/DBAL/Connection.php(429): Doctrine\DBAL\Connection->connect()
+#4 /home/onstok/public_html/salon/vendor/doctrine/dbal/lib/Doctrine/DBAL/Connection.php(389): Doctrine\DBAL\Connection in /home/onstok/public_html/salon/vendor/doctrine/dbal/lib/Doctrine/DBAL/Driver/AbstractMySQLDriver.php on line 103
+[15-Nov-2017 11:45:26 America/Chicago] PHP Fatal error:  Uncaught exception 'PDOException' with message 'SQLSTATE[28000] [1045] Access denied for user 'root'@'localhost' (using password: NO)' in /home/onstok/public_html/salon/vendor/doctrine/dbal/lib/Doctrine/DBAL/Driver/PDOConnection.php:43
+Stack trace:
+#0 /home/onstok/public_html/salon/vendor/doctrine/dbal/lib/Doctrine/DBAL/Driver/PDOConnection.php(43): PDO->__construct('mysql:host=loca...', 'root', NULL, Array)
+#1 /home/onstok/public_html/salon/vendor/doctrine/dbal/lib/Doctrine/DBAL/Driver/PDOMySql/Driver.php(45): Doctrine\DBAL\Driver\PDOConnection->__construct('mysql:host=loca...', 'root', NULL, Array)
+#2 /home/onstok/public_html/salon/vendor/doctrine/dbal/lib/Doctrine/DBAL/Connection.php(360): Doctrine\DBAL\Driver\PDOMySql\Driver->connect(Array, 'root', NULL, Array)
+#3 /home/onstok/public_html/salon/vendor/doctrine/dbal/lib/Doctrine/DBAL/Connection.php(429): Doctrine\DBAL\Connection->connect()
+#4 /home/onstok/public_html/salon/vendor/doctrine/dbal/lib/Doctrine/DBAL/Connection.php(389): Doctrine\DBAL\Connection in /home/onstok/public_html/salon/vendor/doctrine/dbal/lib/Doctrine/DBAL/Driver/AbstractMySQLDriver.php on line 103
+[06-Dec-2018 05:21:47 America/Chicago] PHP Fatal error:  Uncaught exception 'PDOException' with message 'SQLSTATE[28000] [1045] Access denied for user 'root'@'localhost' (using password: NO)' in /home2/wcfxmyhv/public_html/groupji/vendor/doctrine/dbal/lib/Doctrine/DBAL/Driver/PDOConnection.php:43
+Stack trace:
+#0 /home2/wcfxmyhv/public_html/groupji/vendor/doctrine/dbal/lib/Doctrine/DBAL/Driver/PDOConnection.php(43): PDO->__construct('mysql:host=loca...', 'root', NULL, Array)
+#1 /home2/wcfxmyhv/public_html/groupji/vendor/doctrine/dbal/lib/Doctrine/DBAL/Driver/PDOMySql/Driver.php(45): Doctrine\DBAL\Driver\PDOConnection->__construct('mysql:host=loca...', 'root', NULL, Array)
+#2 /home2/wcfxmyhv/public_html/groupji/vendor/doctrine/dbal/lib/Doctrine/DBAL/Connection.php(360): Doctrine\DBAL\Driver\PDOMySql\Driver->connect(Array, 'root', NULL, Array)
+#3 /home2/wcfxmyhv/public_html/groupji/vendor/doctrine/dbal/lib/Doctrine/DBAL/Connection.php(429): Doctrine\DBAL\Connection->connect()
+#4 /home2/wcfxmyhv/public_html/groupji/vendor/doctrine/db in /home2/wcfxmyhv/public_html/groupji/vendor/doctrine/dbal/lib/Doctrine/DBAL/Driver/AbstractMySQLDriver.php on line 103
+[06-Dec-2018 05:23:34 America/Chicago] PHP Fatal error:  Uncaught exception 'PDOException' with message 'SQLSTATE[28000] [1045] Access denied for user 'root'@'localhost' (using password: NO)' in /home2/wcfxmyhv/public_html/groupji/vendor/doctrine/dbal/lib/Doctrine/DBAL/Driver/PDOConnection.php:43
+Stack trace:
+#0 /home2/wcfxmyhv/public_html/groupji/vendor/doctrine/dbal/lib/Doctrine/DBAL/Driver/PDOConnection.php(43): PDO->__construct('mysql:host=loca...', 'root', NULL, Array)
+#1 /home2/wcfxmyhv/public_html/groupji/vendor/doctrine/dbal/lib/Doctrine/DBAL/Driver/PDOMySql/Driver.php(45): Doctrine\DBAL\Driver\PDOConnection->__construct('mysql:host=loca...', 'root', NULL, Array)
+#2 /home2/wcfxmyhv/public_html/groupji/vendor/doctrine/dbal/lib/Doctrine/DBAL/Connection.php(360): Doctrine\DBAL\Driver\PDOMySql\Driver->connect(Array, 'root', NULL, Array)
+#3 /home2/wcfxmyhv/public_html/groupji/vendor/doctrine/dbal/lib/Doctrine/DBAL/Connection.php(429): Doctrine\DBAL\Connection->connect()
+#4 /home2/wcfxmyhv/public_html/groupji/vendor/doctrine/db in /home2/wcfxmyhv/public_html/groupji/vendor/doctrine/dbal/lib/Doctrine/DBAL/Driver/AbstractMySQLDriver.php on line 103
+[06-Dec-2018 05:32:30 America/Chicago] PHP Fatal error:  Call to a member function getprevilige() on null in /home2/wcfxmyhv/public_html/groupji/src/GJI/GJIBundle/Controller/GroupeController.php on line 439
+[06-Dec-2018 05:32:31 America/Chicago] PHP Fatal error:  Call to a member function getprevilige() on null in /home2/wcfxmyhv/public_html/groupji/src/GJI/GJIBundle/Controller/GroupeController.php on line 439
+[06-Dec-2018 05:32:38 America/Chicago] PHP Fatal error:  Call to a member function getprevilige() on null in /home2/wcfxmyhv/public_html/groupji/src/GJI/GJIBundle/Controller/GroupeController.php on line 439
+[06-Dec-2018 05:32:39 America/Chicago] PHP Fatal error:  Call to a member function getprevilige() on null in /home2/wcfxmyhv/public_html/groupji/src/GJI/GJIBundle/Controller/GroupeController.php on line 439
+[06-Dec-2018 05:32:55 America/Chicago] PHP Fatal error:  Call to a member function getprevilige() on null in /home2/wcfxmyhv/public_html/groupji/src/GJI/GJIBundle/Controller/GroupeController.php on line 439
+[06-Dec-2018 05:32:56 America/Chicago] PHP Fatal error:  Call to a member function getprevilige() on null in /home2/wcfxmyhv/public_html/groupji/src/GJI/GJIBundle/Controller/GroupeController.php on line 439
+[06-Dec-2018 05:35:06 America/Chicago] PHP Fatal error:  Call to a member function getprevilige() on null in /home2/wcfxmyhv/public_html/groupji/src/GJI/GJIBundle/Controller/GroupeController.php on line 439
+[06-Dec-2018 05:35:07 America/Chicago] PHP Fatal error:  Call to a member function getprevilige() on null in /home2/wcfxmyhv/public_html/groupji/src/GJI/GJIBundle/Controller/GroupeController.php on line 439
+[06-Dec-2018 05:46:14 America/Chicago] PHP Fatal error:  Call to a member function getId() on string in /home2/wcfxmyhv/public_html/groupji/src/GJI/GJIBundle/Controller/MainController.php on line 487
+[06-Dec-2018 07:58:40 America/Chicago] PHP Fatal error:  Call to a member function getId() on string in /home2/wcfxmyhv/public_html/groupji/src/GJI/GJIBundle/Controller/MainController.php on line 487
+[09-Dec-2018 08:24:25 America/Chicago] PHP Fatal error:  Call to a member function getprevilige() on null in /home2/wcfxmyhv/public_html/groupji/src/GJI/GJIBundle/Controller/GroupeController.php on line 439
+[09-Dec-2018 08:24:30 America/Chicago] PHP Fatal error:  Call to a member function getprevilige() on null in /home2/wcfxmyhv/public_html/groupji/src/GJI/GJIBundle/Controller/GroupeController.php on line 439
+[10-Dec-2018 07:12:20 America/Chicago] PHP Fatal error:  Call to a member function getId() on string in /home2/wcfxmyhv/public_html/groupji/src/GJI/GJIBundle/Controller/MainController.php on line 490
+[11-Dec-2018 16:37:29 America/Chicago] PHP Fatal error:  Call to a member function getId() on string in /home2/wcfxmyhv/public_html/groupji/src/GJI/GJIBundle/Controller/MainController.php on line 490
+[26-Dec-2018 05:27:45 America/Chicago] PHP Fatal error:  Call to a member function getId() on string in /home2/wcfxmyhv/public_html/groupji/src/GJI/GJIBundle/Controller/MainController.php on line 491
+[27-Dec-2018 07:53:34 America/Chicago] PHP Fatal error:  Call to a member function getId() on string in /home2/wcfxmyhv/public_html/groupji/src/GJI/GJIBundle/Controller/MainController.php on line 491
+[27-Dec-2018 08:40:07 America/Chicago] PHP Fatal error:  Call to a member function getId() on string in /home2/wcfxmyhv/public_html/groupji/src/GJI/GJIBundle/Controller/MainController.php on line 491
+[27-Dec-2018 10:00:32 America/Chicago] PHP Fatal error:  Uncaught exception 'PDOException' with message 'SQLSTATE[28000] [1045] Access denied for user 'root'@'localhost' (using password: NO)' in /home2/wcfxmyhv/public_html/groupji/vendor/doctrine/dbal/lib/Doctrine/DBAL/Driver/PDOConnection.php:43
+Stack trace:
+#0 /home2/wcfxmyhv/public_html/groupji/vendor/doctrine/dbal/lib/Doctrine/DBAL/Driver/PDOConnection.php(43): PDO->__construct('mysql:host=loca...', 'root', NULL, Array)
+#1 /home2/wcfxmyhv/public_html/groupji/vendor/doctrine/dbal/lib/Doctrine/DBAL/Driver/PDOMySql/Driver.php(45): Doctrine\DBAL\Driver\PDOConnection->__construct('mysql:host=loca...', 'root', NULL, Array)
+#2 /home2/wcfxmyhv/public_html/groupji/vendor/doctrine/dbal/lib/Doctrine/DBAL/Connection.php(360): Doctrine\DBAL\Driver\PDOMySql\Driver->connect(Array, 'root', NULL, Array)
+#3 /home2/wcfxmyhv/public_html/groupji/vendor/doctrine/dbal/lib/Doctrine/DBAL/Connection.php(429): Doctrine\DBAL\Connection->connect()
+#4 /home2/wcfxmyhv/public_html/groupji/vendor/doctrine/dbal/lib/Doctrine/DBAL/Connection.php( in /home2/wcfxmyhv/public_html/groupji/vendor/doctrine/dbal/lib/Doctrine/DBAL/Driver/AbstractMySQLDriver.php on line 103
+[27-Dec-2018 10:07:17 America/Chicago] PHP Fatal error:  Call to a member function getId() on string in /home2/wcfxmyhv/public_html/groupji/src/GJI/GJIBundle/Controller/MainController.php on line 491
+[27-Dec-2018 10:14:09 America/Chicago] PHP Fatal error:  Call to a member function getId() on string in /home2/wcfxmyhv/public_html/groupji/src/GJI/GJIBundle/Controller/MainController.php on line 491
+[27-Dec-2018 10:24:53 America/Chicago] PHP Fatal error:  Call to a member function getId() on string in /home2/wcfxmyhv/public_html/groupji/src/GJI/GJIBundle/Controller/MainController.php on line 491
+[27-Dec-2018 10:39:31 America/Chicago] PHP Fatal error:  Call to a member function getId() on string in /home2/wcfxmyhv/public_html/groupji/src/GJI/GJIBundle/Controller/MainController.php on line 491
+[27-Dec-2018 10:39:40 America/Chicago] PHP Fatal error:  Call to a member function getId() on string in /home2/wcfxmyhv/public_html/groupji/src/GJI/GJIBundle/Controller/MainController.php on line 491
+[27-Dec-2018 10:42:41 America/Chicago] PHP Fatal error:  Call to a member function getId() on string in /home2/wcfxmyhv/public_html/groupji/src/GJI/GJIBundle/Controller/MainController.php on line 491
+[31-Dec-2018 06:45:47 America/Chicago] PHP Fatal error:  Call to a member function getId() on string in /home2/wcfxmyhv/public_html/groupji/src/GJI/GJIBundle/Controller/MainController.php on line 491
+[07-Jan-2019 10:30:18 America/Chicago] PHP Warning:  file_put_contents(/home2/wcfxmyhv/public_html/groupji/var/cache/prod/classes.map): failed to open stream: No such file or directory in /home2/wcfxmyhv/public_html/groupji/vendor/symfony/symfony/src/Symfony/Component/HttpKernel/Kernel.php on line 335
+[07-Jan-2019 10:30:18 America/Chicago] PHP Warning:  file_put_contents(/home2/wcfxmyhv/public_html/groupji/var/cache/prod/annotations.map): failed to open stream: No such file or directory in /home2/wcfxmyhv/public_html/groupji/vendor/symfony/symfony/src/Symfony/Component/HttpKernel/Kernel.php on line 343
+[07-Jan-2019 10:30:22 America/Chicago] PHP Fatal error:  Uncaught exception 'RuntimeException' with message 'Unable to create the Doctrine Proxy directory "/home2/wcfxmyhv/public_html/groupji/var/cache/prod/doctrine/orm/Proxies".' in /home2/wcfxmyhv/public_html/groupji/vendor/symfony/symfony/src/Symfony/Bridge/Doctrine/CacheWarmer/ProxyCacheWarmer.php:58
+Stack trace:
+#0 /home2/wcfxmyhv/public_html/groupji/vendor/symfony/symfony/src/Symfony/Component/HttpKernel/CacheWarmer/CacheWarmerAggregate.php(48): Symfony\Bridge\Doctrine\CacheWarmer\ProxyCacheWarmer->warmUp('/home2/wcfxmyhv...')
+#1 /home2/wcfxmyhv/public_html/groupji/vendor/symfony/symfony/src/Symfony/Component/HttpKernel/Kernel.php(496): Symfony\Component\HttpKernel\CacheWarmer\CacheWarmerAggregate->warmUp('/home2/wcfxmyhv...')
+#2 /home2/wcfxmyhv/public_html/groupji/vendor/symfony/symfony/src/Symfony/Component/HttpKernel/Kernel.php(116): Symfony\Component\HttpKernel\Kernel->initializeContainer()
+#3 /home2/wcfxmyhv/public_html/groupji/vendor/symfony/symfony/src/Symfony/Component/HttpKernel/Kernel.php(165): Symf in /home2/wcfxmyhv/public_html/groupji/vendor/symfony/symfony/src/Symfony/Bridge/Doctrine/CacheWarmer/ProxyCacheWarmer.php on line 58
+[07-Jan-2019 11:17:50 America/Chicago] PHP Fatal error:  Call to a member function getId() on string in /home2/wcfxmyhv/public_html/groupji/src/GJI/GJIBundle/Controller/MainController.php on line 491
+[07-Jan-2019 11:17:56 America/Chicago] PHP Fatal error:  Call to a member function getId() on string in /home2/wcfxmyhv/public_html/groupji/src/GJI/GJIBundle/Controller/MainController.php on line 491
+[12-Jan-2019 08:13:39 America/Chicago] PHP Fatal error:  Call to a member function getId() on string in /home2/wcfxmyhv/public_html/groupji/src/GJI/GJIBundle/Controller/MainController.php on line 491
+[12-Jan-2019 08:13:40 America/Chicago] PHP Fatal error:  Call to a member function getId() on string in /home2/wcfxmyhv/public_html/groupji/src/GJI/GJIBundle/Controller/MainController.php on line 491
+[12-Jan-2019 08:22:09 America/Chicago] PHP Fatal error:  Call to a member function getId() on string in /home2/wcfxmyhv/public_html/groupji/src/GJI/GJIBundle/Controller/MainController.php on line 491
+[12-Jan-2019 08:22:09 America/Chicago] PHP Fatal error:  Call to a member function getId() on string in /home2/wcfxmyhv/public_html/groupji/src/GJI/GJIBundle/Controller/MainController.php on line 491
+[12-Jan-2019 08:37:37 America/Chicago] PHP Fatal error:  Call to a member function getId() on string in /home2/wcfxmyhv/public_html/groupji/src/GJI/GJIBundle/Controller/MainController.php on line 491
+[12-Jan-2019 08:42:22 America/Chicago] PHP Fatal error:  Call to a member function getId() on string in /home2/wcfxmyhv/public_html/groupji/src/GJI/GJIBundle/Controller/MainController.php on line 491
+[12-Jan-2019 08:54:01 America/Chicago] PHP Fatal error:  Call to a member function getId() on string in /home2/wcfxmyhv/public_html/groupji/src/GJI/GJIBundle/Controller/MainController.php on line 491

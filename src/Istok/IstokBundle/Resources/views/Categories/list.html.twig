@@ -1,0 +1,85 @@
+    {% extends 'IstokIstokBundle::index.html.twig' %}
+    {% block body %}
+
+
+<h1>Listes Categories</h1><hr>
+
+<div class="col-md-6">
+
+<a class="btn btn-sm btn-primary" href="{{path('Categories_add')}}"><i class="glyphicon glyphicon-plus"></i> Ajouter  Article Categorie</a>
+
+<table class="table table-bordered search-table" >
+<thead> 
+<tr>
+<th>categorie</th>
+<th>type</th>
+
+
+</tr>
+</thead> 
+
+<tbody>
+{% for categorie in Categories %}
+
+
+
+
+<tr>
+<td>{{categorie.categorie}}</td>
+<td>{{categorie.type}}</td>
+
+{% if(role[0])=='ROLE_SUPER_ADMIN' %}
+
+
+<td>
+<a  data-toggle="tooltip" data-placement="top" title="Modifier" class="btn btn-sm btn-warning" href="{{path('Categories_edit',{'id':categorie.id})}}" role="button">  <span class="glyphicon glyphicon-edit" aria-hidden="true"></span></a>
+<a  data-toggle="tooltip" data-placement="top" title="Supprimer" class="btn btn-sm btn-danger" href="{{path('Categories_delete',{'id':categorie.id})}}" role="button">  <span class="glyphicon glyphicon-trash" aria-hidden="true"></span>
+</a>
+
+
+
+</td>
+
+
+{% endif %}
+
+</tr>
+
+
+{% endfor%}
+
+
+
+</tbody>
+
+</table>
+
+</div>
+
+
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/1.12.2/jquery.min.js"></script>
+<script>
+			$(document).ready(function(){
+				$('table.search-table').tableSearch({
+					searchText:'Rechercher    ',
+					searchPlaceHolder:' '
+				});
+			});
+$(document).ready(function(){
+
+
+ $(".delete").click(function(event){
+    if (confirm("voulez vous vraiment supprimer ?") == true) {
+    } else {
+        event.preventDefault();
+location.reload();
+
+
+    }    });
+});
+
+</script>
+
+
+
+    {% endblock %}

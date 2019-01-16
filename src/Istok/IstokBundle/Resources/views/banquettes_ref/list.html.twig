@@ -1,0 +1,88 @@
+    {% extends 'IstokIstokBundle::index.html.twig' %}
+    {% block body %}
+
+
+<h1>Listes refereneces banquettes </h1><hr>
+
+<div class="col-md-6">
+
+<a class="btn btn-sm btn-primary" href="{{path('banquette_ref_add')}}"><i class="glyphicon glyphicon-plus"></i> Ajouter reference banquette </a>
+
+<table class="table table-bordered search-table" >
+<thead> 
+<tr>
+<th>Réference</th>
+<th>Prix</th>
+<th>Sous categorie</th>
+<th>Categorie</th>
+
+
+</tr>
+</thead> 
+
+<tbody>
+{% for banquettes_ref in banquettes_refs %}
+
+
+
+<tr>
+<td>{{banquettes_ref.reference}}</td>
+<td>{{banquettes_ref.prix}}</td>
+<td>{{banquettes_ref.SousBanquettes.SousCategorie}}</td>
+<td>{{banquettes_ref.SousBanquettes.CatBanquettes.categorie}}</td>
+
+{% if(role[0])=='ROLE_SUPER_ADMIN' %}
+
+
+<td>
+<a  data-toggle="tooltip" data-placement="top" title="Modifier" class="btn btn-sm btn-warning" href="{{path('banquette_ref_edit',{'id':banquettes_ref.id})}}" role="button">  <span class="glyphicon glyphicon-edit" aria-hidden="true"></span></a>
+<a  data-toggle="tooltip" data-placement="top" title="Supprimer" class="btn btn-sm btn-danger" href="{{path('banquette_ref_delete',{'id':banquettes_ref.id})}}" role="button">  <span class="glyphicon glyphicon-trash" aria-hidden="true"></span>
+</a>
+
+
+
+</td>
+
+
+{% endif %}
+
+</tr>
+
+
+{% endfor%}
+
+
+
+</tbody>
+
+</table>
+
+</div>
+
+
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/1.12.2/jquery.min.js"></script>
+<script>
+			$(document).ready(function(){
+				$('table.search-table').tableSearch({
+					searchText:'Rechercher    ',
+					searchPlaceHolder:' '
+				});
+			});
+$(document).ready(function(){
+
+
+ $(".delete").click(function(event){
+    if (confirm("voulez vous vraiment supprimer ?") == true) {
+    } else {
+        event.preventDefault();
+location.reload();
+
+
+    }    });
+});
+
+</script>
+
+
+
+    {% endblock %}

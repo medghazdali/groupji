@@ -1,0 +1,117 @@
+home:
+    path:     /Dash
+    defaults: { _controller: GJIBundle:Main:index }
+homelog:
+    path:     /
+    defaults: { _controller: FOSUserBundle:Security:login }
+AddGroup:
+    path:     /AddGroup
+    defaults: { _controller: GJIBundle:Groupe:AddGroup }
+EditGroup:
+    path:     /EditGroup/{id}
+    defaults: { _controller: GJIBundle:Groupe:EditGroup }
+GetGroup:
+    path:     /GetGroup/{id}
+    defaults: { _controller: GJIBundle:Groupe:GetGroup }
+AddPost:
+    path:     /AddPost
+    defaults: { _controller: GJIBundle:Groupe:AddPost }
+AddComment:
+    path:     /AddComment
+    defaults: { _controller: GJIBundle:Groupe:AddComment }
+GetComments:
+    path:     /GetComments
+    defaults: { _controller: GJIBundle:Groupe:GetComments }
+EnableGroup:
+    path:     /EnableGroup
+    defaults: { _controller: GJIBundle:Groupe:EnableGroup }
+MyGroups:
+    path:     /MyGroups
+    defaults: { _controller: GJIBundle:Main:MyGroups }
+LeaveGroup:
+    path:     /LeaveGroup
+    defaults: { _controller: GJIBundle:Groupe:LeaveGroup }
+SignUp:
+    path:     /SignUp
+    defaults: { _controller: GJIBundle:Register:SignUp }
+TwilioCall:
+    path:     /TwilioCall
+    defaults: { _controller: GJIBundle:Register:TwilioCall }
+SendMsg:
+    path:     /SendMsg
+    defaults: { _controller: GJIBundle:Register:SendMsg }
+InviteFriend:
+    path:     /InviteFriend/{id}
+    defaults: { _controller: GJIBundle:Main:InviteFriend }
+SendInvitation:
+    path:     /SendInvitation
+    defaults: { _controller: GJIBundle:Register:SendInvitation }
+ManagerUsers:
+    path:     /ManagerUsers/{id}
+    defaults: { _controller: GJIBundle:Main:ManagerUsers }
+EditPrevilige:
+    path:     /EditPrevilige
+    defaults: { _controller: GJIBundle:Main:EditPrevilige }
+EditActive:
+    path:     /EditActive
+    defaults: { _controller: GJIBundle:Main:EditActive }
+EnableThisGroup:
+    path:     /EnableThisGroup
+    defaults: { _controller: GJIBundle:Groupe:EnableThisGroup }
+CheckUser:
+    path:     /CheckUser
+    defaults: { _controller: GJIBundle:Main:CheckUser }
+getNotificationGroup:
+    path:     /getNotificationGroup
+    defaults: { _controller: GJIBundle:Main:getNotificationGroup }
+getNotification:
+    path:     /getNotification
+    defaults: { _controller: GJIBundle:Main:getNotification }
+readNotification:
+    path:     /readNotification
+    defaults: { _controller: GJIBundle:Main:readNotification }
+EditPoste:
+    path:     /EditPoste/{id}
+    defaults: { _controller: GJIBundle:Groupe:EditPoste }    
+deletePost:
+    path:     /deletePost
+    defaults: { _controller: GJIBundle:Groupe:deletePost }    
+deleteComment:
+    path:     /deleteComment
+    defaults: { _controller: GJIBundle:Groupe:deleteComment }    
+Profile:
+    path:     /Profile
+    defaults: { _controller: GJIBundle:Main:EditUser }    
+deleteImage:
+    path:     /deleteImage
+    defaults: { _controller: GJIBundle:Groupe:deleteImage }    
+ForgetPassword:
+    path:     /ForgetPassword
+    defaults: { _controller: GJIBundle:Main:ForgetPassword }    
+SendByMail:
+    path:     /SendByMail
+    defaults: { _controller: GJIBundle:Register:SendByMail }    
+RenderPass:
+    path:     /RenderPass
+    defaults: { _controller: GJIBundle:Main:RenderPass }     
+SendByOTP:
+    path:     /SendByOTP
+    defaults: { _controller: GJIBundle:Register:SendByOTP }     
+Gauth:
+    path:     /Gauth
+    defaults: { _controller: GJIBundle:Main:Gauth }  
+LoginF:
+    path:     /LoginF
+    defaults: { _controller: GJIBundle:Main:LoginF }  
+GauthFacebook:
+    path:     /GauthFacebook
+    defaults: { _controller: GJIBundle:Main:GauthFacebook }  
+InviteByMail:
+    path:     /InviteByMail
+    defaults: { _controller: GJIBundle:Register:InviteByMail } 
+
+
+
+
+
+

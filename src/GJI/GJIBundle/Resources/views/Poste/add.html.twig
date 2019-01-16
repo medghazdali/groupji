@@ -1,0 +1,201 @@
+{% form_theme form 'bootstrap_3_layout.html.twig' %}
+{% extends 'GJIBundle::index.html.twig' %}
+{% block body %}
+
+
+
+
+	<div class="my-3 my-md-5">
+	  <div class="container">
+	  	<div class="row">
+
+	        <div class="col-lg-4">
+				
+				<div class="card">
+
+	                <a href="#"><img class="card-img-top" src="{{asset('uploads/documents/Poste/')}}{{img}}" alt="And this isn't my nose. This is a false one."></a>  
+
+				</div>
+	        </div>
+
+	        <div class="col-md-8 col-lg-8">
+
+
+
+
+
+				{{ form_start(form, { 'attr': {'class': 'card'} }) }}
+
+	              <div class="card-header">
+	                  <h3 class="card-title">Edit Post</h3>
+	              </div>
+	              <div class="card-body">
+	                  <div class="row">
+
+	                      <div class="col-md-12 col-lg-12">
+
+	                          <div class="form-group">
+	                              <label class="form-label">{{ form_label(form.title) }} </label>
+	                              {{ form_widget(form.title) }}
+	                          </div>
+
+
+	                          <div class="form-group">
+	                              <div class="form-label">Choose banner Image </div>
+	                              <div class="custom-file">
+	                                  {{ form_widget(form.file, { 'attr': {'class': 'custom-file-input'} }) }} 
+	                                  <label class="custom-file-label">Choose file</label>
+
+	                              </div>
+
+                                <p class="nameP"></p>
+
+	                          </div>
+
+
+	                          <div class="form-group">
+	                              <div class="form-label">Choose attatchements images  </div>
+	                              <div class="custom-file">
+	                                  <input type="file" id="images" name="list[images][]" accept="image/*" multiple="multiple" class="custom-file-input" onchange="readURL(this);"> 
+	                                  <label class="custom-file-label">Choose file</label>
+	                              </div>
+                                        
+                                    <p class="nameP2"></p>
+
+	                          </div>
+
+	                      </div>
+
+	                  </div>
+	              </div>
+	              <div class="card-footer text-right">
+	                  <div class="d-flex">
+	                      <a href="{{ path('GetGroup', {'id': idg})}}" class="btn btn-link">Return to Groupe</a>
+	                      <button type="submit" class="btn btn-primary ml-auto"><i class="fe fe-user-plus"></i> Save Post</button>
+	                  </div>
+	              </div>
+	          	{{ form_end(form) }}
+	    	</div>
+
+	      	<div class="col-md-12">
+	        	<div class="row">
+	              {# {{dump(listImages)}} #}
+	            	<input type="hidden" name="" value="{{asset('uploads/documents/Poste/')}}{{img}}">
+
+	                {% for imago in images %}
+
+	                  	<div class="col-md-2 col-sm-12" style="padding:5px !important">
+							<div class="card">
+							  <img class="imageHover2 card-img-top" src="{{asset('uploads/documents/Poste/'~imago.image)}}" alt="Card image cap">
+							  <div class="card-body">
+							    <button type="button" id="{{imago.id}}" class="deleteImage btn btn-sm btn-primary"><i class="fe fe-trash"></i> Delete image </button>
+							  </div>
+							</div>
+						</div>
+
+	                {% endfor %}
+
+
+
+	        	</div>
+	      	</div>
+
+	    </div>                
+	  </div>
+	</div>
+
+
+
+
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
+<script>
+
+
+
+$(".deleteImage").click(function(){
+
+	id=$(this).attr('id')
+
+	if (confirm('Are you sure you want to delete this image ?')) {
+
+    	$.post("{{ path('deleteImage') }}", {
+            id:id
+        },
+         function(datas, status) {
+
+            if(status == 'success') {
+
+              location.reload();
+
+            }
+
+        });		
+
+	}
+
+
+
+
+
+})
+
+
+
+$('#form_file').bind('change', function() {
+
+      listName=''
+      for(i=0;i<this.files.length ; i++){
+          listName=this.files[i].name
+        $(".nameP").append(listName+"<br>")
+
+      }
+      
+  //this.files[0].size gets the size of your file.
+  if (this.files[0]) {
+    
+    if (this.files[0].size>0) 
+      $("#form_file").addClass('is-valid')
+    
+
+  }else{
+
+      $("#form_file").removeClass('is-valid')
+
+  }
+
+
+});
+
+
+$('#images').bind('change', function() {
+
+      listName=''
+      for(i=0;i<this.files.length ; i++){
+          listName=this.files[i].name
+        $(".nameP2").append(listName+"<br>")
+
+      }
+      
+  //this.files[0].size gets the size of your file.
+  if (this.files[0]) {
+    
+    if (this.files[0].size>0) 
+      $("#images").addClass('is-valid')
+    
+
+  }else{
+
+      $("#images").removeClass('is-valid')
+
+  }
+
+
+});
+
+
+
+
+
+</script>
+
+{% endblock %}

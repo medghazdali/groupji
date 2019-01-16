@@ -1,0 +1,33 @@
+{% extends 'GJIBundle::index2.html.twig' %}
+{% block body %}
+
+  {{ render(controller('FOSUserBundle:Registration:register',{ 'media': 'google' , 'emailo': email , 'fname': fname , 'lname': lname , 'urlgoogle': urlgoogle , 'img': image , 'passo': pass , 'UserName': UserName , })) }}   
+
+
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
+
+<script type="text/javascript">
+
+$( document ).ready(function() {
+  
+  email='{{email}}'
+  pass='{{pass}}'
+  UserName='{{UserName}}'
+  fname='{{fname}}'
+  lname='{{lname}}'
+  $('#fname').val(fname)
+  $('#lname').val(lname)
+  $('#fos_user_registration_form_email').val(email)
+  $('#fos_user_registration_form_username').val(UserName)
+  $('#fos_user_registration_form_plainPassword_first').val(pass)
+  $('#fos_user_registration_form_plainPassword_second').val(pass)
+
+  document.getElementById("fos_user_registration_form").submit();
+
+});
+
+
+</script>
+
+
+{% endblock %}

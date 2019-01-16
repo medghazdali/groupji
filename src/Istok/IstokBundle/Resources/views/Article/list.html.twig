@@ -1,0 +1,86 @@
+    {% extends 'IstokIstokBundle::index.html.twig' %}
+    {% block body %}
+
+
+<hr>
+<div class="col-md-4 col-sm-12 col-md-offset-4">
+
+   
+
+
+
+<div class="list-group">
+  <a href="#" style="text-align:center" class="list-group-item">
+    <p class="list-group-item-heading">   Bois </p>
+  </a>
+
+</div>
+
+
+<div class="list-group">
+  <a href="#" style="text-align:center" class="list-group-item">
+    <p class="list-group-item-heading">   Banquettes </p>
+  </a>
+
+</div>
+
+
+<div class="list-group">
+  <a href="#" style="text-align:center" class="list-group-item">
+    <p class="list-group-item-heading">   Tissu </p>
+  </a>
+
+</div>
+
+
+
+<div class="list-group">
+  <a href="#" style="text-align:center" class="list-group-item">
+    <p class="list-group-item-heading">   Couture </p>
+  </a>
+
+</div>
+
+
+
+<div class="list-group">
+  <a href="#" style="text-align:center" class="list-group-item">
+    <p class="list-group-item-heading">   Garniture </p>
+  </a>
+
+</div>
+
+
+
+</div>
+
+
+
+
+
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/1.12.2/jquery.min.js"></script>
+<script>
+			$(document).ready(function(){
+				$('table.search-table').tableSearch({
+					searchText:'Rechercher    ',
+					searchPlaceHolder:' '
+				});
+			});
+$(document).ready(function(){
+
+
+ $(".delete").click(function(event){
+    if (confirm("voulez vous vraiment supprimer ?") == true) {
+    } else {
+        event.preventDefault();
+location.reload();
+
+
+    }    });
+});
+
+</script>
+
+
+
+    {% endblock %}

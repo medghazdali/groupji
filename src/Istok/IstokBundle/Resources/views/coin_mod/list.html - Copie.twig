@@ -1,0 +1,91 @@
+    {% extends 'IstokIstokBundle::index.html.twig' %}
+    {% block body %}
+
+
+<h1>Listes Articles</h1><hr>
+
+<a class="btn btn-sm btn-primary" href="{{path('article_add')}}"><i class="glyphicon glyphicon-plus"></i> Ajouter  Article</a>
+
+
+<table class="table table-bordered search-table" >
+<thead> 
+<tr>
+<th>Reference</th>
+<th>Article</th>
+<th>Description</th>
+<th>Prix</th>
+<th>Qte</th>
+<th>Date de stock</th>
+<th>Categorie</th>
+
+</tr>
+</thead> 
+
+<tbody>
+{% for article in articles %}
+
+
+<tr>
+<td>{{article.reference}}</td>
+<td>{{article.article}}</td>
+<td>{{article.description}}</td>
+<td>{{article.prix}}</td>
+<td>{{article.quantite}}</td>
+<td>{{article.datestock|date("m/d/Y")}}</td>
+<td>{{article.categories.categorie}}</td>
+{% if(role[0])=='ROLE_SUPER_ADMIN' %}
+
+<td>
+
+
+
+<a class="btn btn-sm btn-warning" href="{{path('article_edit',{'id':article.id})}}" role="button">  <span class="glyphicon glyphicon-edit" aria-hidden="true"></span></a>
+<a class="btn btn-sm btn-danger" href="{{path('article_delete',{'id':article.id})}}" role="button">  <span class="glyphicon glyphicon-trash" aria-hidden="true"></span>
+</a>
+
+
+
+</td>
+{% endif %}
+
+
+</tr>
+
+
+{% endfor%}
+
+
+
+</tbody>
+
+</table>
+
+
+
+
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/1.12.2/jquery.min.js"></script>
+<script>
+			$(document).ready(function(){
+				$('table.search-table').tableSearch({
+					searchText:'Rechercher    ',
+					searchPlaceHolder:' '
+				});
+			});
+$(document).ready(function(){
+
+
+ $(".delete").click(function(event){
+    if (confirm("voulez vous vraiment supprimer ?") == true) {
+    } else {
+        event.preventDefault();
+location.reload();
+
+
+    }    });
+});
+
+</script>
+
+
+
+    {% endblock %}

@@ -1,0 +1,153 @@
+
+
+.salon{
+
+  background: #fff;border: 1px solid #eee;height: 838px
+
+
+  }
+
+
+body{
+      color: #797979;
+    background-color: #fcfcfc;
+    font-family: 'Roboto', sans-serif;
+    padding: 0px !important;
+    margin: 0px !important;
+    font-size: 14px;
+}
+
+.menu{
+
+  
+
+  }
+
+html, body{
+}
+
+  .navbar{}
+  /*.container-fluid{padding: 0px}*/
+
+.ui-dialog-titlebar-close{
+    background: #2c3e50;
+    border: 1px solid #2c3e50;}
+
+#tabs,#drag-list{   
+
+  background: #fff !important;border: 0px !important
+}
+
+#dialog-forme-sb{height: 100%}
+
+.simplecolorpicker{width: 22px}
+
+.dropdown-colorselector{
+        
+        float: right;
+        margin-left: 10px;
+
+}
+
+.dimens{
+  color: #ff7518;    font-weight: bold;    font-size: 11px;visibility: hidden;    background: rgba(255, 255, 255, 0);
+    border: 0px;
+    text-align: right;
+    width: 30px;
+  }
+
+.dimensShow{
+  color: #ff7518;    font-weight: bold;    font-size: 11px;background: rgba(255, 255, 255, 0);
+    border: 0px;
+    text-align: right;
+    width: 30px;
+  }
+
+.dimens2{
+  position: absolute;
+    bottom: 0;
+    left: 20%;
+    text-align: center;
+  }
+
+
+.dimens1{
+  position: absolute;
+    top: 0;
+   left: 0%;
+  }
+
+.dimens3{
+    top: 35%;
+    position: absolute;
+    right: 5%;
+  }
+
+.dimens4{
+  position: absolute;
+    bottom: 0;
+    left: 40%;
+  }
+
+
+.dimens5{
+    top: 35%;
+    position: absolute;
+    right: 80%;
+  }
+
+
+
+
+
+
+
+
+.dimtab{
+
+
+    background: rgba(221, 221, 221, 0);
+    border: 0px;
+    width: 100%;
+    text-align: center;
+    font-size: 11px
+
+
+}
+
+.lo{
+
+  /*vertical-align: top;*/
+}
+
+
+
+.dimens6{
+  position: absolute;
+    top: 0;
+   left: 32%;
+  }
+
+
+.dimens7{
+    top: 62%;
+    position: absolute;
+    right: 80%;
+  }
+
+
+.dimens8{
+    top: 20%;
+    color: #3fb618;
+    position: absolute;
+    right: 60%;
+  }
+
+
+.sbhD{font-size: 13px;height: 30px;background-color: #944f21;text-align: center;line-height: 2;color: #fff;    border: 2px solid #000;float: left;margin-right: 5px}
+
+
+
+
+#goinputprixTissus2Coin,.TissuTraInput,.TissuMetrageVal{display: none;}
+

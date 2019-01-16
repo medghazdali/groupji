@@ -1,0 +1,88 @@
+    {% extends 'IstokIstokBundle::index.html.twig' %}
+    {% block body %}
+
+
+
+  
+
+
+<h1>Liste accoudoirss accoudoirs</h1><hr>
+
+<a class="btn btn-sm btn-primary" href="{{path('accoudoirs_add')}}"><i class="glyphicon glyphicon-plus"></i> Ajouter  accoudoirs</a>
+
+
+<table class="table table-bordered search-table" >
+<thead> 
+<tr>
+<th>Image</th>
+<th>Réference</th>
+<th>Metrage</th>
+
+</tr>
+</thead> 
+
+<tbody>
+{% for accoudoirs in accoudoirss %}
+
+
+<tr>
+  <td><img  style="width:100px;height:65px"  src="{{asset('uploads/documents/accoudoirs/'~accoudoirs.path)}}"> </td>
+
+<td>{{accoudoirs.reference}}</td>
+<td>{{accoudoirs.metrage}}</td>
+{% if(role[0])=='ROLE_SUPER_ADMIN' %}
+
+<td>
+
+
+
+<a  data-toggle="tooltip" data-placement="top" title="Modifier" class="btn btn-sm btn-warning" href="{{path('accoudoirs_edit',{'id':accoudoirs.id})}}" role="button">  <span class="glyphicon glyphicon-edit" aria-hidden="true"></span></a>
+<a  data-toggle="tooltip" data-placement="top" title="Supprimer" class="btn btn-sm btn-danger" href="{{path('accoudoirs_delete',{'id':accoudoirs.id})}}" role="button">  <span class="glyphicon glyphicon-trash" aria-hidden="true"></span>
+</a>
+
+
+
+</td>
+{% endif %}
+
+
+</tr>
+
+
+{% endfor%}
+
+
+
+</tbody>
+
+</table>
+
+
+
+
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/1.12.2/jquery.min.js"></script>
+<script>
+      $(document).ready(function(){
+        $('table.search-table').tableSearch({
+          searchText:'Rechercher    ',
+          searchPlaceHolder:' '
+        });
+      });
+$(document).ready(function(){
+
+
+ $(".delete").click(function(event){
+    if (confirm("voulez vous vraiment supprimer ?") == true) {
+    } else {
+        event.preventDefault();
+location.reload();
+
+
+    }    });
+});
+
+</script>
+
+
+
+    {% endblock %}

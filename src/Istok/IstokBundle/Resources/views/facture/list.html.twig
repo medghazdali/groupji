@@ -1,0 +1,91 @@
+    {% extends 'IstokIstokBundle::index.html.twig' %}
+    {% block body %}
+
+
+<h1>Listes factures</h1><hr>
+
+<div class="col-md-10">
+
+
+<table class="table table-bordered search-table" >
+<thead> 
+<tr>
+<th>Num facture</th>
+<th>Num commande</th>
+<th>Client</th>
+<th>Date facture</th>
+<th>Date commande</th>
+<th>user</th>
+<th>Total</th>
+
+
+</tr>
+</thead> 
+
+<tbody>
+{% for facture in factures %}
+
+
+
+
+<tr>
+<td>{{facture.reference}}</td>
+<td>{{facture.vente.num}}</td>
+<td>{{facture.vente.client.nom}} {{facture.vente.client.prenom}}</td>
+<td>{{facture.datestock|date("m/d/Y")}}</td>
+<td>{{facture.vente.date|date("m/d/Y")}}</td>
+
+<td>{{facture.user}}</td>
+
+<td>{{facture.vente.total}} Dhs</td>
+
+<td>
+
+<a class="btn btn-sm btn-success" href="{{path('vente_detail',{'id':facture.vente.id})}}" role="button">  <span class="glyphicon glyphicon-list" aria-hidden="true"></span></a>
+
+
+
+</td>
+
+
+
+</tr>
+
+
+{% endfor%}
+
+
+
+</tbody>
+
+</table>
+
+</div>
+
+
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/1.12.2/jquery.min.js"></script>
+<script>
+			$(document).ready(function(){
+				$('table.search-table').tableSearch({
+					searchText:'Rechercher    ',
+					searchPlaceHolder:' '
+				});
+			});
+$(document).ready(function(){
+
+
+ $(".delete").click(function(event){
+    if (confirm("voulez vous vraiment supprimer ?") == true) {
+    } else {
+        event.preventDefault();
+location.reload();
+
+
+    }    });
+});
+
+</script>
+
+
+
+    {% endblock %}

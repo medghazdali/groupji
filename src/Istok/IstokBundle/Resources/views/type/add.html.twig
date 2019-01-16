@@ -1,0 +1,21 @@
+    {% form_theme form 'bootstrap_3_layout.html.twig' %}
+    {% extends 'IstokIstokBundle::index.html.twig' %}
+    {% block body %}
+
+
+<h2>{{ msg }}</h2><hr>
+<div class="col-md-6">
+{% if errors is defined %}
+
+<div class="alert alert-danger" role="alert"> <strong>{{ errors }}. </div>
+
+
+{% endif %}
+
+{{ form_start(form) }}
+{{ form_widget(form) }}
+{{ form_end(form) }}
+
+
+</div>
+    {% endblock %}

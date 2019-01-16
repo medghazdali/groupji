@@ -1,0 +1,156 @@
+{% extends 'GJIBundle::index.html.twig' %}
+{% block body %}
+
+
+        <style type="text/css">
+          th,td{text-align: center;}
+        </style>
+
+<div class="my-3 my-md-5">
+    <div class="container">
+
+          <div class="col-12">
+
+
+               <div  style="display:none;" class="alertDiv alert alert-dismissible alert-success"> <button type="button" class="close" data-dismiss="alert"></button> <h4 class="alert-heading"> Update has been sent successfully </h4></div>
+
+               <h3 class="mb-3">List Members <strong> {{title}}</strong> </h3>
+
+               <div class="card">
+
+                    <table class="table table-hover">
+                         <thead class="thead-dark">
+                             <tr>
+                                 <th scope="col"></th>
+                                 <th scope="col">Member</th>
+                                 <th scope="col">Phone</th>
+                                 <th scope="col">Email</th>
+                                 <th scope="col">Role</th>
+                                 {# <th scope="col">Statut</th> #}
+                             </tr>
+                         </thead>
+
+                         <tbody>
+
+                              {% for data in datas %}
+
+
+
+
+
+
+
+                                   <tr>
+                                      <th style="width:70px" scope="row"><img class="rounded float-left" style="width: 100%;" src="{{asset('uploads/users/'~data.avatar)}}"> </th>
+                                      <td><h6 style="margin-top: 15px;">{{data.name}}</h6></td>
+                                      <td><h6 style="margin-top: 15px;">{{data.tel}}</h6></td>
+                                      <td><h6 style="margin-top: 15px;">{{data.email}}</h6></td>
+                                      <td>
+                                          <select  name="beast" id="{{data.id}}" class="selectPrevilige form-control custom-select">
+                                             
+                                             {% if data.previlige == 2 %}
+
+                                                  <option value="2"> Utilisateur </option>
+                                                  <option value="1"> Administrateur </option>
+
+                                             {% endif %}    
+
+                                             {% if data.previlige == 1 %}
+
+                                                  <option value="1"> Administrateur </option>
+                                                  <option value="2"> Utilisateur </option>
+
+                                             {% endif %}
+
+                                          </select>
+                                      </td>
+
+{#                                       <td>
+                                          <select name="beast" id="{{data.id}}"  class="selectActif form-control custom-select">
+                                             {% if data.active == 1 %}
+
+                                                  <option value="1"> Actif </option>
+                                                  <option value="0"> Non Actif </option>
+
+                                             {% endif %}    
+
+                                             {% if data.active == 0 %}
+
+                                                  <option value="0"> Non Actif </option>
+                                                  <option value="1"> Actif </option>
+
+                                             {% endif %}
+                                          </select>
+                                      </td> #}
+                                   </tr>
+
+                              {% endfor %}
+
+                         </tbody>
+                    </table>
+
+               </div>
+
+          </div>
+
+    </div>
+</div>
+
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
+
+
+<script>
+
+
+
+
+     $( ".selectActif" ).change(function() {
+
+          id=$(this).attr('id')
+          actif=$(this).val()
+
+          $.post("{{ path('EditActive') }}", {
+               id: id,
+               actif:actif
+          },
+          function(datas, status) {
+
+               if (status == 'success') {
+                    $('.alertDiv').show()                    
+                    location.reload();
+               }
+
+          });
+     });
+
+
+
+     $( ".selectPrevilige" ).change(function() {
+
+          id=$(this).attr('id')
+          previlige=$(this).val()
+
+          $.post("{{ path('EditPrevilige') }}", {
+               id: id,
+               previlige:previlige
+          },
+          function(datas, status) {
+
+               if (status == 'success') {
+                    $('.alertDiv').show()                                   
+                    location.reload();
+               }
+
+          });
+     });
+
+
+
+
+
+
+</script>
+
+
+
+{% endblock %}

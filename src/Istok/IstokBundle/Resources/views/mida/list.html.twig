@@ -1,0 +1,89 @@
+    {% extends 'IstokIstokBundle::index.html.twig' %}
+    {% block body %}
+
+
+
+  
+
+
+<h1>Liste Tables</h1><hr>
+
+<a class="btn btn-sm btn-primary" href="{{path('mida_add')}}"><i class="glyphicon glyphicon-plus"></i> Ajouter  Table</a>
+
+
+<table class="table table-bordered search-table" >
+<thead> 
+<tr>
+<th>ref</th>
+<th>Prix</th>
+<th>Image</th>
+
+</tr>
+</thead> 
+
+<tbody>
+{% for mida in midas %}
+
+
+<tr>
+<td>{{mida.ref}}</td>
+<td>{{mida.prix}}</td>
+{% if(role[0])=='ROLE_SUPER_ADMIN' %}
+
+<td><img style="width:100px;height:65px"  src="{{asset('uploads/documents/mida/'~mida.path)}}"> </td>
+
+
+<td>
+
+
+
+<a  data-toggle="tooltip" data-placement="top" title="Modifier" class="btn btn-sm btn-warning" href="{{path('mida_edit',{'id':mida.id})}}" role="button">  <span class="glyphicon glyphicon-edit" aria-hidden="true"></span></a>
+<a  data-toggle="tooltip" data-placement="top" title="Supprimer" class="btn btn-sm btn-danger" href="{{path('mida_delete',{'id':mida.id})}}" role="button">  <span class="glyphicon glyphicon-trash" aria-hidden="true"></span>
+</a>
+
+
+
+</td>
+{% endif %}
+
+
+</tr>
+
+
+{% endfor%}
+
+
+
+</tbody>
+
+</table>
+
+
+
+
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/1.12.2/jquery.min.js"></script>
+<script>
+      $(document).ready(function(){
+        $('table.search-table').tableSearch({
+          searchText:'Rechercher    ',
+          searchPlaceHolder:' '
+        });
+      });
+$(document).ready(function(){
+
+
+ $(".delete").click(function(event){
+    if (confirm("voulez vous vraiment supprimer ?") == true) {
+    } else {
+        event.preventDefault();
+location.reload();
+
+
+    }    });
+});
+
+</script>
+
+
+
+    {% endblock %}

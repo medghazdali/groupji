@@ -1,0 +1,668 @@
+{% form_theme form 'bootstrap_3_layout.html.twig' %}
+{% extends 'GJIBundle::index.html.twig' %}
+{% block body %}
+
+<style type="text/css">
+
+.cardImgDeal{height: 230px;}
+
+</style>
+
+
+
+    <!-- Modal -->
+    <div class="modal fade" id="exampleModalDeleteComment" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel" aria-hidden="true">
+      <div class="modal-dialog" role="document">
+        <div class="modal-content">
+          <div class="modal-header">
+            <h5 class="modal-title" id="exampleModalLabel">Are you sure you want to Delete this comment ?</h5>
+            <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+            </button>
+          </div>
+
+          <div class="modal-footer">
+            <button type="button" class="btn btn-secondary" data-dismiss="modal">Close</button>
+            <button type="button" id="deleteComment" class="btn btn-danger">Delete Comment</button>
+          </div>
+        </div>
+      </div>
+    </div>
+
+
+
+    <!-- Modal -->
+    <div class="modal fade" id="exampleModalDeletePost" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel" aria-hidden="true">
+      <div class="modal-dialog" role="document">
+        <div class="modal-content">
+          <div class="modal-header">
+            <h5 class="modal-title" id="exampleModalLabel">Are you sure you want to Delete Post ?</h5>
+            <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+            </button>
+          </div>
+
+          <div class="modal-footer">
+            <button type="button" class="btn btn-secondary" data-dismiss="modal">Close</button>
+            <button type="button" id="deletePoste" class="btn btn-danger">Delete Poste</button>
+          </div>
+        </div>
+      </div>
+    </div>
+
+
+    <style type="text/css">
+
+      .bannerW{width: 25%}
+      .imageHover:hover{cursor: pointer;border: 1px solid #45aaf2ad;}
+
+    </style>
+
+    <!-- Modal -->
+      <div class="modal fade" id="exampleModal2" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel" aria-hidden="true">
+        
+        {{ form_start(form) }}
+
+            <div class="modal-dialog" role="document">
+              <div class="modal-content">
+                <div class="modal-header">
+                  <h5 class="modal-title" id="exampleModalLabel">Create New Post</h5>
+                  <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                  </button>
+                </div>
+
+                <div class="modal-body">
+                          <div class="row">
+
+                              <div class="col-md-12 col-lg-12">
+     
+                                  <div class="form-group">
+                                      <label class="form-label">{{ form_label(form.title) }} </label>
+                                      {{ form_widget(form.title) }}
+                                  </div>
+
+                                  <div class="form-group">
+                                      <div class="form-label">Choose cover image</div>
+                                      <div class="custom-file">
+                                          {{ form_widget(form.file, { 'attr': {'class': 'custom-file-input'} }) }} 
+                                          <label class="custom-file-label">Choose file</label>
+                                      </div>
+                                                                              <p class="nameP"></p>
+
+                                  </div>
+
+{# 
+                                  <div class="form-group">
+                                      <div class="form-label">Choose file </div>
+                                      <div class="custom-file">
+                                          <input type="file" id="form_images" name="form[images][]" required="required" accept="image/*" multiple="multiple" class="custom-file-input"> 
+                                          <label class="custom-file-label">Choose file</label>
+                                      </div>
+                                  </div>
+ #}
+
+
+                                  <div class="form-group">
+                                      <div class="form-label">Choose attatchements images  </div>
+                                      <div class="custom-file">
+                                          <input type="file" id="images" name="list[images][]"accept="image/*" multiple="multiple" class="custom-file-input"> 
+                                          <label class="custom-file-label">Choose file</label>
+                                      </div>
+                                        
+                                        <p class="nameP2"></p>
+
+                                  </div>
+
+                              </div>
+
+                          </div>
+
+
+
+                </div>
+
+                <div class="modal-footer">
+                  <button type="button" class="btn btn-secondary" data-dismiss="modal">Close</button>
+                  <button type="submit" class="btn btn-primary">Add post to group</button>
+                </div>
+              </div>
+            </div>
+
+        {{ form_end(form) }}
+
+      </div>
+
+        <div class="my-3 my-md-5">
+          <div class="container">
+            <div class="row">
+              <div class="col-lg-4">
+                <div class="card card-profile">
+                  <div class="card-header" style="background-image: url({{asset('uploads/documents/groupe/'~Groupe.path)}});"></div>
+                  <div class="card-body text-center">
+                   <img style="height: 70px;width: 70px;" class="card-profile-img" src="{{asset('uploads/users/'~Groupe.user.path)}}">
+
+                    <h3 class="mb-3">{{Groupe.title}}</h3>
+                    <p class="mb-4">
+                      <strong>{{Groupe.Cat.categorie}}</strong>
+                    </p>
+                    <a href="addPost.php"  data-toggle="modal" data-target="#exampleModal2"  class="btn btn-primary btn-md">
+                      <span class="fa fa-share-alt"></span> Add post 
+                    </a>
+
+
+
+                  </div>
+                </div>
+
+
+              </div>
+              <div class="col-lg-6">
+
+                {% if listPostes|length == 0 %}
+
+                  <div class="alert alert-danger" role="alert"><h5 style="text-align: center;"> No post in this group</h5></div>
+
+                {% endif %}
+
+                {% for listPoste in listPostes %}
+                  {% set  Poste = listPoste.Poste %}
+                  {% set  listImages = listPoste.images %}
+
+                  
+                  <div class="card">
+                      
+                      <a href="#"><img class="mycardImg card-img-top" src="{{asset('uploads/documents/Poste/'~Poste.path)}}" alt="And this isn't my nose. This is a false one."></a>
+
+                      <div class="col-md-12 div nextandprev">
+                        <div class="row" id="attatche{{Poste.id}}">
+                          
+                          <input type="hidden" name="" value="0">
+
+                          <div class="col-md-6"><button type="button"class="prevImg btn btn-link"><span class="fa fa-angle-double-left"></span> Previous</button></div>
+
+                          <div class="col-md-6"><button type="button" class="nextImg btn btn-link pull-right"> Next <span class="fa fa-angle-double-right"></span></button></div>
+
+                        </div>
+                      </div>
+
+
+                      <div class="col-md-12 imagesDiv">
+                        <div class="row">
+
+
+                              {# {{dump(listImages)}} #}
+                            <input type="hidden" name="" value="{{asset('uploads/documents/Poste/'~Poste.path)}}">
+
+                            {% for imago in listImages %}
+
+                              <div id="attatche{{Poste.id}}" class="bannerW" style="padding:5px !important">
+                                <img src="{{asset('uploads/documents/Poste/'~imago.image)}}" alt="..." class="attatche{{Poste.id}} imageHover img-thumbnail">
+                              </div>
+
+                            {% endfor %}
+
+
+                        </div>
+                      </div>
+
+
+
+                      <div class="card-body d-flex flex-column">
+                          <h4>
+                            
+{#                             {{previlige}}
+                            {{Poste.User.id}}
+                            {{app.user.id}}
+ #}
+                            {% if previlige <= 1 or Poste.User.id == app.user.id %}
+
+
+
+                              <div class="dropdown">
+                                <a style="padding-left: 0px;" href="#" class="nav-link pr-0 leading-none" data-toggle="dropdown">
+                                  <span class="pull-left d-lg-block">
+                                    <span style="color:#9aa0ac !important" class="text-default"><i class="fe fe-more-vertical"></i></span>
+                                  </span>
+                                </a>
+                                
+                                <div class="dropdown-menu dropdown-menu-right dropdown-menu-arrow">
+                                  
+                                  <a class="dropdown-item" href="{{path('EditPoste',{'id':Poste.id})}}">
+                                    <i class="dropdown-icon fe fe-edit"></i> Edit post
+                                  </a>
+
+                                  <a class="dropdown-item" onclick="getIdpostDelete({{Poste.id}})"  data-toggle="modal" data-target="#exampleModalDeletePost"  href="#">
+                                    <i class="dropdown-icon fe fe-trash"></i> Delete post
+                                  </a>
+
+
+                                </div>
+
+                              </div>
+
+
+
+                            {% endif %}
+
+                            <a href="#">{{Poste.title}}</a>
+                          </h4>
+                      
+                         <div class="d-flex align-items-center pt-5 mt-auto">
+                            <div class="avatar avatar-md mr-3" style="background-image: url({{asset('uploads/users/'~Poste.user.path)}})"></div>
+                            <div>
+                               <a href="./profile.html" class="text-default">{{Poste.User.Lname}} {{Poste.User.Fname}}</a>
+                               <small class="d-block text-muted">{{Poste.dateCreation|date("m/d/Y H:i:s")}}</small>
+                            </div>
+                            <div class="ml-auto text-muted">
+                               <a style="margin-right: 8px" id=" {{Poste.id}}" class ="comment" href="javascript:void(0)" class="icon d-none d-md-inline-block ml-3"> {{Poste.NbrComments}} comments</a>
+                                
+                                <!-- <button class="btn btn-primary btn-sm"><span class="fa fa-commenting"></span> Add Comment </button>                              -->
+                            </div>
+
+
+                         </div>
+
+
+                      </div>
+
+                          <div class="card-header">
+                            <div class="input-group">
+                              <input type="text" class="form-control" placeholder="Your comment">
+                              <div class="input-group-append">
+                                <button id="{{Poste.id}}" type="button" class="sendComment btn btn-primary"><i class="fa fa-commenting"></i></button>
+                              </div>
+                            </div>
+                          </div>
+                    
+
+                          <div class="loading" style="width: 50px ; margin-right: auto;margin-left: auto;">
+
+                              <svg xmlns="http://www.w3.org/2000/svg" width="30px" height="30px" viewBox="0 0 100 100" preserveAspectRatio="xMidYMid" class="lds-rolling" style="background: none;"><circle cx="50" cy="50" fill="none" ng-attr-stroke='' ng-attr-stroke-width='' ng-attr-r="" ng-attr-stroke-dasharray='' stroke="#918784" stroke-width="10" r="35" stroke-dasharray="164.93361431346415 56.97787143782138" transform="rotate(172.193 50 50)"><animateTransform attributeName="transform" type="rotate" calcMode="linear" values="0 50 50;360 50 50" keyTimes="0;1" dur="1s" begin="0s" repeatCount="indefinite"></animateTransform></circle></svg>
+
+                          </div>
+
+                      <ul class="comments list-group card-list-group">
+
+
+                      </ul>   
+
+                  </div>
+
+                {% endfor %}
+
+
+
+              </div>
+
+
+
+
+
+
+
+
+            </div>
+          </div>
+        </div>
+
+
+
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
+<script>
+
+
+$(".prevImg").click(function(){
+
+  listImg=[]
+
+  o=$(this).parent().parent().children('input').val()
+  o=parseInt(o)
+
+  that=$(this).parent().parent().attr('id')
+  imgPrincipal=$(this).parent().parent().parent().parent().children('a').children('img')
+
+  $("."+that).each(function( index, element ) {
+
+    listImg.push($(this).attr('src'))
+
+  });
+
+  o++
+
+  if(o>=listImg.length)
+    o=0
+
+  imgPrincipal.attr('src',listImg[o])
+
+
+  $(this).parent().parent().children('input').val(o)
+
+  console.log(o)
+
+
+
+});
+
+
+
+$(".nextImg").click(function(){
+
+  listImg=[]
+
+  o=$(this).parent().parent().children('input').val()
+  o=parseInt(o)
+
+  that=$(this).parent().parent().attr('id')
+  imgPrincipal=$(this).parent().parent().parent().parent().children('a').children('img')
+
+  $("."+that).each(function( index, element ) {
+
+    listImg.push($(this).attr('src'))
+
+  });
+
+
+
+  o=o-1
+
+  if(o<0)
+    o=listImg.length-1
+
+  imgPrincipal.attr('src',listImg[o])
+
+  $(this).parent().parent().children('input').val(o)
+
+  console.log(o)
+
+
+
+});
+
+
+
+
+
+
+
+
+
+
+
+$( ".imageHover" ).hover(function() {
+
+  thisSRC=$(this).attr('src');
+  $(this).parent().parent().parent().parent().children('a').children('img').attr('src',thisSRC)
+
+});
+
+
+$( ".nextandprev" ).mouseleave(function() {
+
+  OriginSRC=$(this).parent().children('.imagesDiv').children('.row').children('input').val()
+  $(this).parent().children('a').children('img').attr('src',OriginSRC)
+
+});
+
+$( ".nextImg" ).mouseleave(function() {
+
+  OriginSRC=$(this).parent().parent().parent().parent().children('.imagesDiv').children('.row').children('input').val()
+  $(this).parent().parent().parent().parent().children('a').children('img').attr('src',OriginSRC)
+
+});
+
+
+$( ".imageHover" ).mouseleave(function() {
+
+  OriginSRC=$(this).parent().parent().children('input').val()
+
+  $(this).parent().parent().parent().parent().children('a').children('img').attr('src',OriginSRC)
+
+});
+
+
+
+
+idPostD=''
+function getIdpostDelete(idPost) {
+
+  idPostD=idPost
+
+}
+
+
+$("#deletePoste").click(function(){
+
+    $.post("{{ path('deletePost') }}", {
+            idPost:idPostD
+         },
+         function(datas, status) {
+
+            if(status == 'success') {
+
+              location.reload();
+
+            }
+
+         });
+
+
+})
+
+
+
+$("#deleteComment").click(function(){
+
+    $.post("{{ path('deleteComment') }}", {
+            idPost:idPostD
+         },
+         function(datas, status) {
+
+            if(status == 'success') {
+
+              location.reload();
+
+            }
+
+         });
+
+
+})
+
+
+$(".sendComment").click(function(){
+
+
+
+  comment=$(this).parent().parent().children('input').val()
+  
+    if(comment.length>0){
+
+    id=$(this).attr('id')
+    CommentDiv=$(this).parent().parent().parent().parent()
+
+    $(this).parent().parent().children('input').val('')
+
+    ANbrcomment=$(CommentDiv).children('.card-body').children('.d-flex').children('.ml-auto').children('a')
+    
+    if (!$(ANbrcomment).hasClass("activa")) 
+      ANbrcomment.addClass('activa')
+
+    $.post("{{ path('AddComment') }}", {
+            comment:comment,
+            idP:id
+         },
+         function(datas, status) {
+
+            if(status == 'success') {
+
+              getComments(CommentDiv,0)
+
+            }
+
+         });
+
+  }
+
+
+
+
+})
+
+
+
+$(document).ready(function(){
+  
+  previlige={{previlige}}
+  app_user_id={{app.user.id}}
+
+  $(".comments").hide()
+  $(".loading").hide()
+
+})
+
+
+$(".comment").click(function(){
+
+  buttonCommrnt=this
+  CommentDiv=$(buttonCommrnt).parent().parent().parent().parent()
+
+  id=$(this).attr('id')
+
+  if ($(buttonCommrnt).hasClass("activa")) {
+
+    CommentDiv.children('ul').hide();
+    CommentDiv.children('ul').empty();
+    $(buttonCommrnt).removeClass("activa")
+
+  }else{
+
+    getComments(CommentDiv,1)
+
+  }
+
+
+
+});
+
+
+
+function getComments(CommentDiv,ifbtn) {
+  // body...
+
+  console.log(CommentDiv)
+
+    CommentDiv.children('.loading').show();
+    CommentDiv.children('ul').empty();
+  
+
+    $.post("{{ path('GetComments') }}", {
+            idP:id
+         },
+         function(datas, status) {
+
+            if (status == 'success') {
+
+                datasAll=datas[0]
+                NbrComments=datas[1]
+                $(CommentDiv).children('.card-body').children('.d-flex').children('.ml-auto').children('a').text( NbrComments +' comments')
+      
+                for (var i = 0; i < datasAll.length; i++){
+
+                  data=datasAll[i]
+                  imgg="{{asset('uploads/users/')}}"
+
+                  divDown=''
+                  if (previlige <= 1 || data.UserId == app_user_id){
+
+                    divDown='<span style="color:#9aa0ac !important;margin-right:5px;cursor: pointer"  onclick="getIdpostDelete('+data.id+')"  data-toggle="modal" data-target="#exampleModalDeleteComment"  class="text-default"><i class="fa fa-trash"></i></span>'                        
+                  }
+
+
+
+                  CommentDiv.children('ul').append('<li class="list-group-item py-5 mediaGJI"><div class="media"><div class="media-object avatar avatar-md mr-4" style="background-image: url('+imgg+data.path+')"></div><div class="media-body">  <div class="media-heading"><small class="float-right text-muted">'+divDown+''+data.dateCreation+'</small><h5>'+data.UserName+'</h5>  </div>  <div>'+data.Comment+' </div></div></div></li>')
+
+                }
+
+
+                CommentDiv.children('.loading').hide();
+                CommentDiv.children('ul').show();
+                if(ifbtn==1)
+                  $(buttonCommrnt).addClass("activa")
+
+            }
+
+    });
+
+}
+
+
+
+
+$('#form_file').bind('change', function() {
+
+  //this.files[0].size gets the size of your file.
+
+
+  if (this.files[0]) {
+    
+      console.log(this.files[0])
+      listName=''
+      for(i=0;i<this.files.length ; i++){
+          listName=this.files[i].name
+      }
+      console.log(listName)
+      $(".nameP").text(listName)
+      
+      
+    if (this.files[0].size>0) 
+      $("#form_file").addClass('is-valid')
+    
+
+  }else{
+
+      $("#form_file").removeClass('is-valid')
+      $(".nameP").text('')
+
+  }
+
+
+});
+
+
+$('#images').bind('change', function() {
+
+  console.log(this.files[0])
+
+  //this.files[0].size gets the size of your file.
+  if (this.files[0]) {
+
+      console.log(this.files[0])
+      listName=''
+      for(i=0;i<this.files.length ; i++){
+          listName=this.files[i].name
+        $(".nameP2").append(listName+"<br>")
+
+      }
+      console.log(listName)
+      
+      
+    if (this.files[0].size>0) 
+      $("#images").addClass('is-valid')
+    
+
+  }else{
+
+      $("#images").removeClass('is-valid')
+      $(".nameP2").text('')
+
+  }
+
+
+});
+
+
+
+
+
+</script>
+
+
+{% endblock %}

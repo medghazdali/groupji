@@ -1,0 +1,266 @@
+{% extends 'GJIBundle::index.html.twig' %}
+{% block body %}
+
+<style type="text/css">
+
+.cardImgDeal{height: 230px;}
+
+</style>
+
+	<!-- Modal -->
+	<div class="modal fade" id="exampleModal" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel" aria-hidden="true">
+	  <div class="modal-dialog" role="document">
+	    <div class="modal-content">
+	      <div class="modal-header">
+	        <h5 class="modal-title" id="exampleModalLabel">Are you sure you want to enable : <strong class="titleG"></strong> ?</h5>
+	        <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+	        </button>
+	      </div>
+
+	      <div class="modal-footer">
+	        <button type="button" class="btn btn-secondary" data-dismiss="modal">Close</button>
+	        <button type="button" id="leaveGroupe" class="btn btn-primary">Leave Group</button>
+	      </div>
+	    </div>
+	  </div>
+	</div>
+
+
+	<!-- Modal -->
+	<div class="modal fade" id="exampleModal2" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel" aria-hidden="true">
+	  <div class="modal-dialog" role="document">
+	    <div class="modal-content">
+	      <div class="modal-header">
+	        <h5 class="modal-title" id="exampleModalLabel">Are you sure you want to enable : <strong class="titleG"></strong> ?</h5>
+	        <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+	        </button>
+	      </div>
+
+	      <div class="modal-footer">
+	        <button type="button" class="btn btn-secondary" data-dismiss="modal">Close</button>
+	        <button type="button" id="enableGroupe" class="btn btn-danger">Disable Group</button>
+	      </div>
+	    </div>
+	  </div>
+	</div>
+
+
+	<div class="my-3 my-md-5">
+	    <div class="container">
+	      <div class="page-header">
+
+	        <a href="{{path('AddGroup')}}"  class="btn btn-lg btn-dark"><i class="fe fe-user-plus"></i> Create Group</a>
+
+	      </div>
+	      <div class="row row-cards">
+
+
+
+
+			{% for data in datas %}
+   		
+		        <div class="col-sm-12 col-md-6 col-xl-3">
+
+		            <div class="card">
+						
+						{% set enableTest = '' %}						
+						{% if data.enabled == 0 %}
+		                {% set enableTest = 'background: #e9ecef' %}
+		                	<img class="cardImgDeal card-img-top" src="{{asset('uploads/documents/groupe/'~data.file)}}" alt="And this isn't my nose. This is a false one.">
+
+			            {% else %}
+
+		                	<a href="{{path('GetGroup',{'id':data.id})}}"><img class="cardImgDeal card-img-top" src="{{asset('uploads/documents/groupe/'~data.file)}}" alt="And this isn't my nose. This is a false one."></a>
+
+			            {% endif %}
+
+		                <div class="card-body d-flex flex-column" style="{{enableTest}}" >
+
+
+							{% if data.enabled == 0 %}
+			                {% set enableTest = 'background: #e9ecef' %}
+		                    
+		                    	<h4 style="margin-bottom: 2px;height: 38px;" >{{ data.title }}</h4>
+
+				            {% else %}
+
+		                    	<h4 style="margin-bottom: 2px;height: 38px;" ><a href="{{path('GetGroup',{'id':data.id})}}">{{ data.title }}</a> </h4>
+
+				            {% endif %}
+
+
+
+
+		                    <strong style="color: #9aa0ac;font-size: 15px" >{{ data.Cat }}</strong>
+		                    
+			                {% if data.enabled == 1 %}
+
+			                    <div class="d-flex align-items-center pt-5 mt-auto">
+
+			                        <div class="text-muted">
+			                       
+			                          <div class="dropdown">
+			                            <button type="button" class=" btn btn-secondary dropdown-toggle" data-toggle="dropdown">
+			                               <i class="fe fe-menu"></i>
+			                            </button>
+			                            <div class="dropdown-menu">
+
+			                				{% if data.previlige == 0 %}
+
+			                              		<a class="dropdown-item" href="{{path('ManagerUsers',{'id':data.id})}}"><i class="fe fe-settings"></i> Manage Members</a>
+
+			                				{% endif %}
+
+			                              <a class="dropdown-item" target="_blank" href="{{path('InviteFriend',{'id':data.id})}}"><i class="fe fe-share-2"></i> Invite Friends</a>
+
+			                              <a class="dropdown-item leaveGroupeCall" onclick="getId(this,id)"   id="{{data.groupe_UserId}}" data-toggle="modal" data-target="#exampleModal" href=""><i class="fe fe-trash-2"></i> Leave Group</a>
+
+			                				{% if data.previlige <= 1 %}
+
+			                              		<a class="dropdown-item" href="{{path('EditGroup',{'id':data.id})}}"><i class="fe fe-edit"></i> Edit Group Info</a>
+
+			                				{% endif %}
+
+			                				{% if data.previlige <= 1 %}
+					                            
+					                            <a class="dropdown-item enableGroupeCall" onclick="getId(this,id)"  id="{{data.id}}"   data-toggle="modal" data-target="#exampleModal2" href=""><i class="fe fe-log-out"></i> Disable Group</a>
+
+			                				{% endif %}
+
+
+			                            </div>
+			                          </div>
+
+			                        </div>
+			                        <div class="ml-auto avatar avatar-md mr-3" style="background-image: url('{{asset('uploads/users/'~data.path)}}')"></div>
+
+			                        <div>
+			                            <a href="" class="text-default">{{ data.UserName }}</a>
+			                            <small class="d-block text-muted">{{ data.dateCreation|date("m/d/y H:i:s") }}</small>
+			                        </div>     
+			                        
+
+			                    </div>
+
+			                {% endif %}
+
+		                    
+			                {% if data.enabled == 0 %}
+
+			                    <div class="d-flex align-items-center pt-5 mt-auto">
+
+			                        <div class="text-muted">			                       
+										<button  onclick="getId(this,id)"  id="{{data.id}}" data-toggle="tooltip" data-placement="top" title="" data-original-title="Enable this group"  class="enableThisGroup btn btn-md btn-warning"><i class="fe fe-zap"></i></button>
+			                        </div>
+
+			                        <div class="ml-auto avatar avatar-md mr-3" style="background-image: url('{{asset('bundles/gji/img/33.jpg')}}')"></div>
+
+			                        <div>
+			                            <a href="" class="text-default">{{ data.UserName }}</a>
+			                            <small class="d-block text-muted">{{ data.dateCreation }}</small>
+
+			                        </div>     
+			                        
+
+			                    </div>
+
+			                {% endif %}
+
+
+
+
+
+		                </div>
+		            </div>
+		        </div>
+
+
+			{% endfor %}
+
+
+	        <?php } ?>
+
+
+
+	      </div>
+
+
+	    </div>
+	</div>
+
+
+
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
+<script>
+
+
+function getId(domObject,idA) {
+	
+	title=$(domObject).parent().parent().parent().parent().parent().parent().children('.card-body').children('h4').text()
+    id=idA
+    $(".titleG").text(title)
+    console.log(id)
+}
+
+
+
+
+$(".enableThisGroup").click(function(){
+
+    $.post("{{ path('EnableThisGroup') }}", {
+            idP:id
+        },
+        function(datas, status) {
+
+            if(status == 'success'){
+
+            	 location.reload();
+
+            }
+
+        });
+
+})
+
+
+$("#enableGroupe").click(function(){
+
+    $.post("{{ path('EnableGroup') }}", {
+            idP:id
+        },
+        function(datas, status) {
+
+            if(status == 'success'){
+
+            	 location.reload();
+
+            }
+
+        });
+
+})
+
+
+$("#leaveGroupe").click(function(){
+
+    $.post("{{ path('LeaveGroup') }}", {
+            idP:id
+        },
+        function(datas, status) {
+
+            if(status == 'success'){
+
+            	 location.reload();
+
+            }
+
+        });
+
+})
+
+</script>
+
+
+
+{% endblock %}
+
