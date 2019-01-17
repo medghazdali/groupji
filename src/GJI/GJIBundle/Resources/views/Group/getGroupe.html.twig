@@ -49,6 +49,20 @@
     </div>
 
 
+
+    <!-- IMAGES LIST large modal -->
+
+    <div class="modal fade bd-example-modal-lg" tabindex="-1" role="dialog" aria-labelledby="myLargeModalLabel" aria-hidden="true">
+      <div class="modal-dialog modal-lg">
+        <div class="modal-content">
+          ...
+        </div>
+      </div>
+    </div>
+
+ 
+
+
     <style type="text/css">
 
       .bannerW{width: 25%}
@@ -143,11 +157,15 @@
                     <p class="mb-4">
                       <strong>{{Groupe.Cat.categorie}}</strong>
                     </p>
-                    <a href="addPost.php"  data-toggle="modal" data-target="#exampleModal2"  class="btn btn-primary btn-md">
+                    <a href=""  data-toggle="modal" data-target="#exampleModal2"  class="btn btn-primary btn-md">
                       <span class="fa fa-share-alt"></span> Add post 
                     </a>
 
 
+
+                    <a href=""  data-toggle="modal" data-target=".bd-example-modal-lg"  class="btn btn-warning btn-md">
+                      <span class="fa fa-list"></span> Images List 
+                    </a>
 
                   </div>
                 </div>
@@ -172,13 +190,13 @@
                       <a href="#"><img class="mycardImg card-img-top" src="{{asset('uploads/documents/Poste/'~Poste.path)}}" alt="And this isn't my nose. This is a false one."></a>
 
                       <div class="col-md-12 div nextandprev">
-                        <div class="row" id="attatche{{Poste.id}}">
+                        <div class="row row-cards" id="attatche{{Poste.id}}">
                           
                           <input type="hidden" name="" value="0">
 
-                          <div class="col-md-6"><button type="button"class="prevImg btn btn-link"><span class="fa fa-angle-double-left"></span> Previous</button></div>
+                          <div class="col-sm-6 col-xl-6"><button type="button"class="prevImg btn btn-link"><span class="fa fa-angle-double-left"></span> Previous</button></div>
 
-                          <div class="col-md-6"><button type="button" class="nextImg btn btn-link pull-right"> Next <span class="fa fa-angle-double-right"></span></button></div>
+                          <div class="col-sm-6 col-xl-6"><button type="button" class="nextImg btn btn-link pull-right"> Next <span class="fa fa-angle-double-right"></span></button></div>
 
                         </div>
                       </div>

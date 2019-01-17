@@ -109,7 +109,9 @@ GauthFacebook:
 InviteByMail:
     path:     /InviteByMail
     defaults: { _controller: GJIBundle:Register:InviteByMail } 
-
+Gallery:
+    path:     /Gallery
+    defaults: { _controller: GJIBundle:Groupe:Gallery }
 
 
 

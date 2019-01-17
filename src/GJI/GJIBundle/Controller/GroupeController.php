@@ -22,6 +22,7 @@ use Symfony\Component\Form\Extension\Core\Type\DateType;
 use Symfony\Bridge\Doctrine\Form\Type\EntityType;
 use Symfony\Component\Validator\Constraints\DateTime;
 
+
 class GroupeController extends Controller
 {
 
@@ -155,6 +156,47 @@ class GroupeController extends Controller
 
         
         return  new Response (1);     
+    }
+
+
+
+    public function GalleryAction(Request $request)
+    {
+
+        $em=$this->getDoctrine()->getManager();
+        $user=$this->get_identity();
+        $listDatas=[];
+
+        // $idG = $request->get('idG');        
+        $idG = 14;        
+        $postes = $em->getRepository('GJIBundle:Poste')->findBy(array('Groupe' => $idG));
+
+        foreach ($postes as $key => $poste) {
+            # code...
+            $data=[];
+            $data['user']=$poste->getuser()->getFname().' '.$poste->getuser()->getFname();
+            $data['path']=$poste->getpath();
+            $data['date']=$poste->getdateCreation()->format('m-d-Y H:i:s');
+            array_push($listDatas, $data);
+
+            $images = $em->getRepository('GJIBundle:images')->findBy(array('Poste' => $poste->getid()));
+            foreach ($images as $key => $image) {
+                $data=[];
+
+                $data['user']=$poste->getuser()->getFname().' '.$poste->getuser()->getFname();
+                $data['path']=$image->getimage();
+                $data['date']=$poste->getdateCreation()->format('m-d-Y H:i:s');
+                array_push($listDatas, $data);
+
+            }
+
+
+        }
+
+
+        $response = new Response(json_encode($listDatas));
+        $response->headers->set('Content-Type', 'application/json');
+        return $response;     
     }
 
 
